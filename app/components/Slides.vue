@@ -10,7 +10,8 @@
                     :href="slide.referer"
                 >
                     <NuxtImg 
-                        :loading="modeLoading" 
+                        :loading="index === 0 ? 'eager' : 'lazy'"
+                        :fetchpriority="index === 0 ? 'high' : 'auto'"
                         :src="slide.desktop" 
                         :alt="slide.name"
                         class="slide-img"
@@ -28,6 +29,8 @@
                 class="bead" 
                 :class="{ 'active-bead': currentSlide === index }"
                 @click="currentSlide = index"
+                role="button"
+                :aria-label="'Ir para o slide ' + (index + 1)"
             ></span>
         </div>
     </div>

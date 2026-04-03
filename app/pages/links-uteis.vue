@@ -8,7 +8,6 @@
         <p><a href="https://santoevangelho.com.br/">Instituto Reformado Santo Evangelho</a></p>
         <p><a href="https://www.hugodesaovitor.org.br/">Instituto Hugo de São Vitor</a></p>
         <hr>
-        <p>Compartilhe:</p>
         <Shared 
            slug="/links-uteis"
            description="Tenha boas referências para um estudo teológico de qualidade; aqui estão alguns links."

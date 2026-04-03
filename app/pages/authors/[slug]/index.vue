@@ -15,7 +15,6 @@
           <ContentRenderer :value="author" />
         </article>
         <hr>
-        <p>Compartilhe:</p>
         <Shared 
          :slug="'author/'+author.slug"
          :description="author.biograpy"

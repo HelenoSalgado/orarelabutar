@@ -28,7 +28,6 @@ const { imgUrl, name, date, slug, categories } = defineProps(['imgUrl', 'name', 
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    margin-bottom: var(--space-lg);
     width: 100%;
 }
 

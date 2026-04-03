@@ -1,6 +1,6 @@
 <template>
   <header class="frontispiece">
-    <div class="theme-toggle" @click="toggleTheme" :title="isDark ? 'Tema Papiro' : 'Tema Penumbra'">
+    <div class="theme-toggle" @click="toggleTheme" :title="isDark ? 'Tema Papiro' : 'Tema Penumbra'" :aria-label="isDark ? 'Mudar para tema claro' : 'Mudar para tema escuro'">
         <IconsMoon v-if="!isDark" class="theme-icon" />
         <IconsSun v-else class="theme-icon" />
     </div>

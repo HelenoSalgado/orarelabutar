@@ -40,8 +40,10 @@ useSeoMeta({
   twitterTitle: `${title.value}`,
   author: 'Heleno Salgado',
   ogLocale: 'pt-BR',
-  ogUrl: `${config.baseURL + route.path}`,
+  ogUrl: () => `${config.baseURL + route.path}`,
   twitterCard: 'summary_large_image',
-  twitterCreator: '@HelenoSalgado'
+  twitterCreator: '@HelenoSalgado',
+  ogSiteName: 'Orar e Labutar',
+  ogType: 'website'
 });
 </script>

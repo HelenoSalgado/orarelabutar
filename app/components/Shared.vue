@@ -1,21 +1,23 @@
 <template>
-    <div class="dissemination-seals">
-        <div class="seals-grid">
-            <a :href="slugShared.x()" title="Compartilhar no X">
-                <LazyIconsX class="seal-icon" />
-            </a>
-            <a :href="slugShared.facebook()" title="Compartilhar no Facebook">
-                <LazyIconsFacebook class="seal-icon" />
-            </a>
-            <a :href="slugShared.linkedin()" title="Compartilhar no Linkedin">
-                <LazyIconsLinkedin class="seal-icon" />
-            </a>
-            <a :href="slugShared.whatsapp()" title="Compartilhar no WhatsApp">
-                <LazyIconsWhatsApp class="seal-icon" />
-            </a>
-            <a :href="slugShared.pocket()" title="Salvar no Pocket">
-                <LazyIconsPocket class="seal-icon" />
-            </a>
+    <div class="dissemination-wrapper">
+        <div class="dissemination-seals">
+            <div class="seals-grid">
+                <a :href="slugShared.x()" title="Compartilhar no X">
+                    <LazyIconsX class="seal-icon" />
+                </a>
+                <a :href="slugShared.facebook()" title="Compartilhar no Facebook">
+                    <LazyIconsFacebook class="seal-icon" />
+                </a>
+                <a :href="slugShared.linkedin()" title="Compartilhar no Linkedin">
+                    <LazyIconsLinkedin class="seal-icon" />
+                </a>
+                <a :href="slugShared.whatsapp()" title="Compartilhar no WhatsApp">
+                    <LazyIconsWhatsApp class="seal-icon" />
+                </a>
+                <a :href="slugShared.pocket()" title="Salvar no Pocket">
+                    <LazyIconsPocket class="seal-icon" />
+                </a>
+            </div>
         </div>
     </div>
 </template>
@@ -26,6 +28,13 @@ const slugShared = new useShareMedia(slug, description);
 </script>
 
 <style scoped>
+.dissemination-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: flex-start;
+}
+
 .dissemination-seals {
     display: flex;
     align-items: center;

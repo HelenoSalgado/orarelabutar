@@ -14,7 +14,6 @@
           />
       </div>
       <hr>
-      <p>Compartilhe:</p>
       <Shared :slug="'/collection/'+slug" :description="'Veja uma coleção de artigos de '+collection.author "/>
   </main>
 </template>

@@ -131,8 +131,4 @@ Quem deseja conhecer e ensinar aprenda, portanto, quanto há para se ensinar e a
 
 Deve, portanto, o doutor das divinas Escrituras ser defensor da reta fé, debelador do erro, e ensinar o bem; e neste trabalho de pregação conciliar os adversos, levantar os indolentes, declarar aos ignorantes o que devem agir e o que devem esperar. Onde tiver encontrado, ou ele próprio os tiver feito, homens benévolos, atentos e dóceis, há de completar o restante conforme a causa o exija. Se os que ouvem devem ser ensinados, seja-o feito por meio de narração; se, todavia, necessitar que aquilo de que trata seja claramente conhecido, para que as coisas que são duvidosas se tornem certas, raciocine através dos documentos utilizados.
 
-Hugo de São Vitor. [1]
-
-[1]Informações sobre o autor e sua pedagogia.
-
-Fonte: cristianismo.org.br
+Fonte: [https://cristianismo.org](cristianismo.org.br)
