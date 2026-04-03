@@ -1,0 +1,151 @@
+:root {
+    --color-paper: #fdfaf6;
+    --color-ink: #1a1a1a;
+    --color-ink-muted: #4a4a4a;
+    --color-gold: #b8860b;
+    --color-gold-muted: rgba(184, 134, 11, 0.05);
+    --color-shadow: rgba(0, 0, 0, 0.05);
+    --color-selection: #fff2cc;
+    --font-heading: 'Arvo', serif;
+    --font-body: 'Arvo', serif;
+
+    /* Spacing Scale */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+    --space-3xl: 5rem;
+
+    /* Transitions */
+    --transition-fast: 0.3s ease;
+    --transition-base: 0.4s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Z-index */
+    --z-header: 100;
+    --z-aside: 1000;
+    --z-overlay: 900;
+}
+
+.dark-mode {
+    --color-paper: #121212;
+    --color-ink: #d4d4d4;
+    --color-ink-muted: #a0a0a0;
+    --color-gold: #c69b32;
+    --color-gold-muted: rgba(198, 155, 50, 0.05);
+    --color-shadow: rgba(0, 0, 0, 0.3);
+    --color-selection: #2d2d2d;
+}
+
+html { background-color: var(--color-paper); scroll-behavior: smooth; }
+
+body {
+    margin: 0; padding: 0;
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background-color: var(--color-paper);
+    line-height: 1.7;
+    font-size: 1.2rem;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+/* --- Lógica de Alinhamento Global (Obrigatória) --- */
+
+/* Títulos de Página (H1) e Seções (H2, H3) */
+h1, h2, h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-align: left;
+    width: 100%;
+    margin-bottom: var(--space-lg);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-ink);
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; line-height: 1.6rem;}
+h3 { font-size: 1.4rem; }
+
+/* Ícones nos títulos */
+h1 svg, h2 svg, h3 svg {
+    width: 28px;
+    height: 28px;
+    color: var(--color-gold);
+    flex-shrink: 0;
+}
+
+h2 svg, h3 svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Containers de Layout */
+main, section {
+    max-width: 800px;
+    margin: var(--space-lg) auto;
+    padding: 0 var(--space-md);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Divisores ◈ */
+hr {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+    margin: var(--space-xl) 0;
+    position: relative;
+    overflow: visible;
+    display: block;
+}
+
+hr::after {
+    content: "◈";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-paper);
+    padding: 0 var(--space-sm);
+    color: var(--color-gold);
+    font-size: 1.5rem;
+}
+
+/* Grade Universal de Manuscritos */
+.sacred-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    width: 100%;
+    margin: var(--space-lg) 0;
+}
+
+/* --- Elementos Comuns --- */
+a { color: var(--color-gold); text-decoration: none; transition: all var(--transition-base); }
+a:hover { color: var(--color-ink); }
+img { border-radius: 12px; }
+svg { vertical-align: middle; }
+
+/* Botões Sacros */
+.sacred-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem var(--space-md);
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+    transition: all var(--transition-fast);
+    border-radius: 4px;
+    cursor: pointer;
+    background: transparent;
+}
+.sacred-btn:hover { background: var(--color-gold); color: var(--color-paper); }

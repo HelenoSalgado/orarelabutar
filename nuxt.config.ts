@@ -1,42 +1,8 @@
 export default defineNuxtConfig({
-  nitro: {
-    output: {
-      publicDir: 'dist',
-    },
-    baseURL: process.env.NUXT_APP_BASE_URL,
-    minify: true
-  },
-  experimental: {
-    renderJsonPayloads: false,
-    payloadExtraction: true
-  },
-  runtimeConfig: {
-    public: {
-      site: {
-        defaultLocale: 'pt-BR',
-        url: process.env.BASE_URL
-      },
-    }
-  },
-  $production: {
-    app: {
-      head: {
-        link: [
-          {
-            rel: 'stylesheet',
-            href: '/css/main.min.css',
-            type: 'text/css'
-          },
-        ]
-      }
-    }
-  },
-  $development: {
-    css: ['../assets/css/main.css'],
-  },
+  ssr: true,
   app: {
-    //baseURL: process.env.BASE_URL,
-    buildAssetsDir: 'nuxt',
+    pageTransition: false,
+    layoutTransition: false,
     head: {
       base: {
         href: process.env.BASE_URL
@@ -58,19 +24,40 @@ export default defineNuxtConfig({
           href: '/pwa/manifest.webmanifest',
           type: 'application/manifest+json'
         }
-      ],
-      script: [
-        {
-          defer: 'true',
-          src: '/js/menu.js',
-        }
       ]
     }
   },
+  future: {
+    compatibilityVersion: 4,
+  },
+  compatibilityDate: '2024-04-03',
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/']
+    },
+    output: {
+      publicDir: 'dist',
+    },
+    baseURL: process.env.NUXT_APP_BASE_URL,
+    minify: true
+  },
+  experimental: {
+    appManifest: false,
+    payloadExtraction: true
+  },
+  css: ['~/assets/css/global.css'],
   devtools: {
      enabled: false
   },
-  modules: ['@nuxtjs/strapi' , '@nuxt/image'],
+  modules: ['@nuxt/content' , '@nuxt/image'],
+  content: {
+    build: {
+      transformers: [
+        '~/transformers/date-format.ts'
+      ]
+    }
+  },
   image: {
     format: ['webp'],
     presets: {
@@ -90,8 +77,5 @@ export default defineNuxtConfig({
         '2xl': 1536
       }
     }
-  },
-  strapi: {
-    url: process.env.BASE_URL_API
   }
 })
