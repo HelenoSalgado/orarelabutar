@@ -1,8 +1,23 @@
 {
   "name": "orarelabutar",
+  "version": "1.0.0",
+  "description": "Blog Orar e Labutar desenvolvido com Nuxt e Nuxt Content",
+  "author": "Heleno Salgado",
+  "homepage": "https://github.com/heleno/orarelabutar",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heleno/orarelabutar.git"
+  },
+  "keywords": [
+    "nuxt",
+    "vue",
+    "blog"
+  ],
   "type": "module",
   "engines": {
-    "node": ">=18.17.1"
+    "node": ">=22.18.0"
   },
   "scripts": {
     "build": "nuxt build",
@@ -11,7 +26,6 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "test": "vitest run",
-    "zip": "cd ./.output && zip -r dist.zip .",
     "nuxtup": "nuxi upgrade"
   },
   "devDependencies": {
