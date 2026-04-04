@@ -4,15 +4,13 @@
             <IconsTag/>
             <span>{{ tagData.tag.title }}</span>
         </h1>
-            <div v-if="tagData.posts.length" class="grid-container">
                 <PostPreview
 v-for="post in tagData.posts" :key="post.id"
                   :title="post.title"
                   :description="post.description"
-                  :slug="post.slug"
+                  :slug="'/posts/' + post.slug"
                   :img-url="post.imgUrl"
                 />
-            </div>
     </main>
 </template>
 

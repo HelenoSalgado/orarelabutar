@@ -10,7 +10,7 @@
 v-for="post in collectionData.posts" :key="post.id"
             :title="post.title"
             :description="post.description"
-            :slug="post.slug"
+            :slug="'/posts/' + post.slug"
             :img-url="post.imgUrl"
           />
       </div>

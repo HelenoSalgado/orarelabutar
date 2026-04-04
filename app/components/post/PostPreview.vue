@@ -25,7 +25,7 @@ defineProps(['title', 'description', 'slug', 'imgUrl']);
     flex-direction: column;
     column-gap: var(--space-xs);
     row-gap: var(--space-sm);
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-xl);
     align-items: flex-start; /* Alinhamento start */
     text-align: left;
 }
@@ -69,9 +69,9 @@ defineProps(['title', 'description', 'slug', 'imgUrl']);
 }
 
 .preview-desc {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--color-ink-muted);
-    line-height: 1.6;
+    line-height: 1.5;
     margin-bottom: var(--space-sm);
 }
 

@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'GFS Didot';
+    src: url('/fonts/gfs-didot/GFSDidot-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --color-paper: #fdfaf6;
     --color-ink: #1a1a1a;
@@ -6,8 +14,8 @@
     --color-gold-muted: rgba(184, 134, 11, 0.05);
     --color-shadow: rgba(0, 0, 0, 0.05);
     --color-selection: #fff2cc;
-    --font-heading: 'Arvo', serif;
-    --font-body: 'Arvo', serif;
+    --font-heading: 'GFS Didot', serif;
+    --font-body: 'GFS Didot', serif;
 
     /* Spacing Scale */
     --space-xs: 0.5rem;
@@ -50,6 +58,7 @@ body {
     font-size: 1.2rem;
     -webkit-font-smoothing: antialiased;
     transition: background-color var(--transition-slow), color var(--transition-slow);
+    padding: 0 var(--space-sm);
 }
 
 /* --- Lógica de Alinhamento Global (Obrigatória) --- */
@@ -68,7 +77,7 @@ h1, h2, h3 {
 }
 
 h1 { font-size: 2.2rem; }
-h2 { font-size: 1.8rem; line-height: 1.6rem;}
+h2 { font-size: 1.8rem; line-height: 1.8rem;}
 h3 { font-size: 1.4rem; }
 
 /* Ícones nos títulos */

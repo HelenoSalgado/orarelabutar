@@ -6,7 +6,7 @@
         </h1>
         <div class="sacred-grid">
             <PostPreview v-for="post in homeData?.posts" :key="post.id" :title="post.title"
-                :description="post.description" :slug="'posts/' + post.slug" :img-url="post.imgUrl" />
+                :description="post.description" :slug="'/posts/' + post.slug" :img-url="post.imgUrl" />
         </div>
 
         <hr>

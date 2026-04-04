@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
 
   const tag = await queryCollection(event, 'tags')
     .where('slug', '=', slug)
-    .select('id', 'title', 'description')
+    .select('id', 'title', 'description', 'slug')
     .first();
 
 

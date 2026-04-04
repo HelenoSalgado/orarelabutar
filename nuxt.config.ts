@@ -46,7 +46,7 @@ export default defineNuxtConfig({
         { rel: 'manifest', href: '/pwa/manifest.webmanifest', type: 'application/manifest+json' },
         {
           rel: 'preload',
-          href: '/fonts/arvo/Arvo-Regular.ttf',
+          href: '/fonts/gfs-didot/GFSDidot-Regular.ttf',
           type: 'font/ttf',
           as: 'font',
           crossorigin: 'anonymous'
