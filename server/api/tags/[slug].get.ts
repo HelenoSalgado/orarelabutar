@@ -6,6 +6,7 @@ export default defineEventHandler(async (event) => {
   // Select fields needed for PostPreview
   const posts = await queryCollection(event, 'posts')
     .where('categories', 'LIKE', `%"${slug}"%`)
+    .where('published', '=', true)
     .select('id', 'title', 'description', 'slug', 'imgUrl', 'categories')
     .all();
 

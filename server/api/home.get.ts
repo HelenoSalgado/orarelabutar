@@ -5,10 +5,12 @@ import { slugify } from '~~/server/utils/slugify';
 export default defineEventHandler(async (event) => {
   const [posts, allRelated] = await Promise.all([
     queryCollection(event, 'posts')
+      .where('published', '=', true)
       .select('id', 'slug', 'imgUrl', 'title', 'description', 'createdAt')
       .order('createdAt', 'DESC')
       .all(),
     queryCollection(event, 'posts')
+      .where('published', '=', true)
       .select('slug', 'collection', 'imgUrl', 'author')
       .all()
   ]);

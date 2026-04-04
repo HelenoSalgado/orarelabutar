@@ -17,6 +17,7 @@ export default defineEventHandler(async (event) => {
 
   const posts = await queryCollection(event, 'posts')
     .where('author', '=', author.title)
+    .where('published', '=', true)
     .select('title', 'description', 'slug', 'imgUrl')
     .all();
 

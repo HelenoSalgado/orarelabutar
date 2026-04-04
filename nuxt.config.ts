@@ -134,7 +134,9 @@ export default defineNuxtConfig({
     build: {
       transformers: [
         '~~/transformers/slugify-title.ts',
-        '~~/transformers/date-published.ts'
+        '~~/transformers/date-published.ts',
+        '~~/transformers/default-images.ts',
+        '~~/transformers/slugify-collection.ts'
       ]
     }
   },

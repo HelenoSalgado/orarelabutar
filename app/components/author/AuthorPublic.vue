@@ -67,7 +67,7 @@ defineProps(['imgUrl', 'name', 'date', 'slug', 'categories']);
 }
 
 .tag-item {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: var(--color-gold);
     display: inline-flex;
     align-items: center;

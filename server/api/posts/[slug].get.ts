@@ -6,6 +6,7 @@ export default defineEventHandler(async (event) => {
 
   const post = await queryCollection(event, 'posts')
     .where('slug', '=', slug)
+    .where('published', '=', true)
     .select('id', 'path', 'title', 'imgUrl', 'slug', 'dateFormatted', 'description', 'author', 'body', 'categories')
     .first();
 
@@ -35,6 +36,7 @@ export default defineEventHandler(async (event) => {
     related = (await queryCollection(event, 'posts')
       .where('author', '=', post.author)
       .where('slug', '<>', slug)
+      .where('published', '=', true)
       .select('id', 'title', 'description', 'imgUrl', 'slug')
       .limit(3)
       .all()) as PostsCollectionItem[];

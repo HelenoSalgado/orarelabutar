@@ -5,6 +5,7 @@ export default defineEventHandler(async (event) => {
   
   const posts = await queryCollection(event, 'posts')
     .where('collectionSlug', '=', slug)
+    .where('published', '=', true)
     .select('id', 'title', 'description', 'slug', 'imgUrl', 'collection', 'author')
     .all();
 

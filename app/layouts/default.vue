@@ -1,9 +1,7 @@
 <template>
-    <div class="layout-wrapper">
-        <TheHeader />
-        <slot />
-        <TheFooter />
-    </div>
+    <TheHeader />
+    <slot />
+    <TheFooter />
 </template>
 
 <script setup lang="ts">
