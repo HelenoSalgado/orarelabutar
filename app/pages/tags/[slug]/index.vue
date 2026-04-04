@@ -2,9 +2,9 @@
     <main v-if="tagData?.tag">
         <h1>
             <IconsTag/>
-            <span>{{ tagData.tag.name }}</span>
+            <span>{{ tagData.tag.title }}</span>
         </h1>
-            <div v-if="tagData.posts?.length" class="grid-container">
+            <div v-if="tagData.posts.length" class="grid-container">
                 <PostPreview
 v-for="post in tagData.posts" :key="post.id"
                   :title="post.title"
@@ -17,7 +17,8 @@ v-for="post in tagData.posts" :key="post.id"
 </template>
 
 <script setup lang="ts">
-import type { TagResponse } from '~/types';
+import type { PostsCollectionItem, TagsCollectionItem } from '@nuxt/content';
+
 
 defineOptions({
     name: 'TagDetail'
@@ -28,9 +29,9 @@ const config = useRuntimeConfig();
 const route = useRoute();
 const slug = route.params.slug as string;
 
-const { data: tagData } = await useFetch<TagResponse>(`/api/tags/${slug}`);
+const { data: tagData } = await useFetch<{ tag: TagsCollectionItem, posts: PostsCollectionItem[] }>(`/api/tags/${slug}`);
 
-const title = computed(() => `Orar e Labutar | #${tagData.value?.tag?.name}`);
+const title = computed(() => `Orar e Labutar | #${tagData.value?.tag?.title}`);
 
 useSeoMeta({
     title: () => title.value,

@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-const { title, description, slug, imgUrl } = defineProps(['title', 'description', 'slug', 'imgUrl']);
+defineProps(['title', 'description', 'slug', 'imgUrl']);
 </script>
 
 <style scoped>

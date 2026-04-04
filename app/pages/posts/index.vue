@@ -23,7 +23,7 @@ defineOptions({
 
 const config = useRuntimeConfig();
 
-const { data: posts } = await useFetch('/api/posts/all');
+const { data: posts } = await useFetch('/api/posts');
 
 useSeoMeta({
     title: 'Artigos',

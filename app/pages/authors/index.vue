@@ -5,7 +5,7 @@
             <span>Autores</span>
         </h1>
         <div class="container-authors">
-            <AuthorPreview />
+            <AuthorPreview :authors/>
         </div>
     </main>
 </template>
@@ -14,6 +14,9 @@
 defineOptions({
     name: 'AuthorsIndex'
 });
+
+const { data: authors } = await useFetch('/api/authors');
+
 </script>
 
 <style scoped>

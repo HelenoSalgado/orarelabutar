@@ -12,7 +12,6 @@
       <hr>
     </main>
 
-    <section class="post-navigation">
       <div class="navigator-posts">
         <NuxtLink v-if="pageData.surroundings?.[0]" :to="pageData.surroundings[0].slug">
           &lang; Post Anterior
@@ -21,7 +20,6 @@
           Próximo Post &rang;
         </NuxtLink>
       </div>
-    </section>
 
     <section v-if="pageData?.related?.length" class="related-posts">
       <h2>
@@ -29,7 +27,7 @@
         <span>Posts Relacionados</span>
       </h2>
       <div class="grid-container">
-        <PostRelation v-for="related in pageData.related" :key="related.id" :title="related.title"
+        <PostRelation v-for="related in pageData.related" :key="related.id" :title="related.title" :description="related.description"
           :img-url="related.imgUrl" :slug="related.slug" />
       </div>
     </section>
@@ -37,8 +35,6 @@
 </template>
 
 <script setup lang="ts">
-import type { AuthorsCollectionItem, PostsCollectionItem } from '@nuxt/content';
-
 defineOptions({ name: 'PostDetail' });
 
 const config = useRuntimeConfig();
@@ -46,12 +42,9 @@ const config = useRuntimeConfig();
 const route = useRoute();
 const slug = route.params.slug as string;
 
-const { data: pageData } = await useFetch<{
-  post: PostsCollectionItem;
-  surroundings: PostsCollectionItem[];
-  author: AuthorsCollectionItem | null;
-  related: PostsCollectionItem[];
-}>(`/api/posts/${slug}`);
+const { data: pageData } = await useFetch(`/api/posts/${slug}`);
+
+console.log(pageData.value?.surroundings);
 
 
 useSeoMeta({
@@ -84,7 +77,8 @@ useSeoMeta({
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: var(--space-md);
+  max-width: 800px;
+  margin: var(--space-xs) auto;
 }
 
 .navigator-posts a {

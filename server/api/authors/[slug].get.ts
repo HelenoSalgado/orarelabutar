@@ -3,14 +3,10 @@ import { queryCollection } from '@nuxt/content/server';
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, 'slug');
   
-  const [author, posts] = await Promise.all([
-    queryCollection(event, 'authors').path(`/authors/${slug}`)
-    .select('title', 'description', 'imgUrl', 'slug')
-    .first(),
-    queryCollection(event, 'posts').where('slug', '=', slug)
-    .select('author', 'title', 'description', 'slug', 'imgUrl')
-    .all()
-  ]);
+  const author = await queryCollection(event, 'authors')
+    .where('slug', '=', slug)
+    .select('title', 'description', 'imgUrl', 'slug', 'body')
+    .first();
 
   if (!author) {
     throw createError({
@@ -18,6 +14,11 @@ export default defineEventHandler(async (event) => {
       statusMessage: 'Author not found',
     });
   }
+
+  const posts = await queryCollection(event, 'posts')
+    .where('author', '=', author.title)
+    .select('title', 'description', 'slug', 'imgUrl')
+    .all();
 
   return {
     author,

@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-const { title, imgUrl, author, slug, count } = defineProps(['title', 'imgUrl', 'author', 'slug', 'count']);
+defineProps(['title', 'imgUrl', 'author', 'slug', 'count']);
 </script>
 
 <style scoped>

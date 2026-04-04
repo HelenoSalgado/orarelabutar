@@ -7,13 +7,13 @@
             sizes="xs:320px, sm:640px, md:768px" />
         </div>
         <h1>{{ authorData.author.title }}</h1>
-        <ContentRenderer :value="authorData.author" />
+        <ContentRenderer :value="authorData.author.body" />
       </article>
       <hr>
       <SocialShare :slug="'author/' + authorData.author.slug" :description="authorData.author.description" />
     </div>
 
-    <section v-if="authorData?.posts?.length" class="author-posts">
+    <section v-if="authorData?.posts?.length">
       <h2>
         <IconsUser />
         <span>Deste Autor</span>
@@ -30,7 +30,7 @@
         <span>Autores</span>
       </h1>
       <div class="container-authors">
-        <AuthorPreview />
+        <AuthorPreview :authors />
       </div>
     </section>
   </main>
@@ -48,6 +48,8 @@ const config = useRuntimeConfig();
 const slug = useRoute().params.slug as string;
 
 const { data: authorData } = await useFetch<{ author: AuthorsCollectionItem, posts: PostsCollectionItem[] }>(`/api/authors/${slug}`);
+
+const { data: authors } = await useFetch('/api/authors');
 
 const title = computed(() => `Orar e Labutar | ${authorData.value?.author?.title || ''}`);
 

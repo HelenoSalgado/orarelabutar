@@ -3,18 +3,15 @@ import { queryCollection } from '@nuxt/content/server';
 import { slugify } from '~~/server/utils/slugify';
 
 export default defineEventHandler(async (event) => {
-  const [postsRaw, allRelatedRaw] = await Promise.all([
+  const [posts, allRelated] = await Promise.all([
     queryCollection(event, 'posts')
-      .select('id', 'stem', 'imgUrl', 'title', 'description', 'createdAt', 'dateFormatted')
+      .select('id', 'slug', 'imgUrl', 'title', 'description', 'createdAt')
       .order('createdAt', 'DESC')
       .all(),
     queryCollection(event, 'posts')
-      .select('stem', 'collection', 'imgUrl', 'author', 'dateFormatted')
+      .select('slug', 'collection', 'imgUrl', 'author')
       .all()
   ]);
-
-  const posts = postsRaw.map(p => ({ ...p, slug: p.stem }));
-  const allRelated = allRelatedRaw.map(p => ({ ...p, slug: p.stem }));
 
   const collectionsMap = allRelated.reduce((acc: Record<string, { name: string, slug: string, imgUrl: string, authors: Set<string>, count: number }>, post) => {
     if (post.collection) {

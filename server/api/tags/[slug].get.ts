@@ -3,8 +3,18 @@ import { queryCollection } from '@nuxt/content/server';
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, 'slug') as string;
   
-  const allPosts = await queryCollection(event, 'posts').all();
-  const posts = allPosts.filter(p => p.categories?.includes(slug));
+  // Select fields needed for PostPreview
+  const posts = await queryCollection(event, 'posts')
+    .where('categories', 'LIKE', `%"${slug}"%`)
+    .select('id', 'title', 'description', 'slug', 'imgUrl', 'categories')
+    .all();
+
+  const tag = await queryCollection(event, 'tags')
+    .where('slug', '=', slug)
+    .select('id', 'title', 'description')
+    .first();
+
+
 
   if (posts.length === 0) {
     throw createError({
@@ -12,12 +22,6 @@ export default defineEventHandler(async (event) => {
       statusMessage: 'Tag not found or has no posts',
     });
   }
-
-  // Create a virtual tag object for the frontend
-  const tag = {
-    name: slug,
-    description: `Manuscritos marcados com #${slug}`
-  };
 
   return {
     tag,

@@ -1,8 +1,8 @@
 <template>
     <div v-for="auth in authors" :key="auth.id" class="card-author">
-        <NuxtImg preset="avatar" :src="'/img/'+auth.imgUrl" :alt="auth.name" width="60" height="60"/>
+        <NuxtImg preset="avatar" :src="'/img/'+auth.imgUrl" :alt="auth.title" width="60" height="60"/>
         <div>
-            <h3>{{ auth.name }}</h3>
+            <h3>{{ auth.title }}</h3>
             <p v-if="auth.createdAt">Desde {{ auth.createdAt }}</p>
             <NuxtLink :to="'/authors/'+auth.slug">Ver Perfil</NuxtLink>
         </div>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-const { data: authors } = await useFetch('/api/authors/all');
+defineProps(['authors'])
 </script>
 
 <style scoped>

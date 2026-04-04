@@ -1,23 +1,19 @@
 <template>
     <div class="post-card-related">
-        <NuxtLink :href="'/posts/'+slug" class="related-img-link">
-          <NuxtImg class="post-card-related-img" :src="'/img/'+imgUrl" :alt="title" loading="lazy" width="300" height="200"/>
+        <NuxtLink :href="'/posts/' + slug" class="related-img-link">
+            <NuxtImg class="post-card-related-img" :src="'/img/' + imgUrl" :alt="title" loading="lazy" width="300"
+                height="200" />
         </NuxtLink>
         <div class="post-card-related-text">
-          <NuxtLink :href="'/posts/'+slug" class="related-title-link">
-            <h3>{{title}}</h3>
-          </NuxtLink>
+            <NuxtLink :href="'/posts/' + slug" class="related-title-link">
+                <h3>{{ title }}</h3>
+            </NuxtLink>
+            <p>{{ description }}</p>
         </div>
     </div>
-  </template>
+</template>
 <script setup lang="ts">
-import type { Post } from '~/types';
-
-const { title, slug, imgUrl } = defineProps<{
-    title: Post['title'];
-    slug: Post['slug'];
-    imgUrl: Post['imgUrl'];
-}>();
+defineProps(['title', 'description', 'imgUrl', 'slug']);
 </script>
 
 <style scoped>
@@ -47,11 +43,17 @@ const { title, slug, imgUrl } = defineProps<{
 }
 
 .post-card-related-text h3 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin: 0;
     color: var(--color-ink);
     line-height: 1.4;
     text-align: center;
+
+
+}
+
+.post-card-related-text p {
+    line-height: 1.6rem;
 }
 
 .related-title-link {

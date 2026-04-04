@@ -153,11 +153,11 @@ export default defineNuxtConfig({
       'lg': 1024,
       'xl': 1280
     },
-    provider: 'cloudflare',
-    cloudflare: {
-      baseURL: 'https://orarelabutar.com'
-    },
-    domains: ['orarelabutar.com'],
+    // provider: 'cloudflare',
+    // cloudflare: {
+    //   baseURL: 'https://orarelabutar.com'
+    // },
+    // domains: ['orarelabutar.com'],
   },
 
   dir: {

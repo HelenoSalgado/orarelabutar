@@ -23,7 +23,7 @@ Orar e Labutar subscreve o Credo Apostólico e a Confissão de Fé de Westminste
 
 Nossas redes sociais encontram-se no perfil @licoes1
 
-Temos um grupo no Telegram.
+Temos um grupo no (https://t.me/joinchat/HQNxlzmzltXigTMQ)[Telegram].
 
 Graça e Paz
 

@@ -1,16 +1,13 @@
-import type { AuthorsCollectionItem, PostsCollectionItem } from "@nuxt/content";
+import type { PostsCollectionItem } from "@nuxt/content";
 import { queryCollection, queryCollectionItemSurroundings } from '@nuxt/content/server';
 
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, 'slug') as string;
 
-  const [post, surroundings] = await Promise.all([
-    queryCollection(event, 'posts')
-      .where('slug', '=', slug)
-      .select('id', 'imgUrl', 'slug', 'dateFormatted', 'description', 'author', 'body')
-      .first(),
-    queryCollectionItemSurroundings(event, 'posts', slug)
-  ]);
+  const post = await queryCollection(event, 'posts')
+    .where('slug', '=', slug)
+    .select('id', 'path', 'title', 'imgUrl', 'slug', 'dateFormatted', 'description', 'author', 'body', 'categories')
+    .first();
 
   if (!post) {
     throw createError({
@@ -18,6 +15,10 @@ export default defineEventHandler(async (event) => {
       statusMessage: 'Post not found',
     });
   }
+
+  const surroundings = await queryCollectionItemSurroundings(event, 'posts', post.path, {
+    fields: ['id', 'title', 'slug']
+  });
 
   // Fetch author details
   let author = null;
@@ -31,11 +32,12 @@ export default defineEventHandler(async (event) => {
   // Fetch related posts (same author)
   let related: PostsCollectionItem[] = [];
   if (post.author) {
-    const allRelated = await queryCollection(event, 'posts')
+    related = (await queryCollection(event, 'posts')
       .where('author', '=', post.author)
-      .limit(4)
-      .all();
-    related = allRelated.filter(p => p.slug !== slug).slice(0, 3);
+      .where('slug', '<>', slug)
+      .select('id', 'title', 'description', 'imgUrl', 'slug')
+      .limit(3)
+      .all()) as PostsCollectionItem[];
   }
 
   return {
@@ -43,10 +45,5 @@ export default defineEventHandler(async (event) => {
     surroundings,
     author,
     related
-  } as {
-    post: PostsCollectionItem;
-    surroundings: PostsCollectionItem[];
-    author: AuthorsCollectionItem | null;
-    related: PostsCollectionItem[];
   };
 });

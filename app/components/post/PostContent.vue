@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 
-const { title, body, author, categories, dateFormatted, slugAuthor, avatarAuthor} = defineProps(['title', 'body', 'author', 'categories', 'dateFormatted', 'slugAuthor', 'avatarAuthor']);
+defineProps(['title', 'body', 'author', 'categories', 'dateFormatted', 'slugAuthor', 'avatarAuthor']);
 
 </script>
 

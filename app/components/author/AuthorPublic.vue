@@ -20,15 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Author, Post } from '~~/types';
-
-const { imgUrl, name, date, slug, categories = [] } = defineProps<{
-    imgUrl: Author['imgUrl'];
-    name: Author['name'];
-    date: Post['dateFormatted'];
-    slug: Author['slug'];
-    categories?: Post['categories'];
-}>();
+defineProps(['imgUrl', 'name', 'date', 'slug', 'categories']);
 </script>
 
 <style scoped>

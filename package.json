@@ -2,7 +2,7 @@
   "name": "orarelabutar",
   "type": "module",
   "engines": {
-    "node": ">=19.8.1"
+    "node": ">=18.17.1"
   },
   "scripts": {
     "build": "nuxt build",

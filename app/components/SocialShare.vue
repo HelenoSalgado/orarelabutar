@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
 const { slug, description } = defineProps(['slug', 'description']);
-const slugShared = new useShareMedia(slug, description);
+const slugShared = useShareMedia(slug, description);
 </script>
 
 <style scoped>

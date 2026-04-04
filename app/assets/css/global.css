@@ -88,9 +88,7 @@ h2 svg, h3 svg {
 main, section {
     max-width: 800px;
     margin: var(--space-lg) auto;
-    padding: 0 var(--space-md);
-    display: flex;
-    flex-direction: column;
+    padding: var(--space-lg) 0 var(--space-xs) 0;
 }
 
 /* Divisores ◈ */

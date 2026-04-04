@@ -1,25 +1,36 @@
 import { queryCollection } from '@nuxt/content/server';
-import type { PostsCollectionItem } from "@nuxt/content";
 
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, 'slug');
   
-  const collection = await queryCollection(event, 'posts').path(`/collections/${slug}`).first();
+  const posts = await queryCollection(event, 'posts')
+    .where('collectionSlug', '=', slug)
+    .select('id', 'title', 'description', 'slug', 'imgUrl', 'collection', 'author')
+    .all();
 
-  if (!collection) {
+  if (posts.length === 0) {
     throw createError({
       statusCode: 404,
       statusMessage: 'Collection not found',
     });
   }
 
-  let posts: PostsCollectionItem[] = [];
-  if (collection.slug) {
-    posts = await queryCollection(event, 'posts').where('slug', 'IN', collection.slug).all();
-  }
+  // Use metadata from the first post
+  const firstPost = posts[0];
+  const collection = {
+    title: firstPost.collection,
+    author: firstPost.author,
+    imgUrl: firstPost.imgUrl,
+  };
 
   return {
     collection,
-    posts
+    posts: posts.map(p => ({
+      id: p.id,
+      title: p.title,
+      description: p.description,
+      slug: p.slug,
+      imgUrl: p.imgUrl
+    }))
   };
 });
