@@ -9,6 +9,13 @@
         </div>
     </main>
 </template>
+
+<script setup lang="ts">
+defineOptions({
+    name: 'AuthorsIndex'
+});
+</script>
+
 <style scoped>
 .container-authors {
     display: flex;

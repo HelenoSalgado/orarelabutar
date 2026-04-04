@@ -31,17 +31,19 @@
 </template>
 
 <script setup lang="ts">
-import config from '~/config/index';
+defineOptions({
+    name: 'PdfsPage'
+});
 
-const { data: pdfs } = await useAsyncData('pdfs-list', () => 
-  queryCollection('posts').where('categories', 'LIKE', '%PDF%').all()
-);
+const config = useRuntimeConfig();
+
+const { data: pdfs } = await useFetch('/api/pdfs');
 
 useSeoMeta({
     title: 'PDFs e E-books',
     ogType: 'website',
     description: 'Baixe manuscritos e livros digitais clássicos.',
-    ogImage: `${config.baseURL}/img/pdfs-e-ebooks.jpg`,
+    ogImage: () => `${config.public.site.url}/img/pdfs-e-ebooks.jpg`,
 }, {
     mode: 'server'
 });

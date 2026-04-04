@@ -1,5 +1,5 @@
 <template>
-    <div class="card-author" v-for="auth in authors" :key="auth.id">
+    <div v-for="auth in authors" :key="auth.id" class="card-author">
         <NuxtImg preset="avatar" :src="'/img/'+auth.imgUrl" :alt="auth.name" width="60" height="60"/>
         <div>
             <h3>{{ auth.name }}</h3>
@@ -10,9 +10,7 @@
 </template>
 
 <script setup lang="ts">
-const { data: authors } = await useAsyncData('authors-preview', () => 
-  queryCollection('authors').all()
-);
+const { data: authors } = await useFetch('/api/authors/all');
 </script>
 
 <style scoped>

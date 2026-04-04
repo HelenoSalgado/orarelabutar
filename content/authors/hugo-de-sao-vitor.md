@@ -1,5 +1,5 @@
 ---
-name: Hugo de São Vitor
+title: Hugo de São Vitor
 imgUrl: hugo-de-sao-vitor.webp
 description: A época em que viveu Hugo de São Vitor foi uma das mais importantes da história da civilização ocidental, pois foi nela que começaram a se organizar as nações que hoje fazem parte da Europa.
 ---

@@ -5,10 +5,10 @@
             <h2>Siga o Manuscrito</h2>
         </div>
         <p class="newsletter-desc">Seja avisado quando novos artigos forem publicados.</p>
-        <form @submit.prevent="handleSubmit" class="newsletter-form">
+        <form class="newsletter-form" @submit.prevent="handleSubmit">
             <div class="input-group">
-                <input type="text" v-model="name" placeholder="Seu Nome" required class="sacred-input">
-                <input type="email" v-model="email" placeholder="Seu melhor e-mail" required class="sacred-input">
+                <input v-model="name" type="text" placeholder="Seu Nome" required class="sacred-input">
+                <input v-model="email" type="email" placeholder="Seu melhor e-mail" required class="sacred-input">
             </div>
             <button class="sacred-btn newsletter-btn" type="submit">Inscrever-se</button>
         </form>
@@ -21,7 +21,6 @@ const email = ref('');
 
 const handleSubmit = () => {
     // Implement subscription logic or external form action
-    console.log('Inscrito:', { name: name.value, email: email.value });
     alert('Obrigado por se inscrever!');
     name.value = '';
     email.value = '';

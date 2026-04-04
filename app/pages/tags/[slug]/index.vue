@@ -1,46 +1,46 @@
 <template>
-    <main v-if="tag">
+    <main v-if="tagData?.tag">
         <h1>
             <IconsTag/>
-            <span>{{ tag.name }}</span>
+            <span>{{ tagData.tag.name }}</span>
         </h1>
-            <div class="grid-container" v-if="posts?.length">
-                <PostPreview v-for="post in posts" :key="post.id"
+            <div v-if="tagData.posts?.length" class="grid-container">
+                <PostPreview
+v-for="post in tagData.posts" :key="post.id"
                   :title="post.title"
                   :description="post.description"
                   :slug="post.slug"
-                  :imgUrl="post.imgURL"
+                  :img-url="post.imgUrl"
                 />
             </div>
     </main>
 </template>
 
 <script setup lang="ts">
-import config from '~/config';
+import type { TagResponse } from '~/types';
+
+defineOptions({
+    name: 'TagDetail'
+});
+
+const config = useRuntimeConfig();
 
 const route = useRoute();
 const slug = route.params.slug as string;
 
-const { data: tag } = await useAsyncData(`tag-${slug}`, () => 
-  queryCollection('categories').where('name', '=', slug).first()
-);
+const { data: tagData } = await useFetch<TagResponse>(`/api/tags/${slug}`);
 
-const { data: posts } = await useAsyncData(`posts-in-tag-${slug}`, async () => {
-  const allPosts = await queryCollection('posts').all();
-  return allPosts.filter(p => p.categories?.includes(slug));
-});
-
-const title = computed(() => `Orar e Labutar | #${tag.value?.name}`);
+const title = computed(() => `Orar e Labutar | #${tagData.value?.tag?.name}`);
 
 useSeoMeta({
     title: () => title.value,
     ogTitle: () => title.value,
-    description: () => tag.value?.description,
-    ogDescription: () => tag.value?.description,
-    ogImage: () => `${config.baseURL}/img/licoes1-mobile.jpg`,
+    description: () => tagData.value?.tag?.description,
+    ogDescription: () => tagData.value?.tag?.description,
+    ogImage: () => `${config.public.site.url}/img/licoes1-mobile.jpg`,
     twitterTitle: () => title.value,
-    twitterDescription: () => tag.value?.description,
-    twitterImage: () => `${config.baseURL}/img/licoes1-mobile.jpg`,
+    twitterDescription: () => tagData.value?.tag?.description,
+    twitterImage: () => `${config.public.site.url}/img/licoes1-mobile.jpg`,
 }, {
     mode: 'server'
 });

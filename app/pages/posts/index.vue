@@ -5,31 +5,34 @@
             <span>Artigos</span>
         </h1>
         <div class="grid-container">
-            <PostPreview v-for="post in posts" :key="post.id"
+            <PostPreview
+v-for="post in posts" :key="post.id"
               :title="post.title"
               :description="post.description"
-              :slug="post.slug"
-              :imgUrl="post.imgURL"
+              :slug="'posts/' + post.slug"
+              :img-url="post.imgUrl"
             />
         </div>
     </main>
 </template>
 
 <script setup lang="ts">
-import config from '~/config/index';
+defineOptions({
+    name: 'PostsIndex'
+});
 
-const { data: posts } = await useAsyncData('all-posts', () => 
-  queryCollection('posts').order('createdAt', 'DESC').all()
-);
+const config = useRuntimeConfig();
+
+const { data: posts } = await useFetch('/api/posts/all');
 
 useSeoMeta({
     title: 'Artigos',
     ogType: 'website',
     description: 'Todos os artigos publicados no blog Orar e Labutar.',
     ogDescription: 'Todos os artigos publicados no blog Orar e Labutar.',
-    ogImage: `${config.baseURL}/img/artigos.jpg`,
+    ogImage: () => `${config.public.site.url}/img/artigos.jpg`,
     twitterDescription: 'Todos os artigos publicados no blog Orar e Labutar.',
-    twitterImage: `${config.baseURL}/img/artigos.jpg`,
+    twitterImage: () => `${config.public.site.url}/img/artigos.jpg`,
 }, {
     mode: 'server'
 });

@@ -1,21 +1,21 @@
 <template>
     <article class="manuscript-preview-start">
-        <NuxtLink :to="'/posts/'+slug" class="preview-image-link">
+        <NuxtLink :to="slug" class="preview-image-link">
             <NuxtImg :src="'/img/'+imgUrl" :alt="title" class="preview-img" />
         </NuxtLink>
         <div class="preview-content">
             <h2 class="preview-title">
-                <NuxtLink :to="'/posts/'+slug">{{ title }}</NuxtLink>
+                <NuxtLink :to="slug">{{ title }}</NuxtLink>
             </h2>
             <p class="preview-desc">{{ description }}</p>
             <div class="preview-footer">
-                <NuxtLink :to="'/posts/'+slug" class="read-more">Ler o manuscrito &rang;</NuxtLink>
+                <NuxtLink :to="slug" class="read-more">Ler o manuscrito &rang;</NuxtLink>
             </div>
         </div>
     </article>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const { title, description, slug, imgUrl } = defineProps(['title', 'description', 'slug', 'imgUrl']);
 </script>
 
@@ -23,8 +23,9 @@ const { title, description, slug, imgUrl } = defineProps(['title', 'description'
 .manuscript-preview-start {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
-    margin-bottom: var(--space-2xl);
+    column-gap: var(--space-xs);
+    row-gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
     align-items: flex-start; /* Alinhamento start */
     text-align: left;
 }
@@ -54,8 +55,8 @@ const { title, description, slug, imgUrl } = defineProps(['title', 'description'
 
 .preview-title {
     font-size: 1.6rem;
-    margin-bottom: var(--space-xs);
-    text-align: left; /* Título à esquerda */
+    margin: 0 0 var(--space-xs) 0;
+    text-align: left;
 }
 
 .preview-title a {

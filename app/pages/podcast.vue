@@ -6,14 +6,14 @@
         </h1>
         <section class="podcast-section">
             <h2 class="podcast-subtitle">Sobre a Centralidade do Coração</h2>
-            <iframe class="podcast-frame" src="https://open.spotify.com/embed/episode/2pI8i3YP5wE5aQbOkFoB1Q?theme=0" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            <iframe class="podcast-frame" src="https://open.spotify.com/embed/episode/2PN7mo7BPdNbOD4vFDYJR4?theme=0" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            <iframe class="podcast-frame" src="https://open.spotify.com/embed/episode/5Dk08Yh4UDhbs7HCb4sXBf?theme=0" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            <iframe class="podcast-frame" src="https://open.spotify.com/embed/episode/2r2aMfdlcxvaqJWwRPyKKY?theme=0" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe class="podcast-frame" src="https://open.spotify.com/embed/episode/2pI8i3YP5wE5aQbOkFoB1Q?theme=0" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
+            <iframe class="podcast-frame" src="https://open.spotify.com/embed/episode/2PN7mo7BPdNbOD4vFDYJR4?theme=0" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
+            <iframe class="podcast-frame" src="https://open.spotify.com/embed/episode/5Dk08Yh4UDhbs7HCb4sXBf?theme=0" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
+            <iframe class="podcast-frame" src="https://open.spotify.com/embed/episode/2r2aMfdlcxvaqJWwRPyKKY?theme=0" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
         </section>
         <hr>
         <!-- Texto redundante "Compartilhe" removido -->
-        <Shared 
+        <SocialShare
             slug="podcast"
             description="Ouça uma série de podcast sobre a centralidade do coração."
         />
@@ -21,15 +21,19 @@
 </template>
 
 <script setup lang="ts">
-import config from '~/config/index';
+defineOptions({
+    name: 'PodcastPage'
+});
+
+const config = useRuntimeConfig();
 
 useSeoMeta({
     title: 'Podcast',
     description: 'Podcasts recomendados para se aprofundar no estudo do cristianismo e teologia.',
     ogDescription: 'Podcasts recomendados para se aprofundar no estudo do cristianismo e teologia.',
-    ogImage: `${config.baseURL}/img/podcast.jpg`,
+    ogImage: () => `${config.public.site.url}/img/podcast.jpg`,
     twitterDescription: 'Podcasts recomendados para se aprofundar no estudo do cristianismo e teologia.',
-    twitterImage: `${config.baseURL}/img/podcast.jpg`,
+    twitterImage: () => `${config.public.site.url}/img/podcast.jpg`,
 }, {
   mode: 'server'
 });

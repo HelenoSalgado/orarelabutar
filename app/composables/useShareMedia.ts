@@ -1,12 +1,10 @@
-import config from '~/config/index';
-
 export default class useShareMedia{
 
     #description;
     #slugShared;
 
     constructor(slug: string, desc: string){
-        this.#slugShared = config.baseURL+'/'+slug;
+        this.#slugShared = useRuntimeConfig().public.site.url+'/'+slug;
         this.#description = desc;
     }
    

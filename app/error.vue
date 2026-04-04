@@ -1,15 +1,26 @@
 <template>
-  <Header></Header>
-  <main class="page-error">
-    <h1>Error {{ error?.status }}</h1>
-    <p>{{ error?.message }}</p>
-    <button @click="handleError" class="sacred-btn">Voltar à Home</button>
-  </main>
-  <Footer></Footer>
+  <div class="error-layout">
+    <TheHeader/>
+    <main class="page-error">
+      <h1>Error {{ error?.status }}</h1>
+      <p>{{ error?.message }}</p>
+      <button class="sacred-btn" @click="handleError">Voltar à Home</button>
+    </main>
+    <TheFooter/>
+  </div>
 </template>
 <script setup lang="ts">
+import type { NuxtError } from '#app';
+
+defineOptions({
+  name: 'ErrorPage'
+});
+
 const { error } = defineProps({
-  error: Object,
+  error: {
+    type: Object as () => NuxtError,
+    default: () => ({})
+  },
 });
 const handleError = () => clearError({ redirect: "/" });
 </script>

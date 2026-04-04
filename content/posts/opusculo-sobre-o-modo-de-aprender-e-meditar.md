@@ -1,11 +1,12 @@
 ---
 title: Opúsculo sobre o modo de aprender e meditar
 description: "O bom estudante deve ser humilde e manso, inteiramente alheio aos cuidados do mundo e às tentações dos prazeres, e solícito em aprender de boa vontade de todos. Nunca presuma de sua ciência; não queira parecer douto, mas sê-lo..."
-imgURL: artigos.jpg
+imgUrl: artigos.jpg
 author: Hugo de São Vitor
 categories: [pedagogia]
 createdAt: 2024-10-28
 updatedAt: 2024-10-28
+published: true
 ---
 
 A humildade é necessária ao que deseja aprender

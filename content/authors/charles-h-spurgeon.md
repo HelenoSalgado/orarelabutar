@@ -1,5 +1,5 @@
 ---
-name: Charles H. Spurgeon
+title: Charles H. Spurgeon
 imgUrl: spurgeon.webp
 description: Charles Haddon Spurgeon (1834-92) foi o pregador mais conhecido da Inglaterra durante a maior parte da segunda metade do século XIX.
 ---

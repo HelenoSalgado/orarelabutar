@@ -1,7 +1,13 @@
 <template>
-    <Header></Header>
-    <div>
-       <slot></slot> 
+    <div class="layout-wrapper">
+        <TheHeader />
+        <slot />
+        <TheFooter />
     </div>
-    <Footer></Footer>
 </template>
+
+<script setup lang="ts">
+defineOptions({
+    name: 'DefaultLayout'
+});
+</script>

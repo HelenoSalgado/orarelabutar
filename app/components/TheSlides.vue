@@ -28,10 +28,10 @@
                 :key="index"
                 class="bead" 
                 :class="{ 'active-bead': currentSlide === index }"
-                @click="currentSlide = index"
                 role="button"
                 :aria-label="'Ir para o slide ' + (index + 1)"
-            ></span>
+                @click="currentSlide = index"
+            />
         </div>
     </div>
 </template>
@@ -39,7 +39,6 @@
 <script setup>
 import slidesUrl from "~/assets/json/slides.json";
 
-const { modeLoading } = defineProps(['modeLoading']);
 const currentSlide = ref(0);
 let timer = null;
 

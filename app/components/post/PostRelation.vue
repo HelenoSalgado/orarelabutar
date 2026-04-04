@@ -10,12 +10,14 @@
         </div>
     </div>
   </template>
-<script setup>
-const { title, slug, imgUrl } = defineProps([
-  'title',
-  'slug',
-  'imgUrl'
-]);
+<script setup lang="ts">
+import type { Post } from '~/types';
+
+const { title, slug, imgUrl } = defineProps<{
+    title: Post['title'];
+    slug: Post['slug'];
+    imgUrl: Post['imgUrl'];
+}>();
 </script>
 
 <style scoped>

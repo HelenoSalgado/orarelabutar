@@ -1,14 +1,14 @@
 <template>
   <header class="frontispiece">
-    <div class="theme-toggle" @click="toggleTheme" :title="isDark ? 'Tema Papiro' : 'Tema Penumbra'" :aria-label="isDark ? 'Mudar para tema claro' : 'Mudar para tema escuro'">
+    <div class="theme-toggle" :title="isDark ? 'Tema Papiro' : 'Tema Penumbra'" :aria-label="isDark ? 'Mudar para tema claro' : 'Mudar para tema escuro'" @click="toggleTheme">
         <IconsMoon v-if="!isDark" class="theme-icon" />
         <IconsSun v-else class="theme-icon" />
     </div>
 
-    <button class="hamburguer-btn" @click="isMenuOpen = !isMenuOpen" aria-label="Menu">
-      <div class="line" :class="{ 'open': isMenuOpen }"></div>
-      <div class="line" :class="{ 'open': isMenuOpen }"></div>
-      <div class="line" :class="{ 'open': isMenuOpen }"></div>
+    <button class="hamburguer-btn" aria-label="Menu" @click="isMenuOpen = !isMenuOpen">
+      <div class="line" :class="{ 'open': isMenuOpen }"/>
+      <div class="line" :class="{ 'open': isMenuOpen }"/>
+      <div class="line" :class="{ 'open': isMenuOpen }"/>
     </button>
 
     <NuxtLink to="/" class="logo-link">
@@ -38,8 +38,8 @@
       </aside>
     </Transition>
     
-    <div v-if="isMenuOpen" class="aside-overlay" @click="isMenuOpen = false"></div>
-    <div class="div-liturgic"></div>
+    <div v-if="isMenuOpen" class="aside-overlay" @click="isMenuOpen = false"/>
+    <div class="div-liturgic"/>
   </header>
 </template>
 

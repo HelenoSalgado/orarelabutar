@@ -1,11 +1,12 @@
 ---
 title: Despertar
 description: "É uma grande misericórdia sermos levados a pensar sobre nós mesmos e como nos posicionamos em relação a Deus e ao mundo eterno. Muitas vezes, isso é um sinal de que a salvação está chegando até nós."
-imgURL: despertar.webp
+imgUrl: despertar.webp
 author: Charles H. Spurgeon
 categories: [evangelismo]
 createdAt: 2024-03-11
 updatedAt: 2024-03-11
+published: true
 ---
 
 GRANDE NÚMERO DE PESSOAS não se preocupam com as coisas eternas. Elas se preocupam mais com seus cães e gatos do que com suas almas. É uma grande misericórdia sermos levados a pensar sobre nós mesmos e como nos posicionamos em relação a Deus e ao mundo eterno. Muitas vezes, isso é um sinal de que a salvação está chegando até nós. Por natureza, não gostamos da ansiedade que a preocupação espiritual nos causa e tentamos, como preguiçosos, dormir de novo. Isso é uma grande tolice; pois é muito perigoso brincarmos com leviandade quando a morte está tão próxima e o julgamento tão seguro. Se o Senhor nos escolheu para a vida eterna, ele não permitirá que voltemos ao nosso sono. Se formos sensatos, devemos orar para que nossa ansiedade sobre nossas almas nunca chegue ao fim até que estejamos real e verdadeiramente salvos. Vamos dizer em nossos corações:

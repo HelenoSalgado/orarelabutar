@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import config from '~/config/index';
 const route = useRoute();
+const config = useRuntimeConfig();
 const title = computed(() => route.meta.title ? `Orar e Labutar | ${route.meta.title}` : 'Orar e Labutar'
 );
 
@@ -15,24 +15,6 @@ useHead({
     if (titleChunk?.includes('|')) return titleChunk;
     return title.value
   }),
-  script: [
-    {
-      innerHTML: `
-        (function() {
-          try {
-            var theme = localStorage.getItem('theme');
-            var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-            if (theme === 'dark' || (!theme && supportDarkMode)) {
-              document.documentElement.classList.add('dark-mode');
-            } else {
-              document.documentElement.classList.remove('dark-mode');
-            }
-          } catch (e) {}
-        })();
-      `,
-      type: 'text/javascript'
-    }
-  ]
 });
 
 useSeoMeta({
@@ -40,7 +22,7 @@ useSeoMeta({
   twitterTitle: `${title.value}`,
   author: 'Heleno Salgado',
   ogLocale: 'pt-BR',
-  ogUrl: () => `${config.baseURL + route.path}`,
+  ogUrl: () => `${config.public.site.url + route.path}`,
   twitterCard: 'summary_large_image',
   twitterCreator: '@HelenoSalgado',
   ogSiteName: 'Orar e Labutar',

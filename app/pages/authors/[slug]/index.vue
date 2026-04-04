@@ -1,88 +1,74 @@
 <template>
-    <main v-if="author">
-       <div class="biograpy">
-        <article>
-          <div class="biograpy-box-image">
-            <NuxtImg 
-               :src="'/img/'+author.imgUrl" 
-               :alt="author.name"
-               width="800px" 
-               height="400px"
-               sizes="xs:320px, sm:640px, md:768px"
-            />
-          </div>
-          <h1>{{author.name}}</h1>
-          <ContentRenderer :value="author" />
-        </article>
-        <hr>
-        <Shared 
-         :slug="'author/'+author.slug"
-         :description="author.biograpy"
-       />
-       </div>
-    </main>
+  <main v-if="authorData?.author" class="author-profile">
+    <div class="biograpy">
+      <article>
+        <div class="biograpy-box-image">
+          <NuxtImg :src="'/img/' + authorData.author.imgUrl" :alt="authorData.author.title" width="800px" height="400px"
+            sizes="xs:320px, sm:640px, md:768px" />
+        </div>
+        <h1>{{ authorData.author.title }}</h1>
+        <ContentRenderer :value="authorData.author" />
+      </article>
+      <hr>
+      <SocialShare :slug="'author/' + authorData.author.slug" :description="authorData.author.description" />
+    </div>
 
-    <section v-if="posts?.length">
+    <section v-if="authorData?.posts?.length" class="author-posts">
       <h2>
-        <IconsUser/>
+        <IconsUser />
         <span>Deste Autor</span>
       </h2>
       <div class="grid-container">
-        <PostRelation v-for="post in posts" :key="post.id"
-         :title="post.title"
-         :img-url="post.imgURL"
-         :slug="post.slug"
-        />
+        <PostRelation v-for="post in authorData.posts" :key="post.id" :title="post.title" :img-url="post.imgUrl"
+          :slug="post.slug" />
       </div>
     </section>
 
-    <section>
-      <h1> 
-        <IconsUsers/>
+    <section class="all-authors-section">
+      <h1>
+        <IconsUsers />
         <span>Autores</span>
       </h1>
       <div class="container-authors">
         <AuthorPreview />
       </div>
     </section>
-
-    <section>
-    </section>
+  </main>
 </template>
 
 <script setup lang="ts">
-import config from '~/config';
+import type { AuthorsCollectionItem, PostsCollectionItem } from '@nuxt/content';
+
+defineOptions({
+  name: 'AuthorDetail'
+});
+
+const config = useRuntimeConfig();
 
 const slug = useRoute().params.slug as string;
 
-const { data: author } = await useAsyncData(`author-page-${slug}`, () => 
-  queryCollection('authors').path(`/authors/${slug}`).first()
-);
+const { data: authorData } = await useFetch<{ author: AuthorsCollectionItem, posts: PostsCollectionItem[] }>(`/api/authors/${slug}`);
 
-const { data: posts } = await useAsyncData(`author-posts-${slug}`, () => 
-  queryCollection('posts').where('authorSlug', '=', slug).all()
-);
-
-const title = computed(() => `Orar e Labutar | ${author.value?.name}`);
+const title = computed(() => `Orar e Labutar | ${authorData.value?.author?.title || ''}`);
 
 useSeoMeta({
   title: () => title.value,
   ogTitle: () => title.value,
-  description: () => author.value?.biograpy,
-  ogDescription: () => author.value?.biograpy,
-  ogImage: () => `${config.baseURL}/img/${author.value?.imgUrl}`,
+  description: () => authorData.value?.author?.description,
+  ogDescription: () => authorData.value?.author?.description,
+  ogImage: () => authorData.value?.author?.imgUrl ? `${config.public.site.url}/img/${authorData.value.author.imgUrl}` : undefined,
   twitterTitle: () => title.value,
-  twitterDescription: () => author.value?.biograpy,
-  twitterImage: () => `${config.baseURL}/img/${author.value?.imgUrl}`,
+  twitterDescription: () => authorData.value?.author?.description,
+  twitterImage: () => authorData.value?.author?.imgUrl ? `${config.public.site.url}/img/${authorData.value.author.imgUrl}` : undefined,
 }, {
   mode: 'server',
 });
 </script>
 
 <style scoped>
-.container-authors{
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 2rem;
+.container-authors {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
 }
 </style>

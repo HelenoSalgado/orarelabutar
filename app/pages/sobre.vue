@@ -1,44 +1,26 @@
 <template>
     <main class="about-page">
-        <h1>
-            <IconsGlobe />
-            <span>Sobre o Orar e Labutar</span>
-        </h1>
-        <article class="manuscript-body">
-            <p>
-                O <strong>Orar e Labutar</strong> nasceu do desejo profundo de resgatar a espiritualidade clássica e a vida intelectual cristã. Em um mundo de ruído incessante, buscamos o silêncio da contemplação e a dignidade do trabalho diligente.
-            </p>
-            
-            <p>
-                Nossa missão é fornecer subsídios para que o cristão contemporâneo possa aprofundar suas raízes na tradição da Igreja, unindo a piedade devocional ao rigor teológico.
-            </p>
-
-            <blockquote>
-                "Ora et Labora" — a oração e o trabalho não são esferas separadas, mas sim uma única tapeçaria tecida para a glória de Deus.
-            </blockquote>
-
-            <p>
-                Este espaço é dedicado à publicação de manuscritos, traduções de clássicos e reflexões que visam a edificação da alma e o fortalecimento da mente.
-            </p>
-
-            <div class="sacred-ornament">◈</div>
-
-            <p>Orar e Labutar subscreve o Credo Apostólico e as confissões de fé da Reforma.</p>
-        </article>
+        <ContentRenderer :value="(sobreData?.body as any)"/>
     </main>
 </template>
 
 <script setup lang="ts">
-import config from '~/config/index';
+defineOptions({
+    name: 'SobrePage'
+});
+
+const config = useRuntimeConfig();
+
+const { data: sobreData } = await useFetch('/api/sobre');
 
 useSeoMeta({
     title: 'Sobre',
     ogType: 'website',
     description: 'Conheça o propósito do blog Orar e Labutar.',
     ogDescription: 'Conheça o propósito do blog Orar e Labutar.',
-    ogImage: `${config.baseURL}/img/licoes1-mobile.jpg`,
+    ogImage: () => `${config.public.site.url}/img/licoes1-mobile.jpg`,
     twitterDescription: 'Conheça o propósito do blog Orar e Labutar.',
-    twitterImage: `${config.baseURL}/img/licoes1-mobile.jpg`,
+    twitterImage: () => `${config.public.site.url}/img/licoes1-mobile.jpg`,
 }, {
     mode: 'server'
 });

@@ -1,15 +1,23 @@
 <template>
     <article class="scriptorium-article-start">
         <h1 class="article-title">{{ title }}</h1>
-        <slot name="metadata" />
+          <AuthorPublic 
+            :name="author" 
+            :img-url="avatarAuthor" 
+            :date="dateFormatted" 
+            :slug="slugAuthor" 
+            :categories="categories"
+          />
         <div class="article-body">
-            <ContentRenderer :value="content" />
+            <ContentRenderer :value="(body as any)"/>
         </div>
     </article>
 </template>
 
-<script setup>
-const { title, content } = defineProps(['title', 'content']);
+<script setup lang="ts">
+
+const { title, body, author, categories, dateFormatted, slugAuthor, avatarAuthor} = defineProps(['title', 'body', 'author', 'categories', 'dateFormatted', 'slugAuthor', 'avatarAuthor']);
+
 </script>
 
 <style scoped>

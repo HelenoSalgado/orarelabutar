@@ -1,6 +1,6 @@
 <template>
     <div class="amei-wrapper">
-        <div class="amei-container" @click="updateLike" :class="{ 'amei-animation': animating, 'is-liked': isLiked }">
+        <div class="amei-container" :class="{ 'amei-animation': animating, 'is-liked': isLiked }" @click="updateLike">
             <span class="count-likes">{{ likes }}</span>
             <LazyIconsHeart :style="{ fill: isLiked ? '#ff0000' : 'transparent', stroke: isLiked ? '#ff0000' : '#eb8484' }" />
         </div>
@@ -29,8 +29,8 @@ const fetchLikes = async () => {
         } else {
             likes.value = data.likes;
         }
-    } catch (e) {
-        console.error("Erro ao buscar likes", e);
+    } catch {
+        // Silently fail or use a more robust logging service
     }
 };
 
@@ -43,8 +43,8 @@ const createLike = async () => {
         });
         const data = await res.json();
         likes.value = data.likes;
-    } catch (e) {
-        console.error("Erro ao criar like", e);
+    } catch {
+        // Silently fail or use a more robust logging service
     }
 };
 
@@ -62,8 +62,8 @@ const updateLike = async () => {
         });
         const data = await res.json();
         likes.value = data.likes;
-    } catch (e) {
-        console.error("Erro ao atualizar like", e);
+    } catch {
+        // Silently fail or use a more robust logging service
     }
 
     setTimeout(() => {
