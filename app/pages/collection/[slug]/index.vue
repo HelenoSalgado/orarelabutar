@@ -43,7 +43,5 @@ useSeoMeta({
   twitterTitle: () => title.value,
   twitterDescription: () => `Veja uma coleção de artigos de ${collectionData.value?.collection?.author}`,
   twitterImage: () => `${config.public.site.url}/img/${collectionData.value?.collection?.imgUrl}`
-}, {
-  mode: 'server',
 });
 </script>

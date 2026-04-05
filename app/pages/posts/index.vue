@@ -33,8 +33,6 @@ useSeoMeta({
     ogImage: () => `${config.public.site.url}/img/artigos.jpg`,
     twitterDescription: 'Todos os artigos publicados no blog Orar e Labutar.',
     twitterImage: () => `${config.public.site.url}/img/artigos.jpg`,
-}, {
-    mode: 'server'
 });
 
 definePageMeta({

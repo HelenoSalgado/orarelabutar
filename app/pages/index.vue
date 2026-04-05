@@ -42,8 +42,6 @@ useSeoMeta({
     ogImage: () => `${config.public.site.url}/img/licoes1-mobile.jpg`,
     twitterDescription: 'Veja os artigos mais recentes. Conheça o propósito deste blog.',
     twitterImage: () => `${config.public.site.url}/img/licoes1-mobile.jpg`,
-}, {
-    mode: 'server'
 });
 
 definePageMeta({

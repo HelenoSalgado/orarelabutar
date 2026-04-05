@@ -42,14 +42,16 @@ const slug = route.params.slug as string;
 
 const { data: pageData } = await useFetch(`/api/posts/${slug}`);
 
+const imgUrl = computed(() => `${config.public.site.url}/img/ai/${pageData.value?.post?.imgUrl}`);
+
+
 useSeoMeta({
-  title: () => pageData.value?.post?.title,
+  title: pageData.value?.post?.title,
   ogType: 'article',
-  description: () => pageData.value?.post?.description,
-  ogImage: () => pageData.value?.post?.imgUrl ? `${config.public.site.url}/img/ai/${pageData.value.post.imgUrl}` : undefined,
-  twitterImage: () => pageData.value?.post?.imgUrl ? `${config.public.site.url}/img/ai/${pageData.value.post.imgUrl}` : undefined
-}, {
-  mode: 'server',
+  description: pageData.value?.post?.description,
+  ogImage: imgUrl.value,
+  twitterImage: imgUrl.value,
+  twitterDescription: pageData.value?.post?.description
 });
 </script>
 

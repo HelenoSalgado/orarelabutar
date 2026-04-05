@@ -28,8 +28,6 @@ useSeoMeta({
     ogImage: () => `${config.public.site.url}/img/links-uteis.jpg`,
     twitterDescription: 'Links recomendadados para se aprofundar no estudo do cristianismo e teologia.',
     twitterImage: () => `${config.public.site.url}/img/links-uteis.jpg`,
-}, {
-    mode: 'server'
 });
 definePageMeta({
    title: 'Links Úteis'

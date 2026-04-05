@@ -40,8 +40,6 @@ useSeoMeta({
     twitterTitle: () => title.value,
     twitterDescription: () => tagData.value?.tag?.description,
     twitterImage: () => `${config.public.site.url}/img/licoes1-mobile.jpg`,
-}, {
-    mode: 'server'
 });
 
 definePageMeta({

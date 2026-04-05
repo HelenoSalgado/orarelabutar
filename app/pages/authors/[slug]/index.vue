@@ -62,8 +62,6 @@ useSeoMeta({
   twitterTitle: () => title.value,
   twitterDescription: () => authorData.value?.author?.description,
   twitterImage: () => authorData.value?.author?.imgUrl ? `${config.public.site.url}/img/${authorData.value.author.imgUrl}` : undefined,
-}, {
-  mode: 'server',
 });
 </script>
 

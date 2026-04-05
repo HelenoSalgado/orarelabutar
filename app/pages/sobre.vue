@@ -21,8 +21,6 @@ useSeoMeta({
     ogImage: () => `${config.public.site.url}/img/licoes1-mobile.jpg`,
     twitterDescription: 'Conheça o propósito do blog Orar e Labutar.',
     twitterImage: () => `${config.public.site.url}/img/licoes1-mobile.jpg`,
-}, {
-    mode: 'server'
 });
 
 definePageMeta({

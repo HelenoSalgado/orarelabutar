@@ -69,7 +69,7 @@ defineProps(['title', 'description', 'slug', 'imgUrl']);
 }
 
 .preview-desc {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--color-ink-muted);
     line-height: 1.5;
     margin-bottom: var(--space-sm);

@@ -1,16 +1,16 @@
 <template>
     <div class="sacred-metadata-box">
-        <NuxtLink :to="'/authors/'+slug" class="author-portrait">
-            <NuxtImg :src="'/img/'+imgUrl" width="56" height="56" :alt="name" class="portrait-img"/>
+        <NuxtLink :to="'/authors/' + slug" class="author-portrait">
+            <NuxtImg :src="'/img/' + imgUrl" width="56" height="56" :alt="name" class="portrait-img" />
         </NuxtLink>
         <div class="metadata-body">
             <div class="author-row">
-                <NuxtLink :to="'/authors/'+slug" class="author-name">{{ name }}</NuxtLink>
-                <div v-if="categories?.length" class="tags-inline">
-                    <NuxtLink v-for="cat in categories" :key="cat" :to="'/tags/'+cat" class="tag-item">
-                        <IconsTag class="tag-icon" /> {{ cat }}
-                    </NuxtLink>
-                </div>
+                <NuxtLink :to="'/authors/' + slug" class="author-name">{{ name }}</NuxtLink>
+            </div>
+            <div v-if="categories?.length" class="tags-inline">
+                <NuxtLink v-for="cat in categories" :key="cat" :to="'/tags/' + cat" class="tag-item">
+                    <IconsTag class="tag-icon" /> {{ cat }}
+                </NuxtLink>
             </div>
             <div class="date-row">
                 <IconsEdit2 class="date-icon" /> {{ date }}
@@ -30,28 +30,17 @@ defineProps(['imgUrl', 'name', 'date', 'slug', 'categories']);
     gap: var(--space-sm);
     width: 100%;
 }
-
-.author-portrait {
-    flex-shrink: 0;
-}
-
 .portrait-img {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     border: 1px solid var(--color-gold);
+    vertical-align: middle;
 }
 
 .metadata-body {
     display: flex;
     flex-direction: column;
-}
-
-.author-row {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    flex-wrap: wrap;
 }
 
 .author-name {
