@@ -9,17 +9,15 @@
         <LikeButton :slug="pageData.post.slug" />
         <SocialShare :slug="pageData.post.slug" :description="pageData.post.description" />
       </div>
-      <hr>
     </main>
-
-      <div class="navigator-posts">
-        <NuxtLink v-if="pageData.surroundings?.[0]" :to="pageData.surroundings[0].slug">
-          &lang; Post Anterior
-        </NuxtLink>
-        <NuxtLink v-if="pageData.surroundings?.[1]" :to="pageData.surroundings[1].slug">
-          Próximo Post &rang;
-        </NuxtLink>
-      </div>
+    <div class="navigator-posts">
+      <NuxtLink v-if="pageData.surroundings?.[0]" :to="pageData.surroundings[0].slug">
+        &lang; Post Anterior
+      </NuxtLink>
+      <NuxtLink v-if="pageData.surroundings?.[1]" :to="pageData.surroundings[1].slug">
+        Próximo Post &rang;
+      </NuxtLink>
+    </div>
 
     <section v-if="pageData?.related?.length" class="related-posts">
       <h2>
@@ -27,8 +25,8 @@
         <span>Posts Relacionados</span>
       </h2>
       <div class="grid-container">
-        <PostRelation v-for="related in pageData.related" :key="related.id" :title="related.title" :description="related.description"
-          :img-url="related.imgUrl" :slug="related.slug" />
+        <PostRelation v-for="related in pageData.related" :key="related.id" :title="related.title"
+          :description="related.description" :img-url="related.imgUrl" :slug="related.slug" />
       </div>
     </section>
   </article>
@@ -61,9 +59,9 @@ useSeoMeta({
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: var(--space-xl) 0 var(--space-lg) 0;
+  margin: var(--space-sm) 0;
   border-top: 1px solid var(--color-gold-muted);
-  padding-top: var(--space-lg);
+  padding-top: var(--space-sm);
 }
 
 .navigator-posts {
@@ -71,7 +69,7 @@ useSeoMeta({
   justify-content: space-between;
   width: 100%;
   max-width: 800px;
-  margin: var(--space-xs) auto;
+  margin: var(--space-lg) auto;
 }
 
 .navigator-posts a {
@@ -105,5 +103,9 @@ useSeoMeta({
 
 :deep(.amei-wrapper) {
   margin: 0;
+}
+
+.related-posts {
+  margin: var(--space-lg) auto;
 }
 </style>

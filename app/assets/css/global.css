@@ -55,7 +55,7 @@ body {
     color: var(--color-ink);
     background-color: var(--color-paper);
     line-height: 1.7;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     -webkit-font-smoothing: antialiased;
     transition: background-color var(--transition-slow), color var(--transition-slow);
     padding: 0 var(--space-sm);
@@ -96,8 +96,8 @@ h2 svg, h3 svg {
 /* Containers de Layout */
 main, section {
     max-width: 800px;
-    margin: var(--space-lg) auto;
-    padding: var(--space-lg) 0 var(--space-xs) 0;
+    margin: var(--space-xs) auto;
+    padding: var(--space-xs) 0;
 }
 
 /* Divisores ◈ */
@@ -106,7 +106,7 @@ hr {
     height: 1px;
     border: none;
     background: linear-gradient(to right, transparent, var(--color-gold), transparent);
-    margin: var(--space-xl) 0;
+    margin: var(--space-xl) 0 var(--space-sm) 0;
     position: relative;
     overflow: visible;
     display: block;

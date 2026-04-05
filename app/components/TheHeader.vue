@@ -39,7 +39,7 @@
     </Transition>
     
     <div v-if="isMenuOpen" class="aside-overlay" @click="isMenuOpen = false"/>
-    <div class="div-liturgic"/>
+    <hr>
   </header>
 </template>
 
@@ -63,7 +63,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--space-xl) var(--space-sm) var(--space-sm) var(--space-sm);
+  padding: var(--space-sm);
   background-color: var(--color-paper);
   position: relative;
   z-index: var(--z-header);
@@ -179,14 +179,6 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
-}
-
-.div-liturgic {
-  width: 40px;
-  height: 1px;
-  background-color: var(--color-gold);
-  margin-top: var(--space-lg);
-  opacity: 0.3;
 }
 
 @media (max-width: 850px) {

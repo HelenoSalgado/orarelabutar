@@ -40,10 +40,10 @@ defineProps(['title', 'body', 'author', 'categories', 'dateFormatted', 'slugAuth
 
 .article-body {
     width: 100%;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     color: var(--color-ink);
     text-align: justify;
-    line-height: 1.7;
+    line-height: 1.6;
     margin-top: var(--space-md);
 }
 
@@ -90,9 +90,6 @@ defineProps(['title', 'body', 'author', 'categories', 'dateFormatted', 'slugAuth
 @media (max-width: 600px) {
     .article-title {
         font-size: 2rem;
-    }
-    .article-body {
-        font-size: 1.1rem;
     }
 }
 </style>
