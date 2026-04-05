@@ -43,13 +43,9 @@ defineProps(['title', 'description', 'imgUrl', 'slug']);
 }
 
 .post-card-related-text h3 {
-    font-size: 1.3rem;
     margin: 0;
     color: var(--color-ink);
     line-height: 1.4;
-    text-align: center;
-
-
 }
 
 .post-card-related-text p {

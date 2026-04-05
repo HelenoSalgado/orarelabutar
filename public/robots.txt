@@ -1,3 +1,7 @@
 User-agent: *
-Disallow: 
+Allow: /
+
+# Bloquear rotas de API para economizar crawl budget e evitar indexação de dados brutos
+Disallow: /api/
+
 Sitemap: https://orarelabutar.com/sitemap.xml
