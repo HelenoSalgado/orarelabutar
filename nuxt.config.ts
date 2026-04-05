@@ -134,9 +134,9 @@ export default defineNuxtConfig({
     build: {
       transformers: [
         '~~/transformers/slugify-title.ts',
+        '~~/transformers/slugify-collection.ts',
         '~~/transformers/date-published.ts',
-        '~~/transformers/default-images.ts',
-        '~~/transformers/slugify-collection.ts'
+        '~~/transformers/default-images.ts'
       ]
     }
   },
@@ -146,6 +146,15 @@ export default defineNuxtConfig({
     presets: {
       avatar: {
         modifiers: { width: 60, height: 60 }
+      },
+      card: {
+        modifiers: {
+          format: 'webp',
+          width: 400,
+          height: 300,
+          fit: 'cover',
+          quality: 80
+        }
       }
     },
     screens: {

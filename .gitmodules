@@ -1,0 +1,3 @@
+[submodule "ai-image-util"]
+	path = ai-image-util
+	url = ./ai-image-util

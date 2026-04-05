@@ -18,7 +18,7 @@ export default defineTransformer({
     extensions: ['.md'],
     transform(file) {
         if (file.title && !file.slug) {
-            file.slug = slugify(file.title)
+            file.slug = slugify(file.title as string)
         }
         return file
     }

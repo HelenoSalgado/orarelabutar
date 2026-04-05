@@ -1,7 +1,6 @@
 ---
 title: Despertar
 description: "É uma grande misericórdia sermos levados a pensar sobre nós mesmos e como nos posicionamos em relação a Deus e ao mundo eterno. Muitas vezes, isso é um sinal de que a salvação está chegando até nós."
-imgUrl: despertar.webp
 author: Charles H. Spurgeon
 categories: [evangelismo]
 createdAt: 2024-03-11
