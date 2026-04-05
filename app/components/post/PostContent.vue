@@ -1,17 +1,8 @@
 <template>
-    <article class="scriptorium-article-start">
-        <h1 class="article-title">{{ title }}</h1>
-          <AuthorPublic 
-            :name="author" 
-            :img-url="avatarAuthor" 
-            :date="dateFormatted" 
-            :slug="slugAuthor" 
-            :categories="categories"
-          />
-        <div class="article-body">
-            <ContentRenderer :value="(body as any)"/>
-        </div>
-    </article>
+    <h1 class="article-title">{{ title }}</h1>
+    <AuthorPublic :name="author" :img-url="avatarAuthor" :date="dateFormatted" :slug="slugAuthor"
+        :categories="categories" />
+    <ContentRenderer :value="(body as any)" class="article-body"/>
 </template>
 
 <script setup lang="ts">
@@ -21,16 +12,9 @@ defineProps(['title', 'body', 'author', 'categories', 'dateFormatted', 'slugAuth
 </script>
 
 <style scoped>
-.scriptorium-article-start {
-    margin-top: var(--space-sm);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
 .article-title {
-    font-size: 2.5rem; /* Ajustado levemente */
+    font-size: 2.5rem;
+    /* Ajustado levemente */
     text-align: left;
     margin-bottom: var(--space-md);
     color: var(--color-ink);
@@ -72,7 +56,8 @@ defineProps(['title', 'body', 'author', 'categories', 'dateFormatted', 'slugAuth
     color: var(--color-ink-muted);
 }
 
-.article-body :deep(h2), .article-body :deep(h3) {
+.article-body :deep(h2),
+.article-body :deep(h3) {
     text-align: left;
     margin: var(--space-lg) 0 var(--space-sm) 0;
     color: var(--color-ink);
