@@ -1,3 +1,4 @@
 [submodule "ai-image-util"]
 	path = ai-image-util
 	url = https://github.com/HelenoSalgado/ai-image-util.git
+	branch = master
