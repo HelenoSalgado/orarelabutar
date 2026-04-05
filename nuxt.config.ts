@@ -129,7 +129,7 @@ export default defineNuxtConfig({
 
   content: {
     renderer: {
-      anchorLinks: false
+      anchorLinks: true,
     },
     build: {
       transformers: [

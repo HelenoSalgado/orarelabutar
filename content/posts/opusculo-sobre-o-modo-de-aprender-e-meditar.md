@@ -1,6 +1,6 @@
 ---
 title: Opúsculo sobre o modo de aprender e meditar
-description: "O bom estudante deve ser humilde e manso, inteiramente alheio aos cuidados do mundo e às tentações dos prazeres, e solícito em aprender de boa vontade de todos. Nunca presuma de sua ciência; não queira parecer douto, mas sê-lo..."
+description: "O bom estudante deve ser humilde e manso, inteiramente alheio aos cuidados do mundo e às tentações dos prazeres, e solícito em aprender de boa vontade de todos. Nunca presuma de sua ciência; não queira parecer douto, mas sê-lo."
 author: Hugo de São Vitor
 categories: [pedagogia]
 createdAt: 2024-10-28
@@ -24,7 +24,7 @@ Muitos se enganaram por quererem parecer sábios antes do tempo, pois com isto e
 
 O bom estudante deve ser humilde e manso, inteiramente alheio aos cuidados do mundo e às tentações dos prazeres, e solícito em aprender de boa vontade de todos. Nunca presuma de sua ciência; não queira parecer douto, mas sê-lo; busque os ditos dos sábios, e procure ardentemente ter sempre os seus vultos diante dos olhos da mente, como um espelho.
 
-Três coisas necessárias ao estudante
+## Três coisas necessárias ao estudante
 
 Três coisas são necessárias ao estudante: a natureza, o exercício e a disciplina.
 
@@ -34,7 +34,7 @@ No exercício, que cultive o senso natural pelo trabalho e diligência.
 
 Na disciplina, que vivendo louvavelmente, componha os costumes com a ciência.
 
-Prime pelo engenho e pela memória
+## Prime pelo engenho e pela memória
 
 Os que se dedicam ao estudo devem primar simultaneamente pelo engenho e pela memória, ambos os quais em todo estudo estão de tal modo unidos entre si que, faltando um, o outro não poderá conduzir ninguém à perfeição, assim como de nada aproveitam os lucros onde faltam os vigilantes, e em vão se fortificam os cofres quando não se tem o que neles guardar.
 
@@ -48,7 +48,7 @@ O engenho provém da natureza, é auxiliado pelo uso, é embotado pelo trabalho 
 
 A memória é principalmente ajudada e fortificada pelo exercício de reter e de meditar assiduamente.
 
-A leitura e a meditação
+## A leitura e a meditação
 
 Duas coisas há que exercitam o engenho: a leitura e a meditação.
 
@@ -56,7 +56,7 @@ Na leitura, mediante regras e preceitos, somos instruídos pelas coisas que est�
 
 Há três gêneros de leitura: a do docente, a do discípulo e a do que examina por si mesmo. Dizemos, de fato: "Leio o livro para o discípulo", "leio o livro pelo mestre", ou simplesmente "leio o livro".
 
-A meditação
+## A meditação
 
 A meditação é uma cogitação frequente com conselho, que investiga prudentemente a causa e a origem, o modo e a utilidade de cada coisa.
 
@@ -65,23 +65,23 @@ A meditação toma o seu princípio da leitura, todavia não se realiza por nenh
 O princípio da doutrina, portanto, está na leitura; a sua consumação, na meditação.
 Quem aprender a amá-la com familiaridade e a ela se dedicar frequentemente tornará a vida imensamente agradável e terá na tribulação a maior das consolações. A meditação é o que mais do que todas as coisas segrega a alma do estrépito dos atos terrenos; pela doçura de sua tranquilidade já nesta vida nos oferece de algum modo um gosto antecipado da eterna; fazendo-nos buscar e inteligir, pelas coisas que foram feitas, àquele que as fez, ensina a alma pela ciência e a aprofunda na alegria, fazendo com que nela encontre o maior dos deleites.
 
-Três gêneros de meditação
+## Três gêneros de meditação
 
-Três são os gêneros de meditação. O primeiro consiste no exame dos costumes, o segundo na indagação dos mandamentos, o terceiro na investigação das obras divinas.
-Nos costumes a meditação examina os vícios e as virtudes. Nos mandamentos divinos, os que preceituam, os que prometem, os que ameaçam.
+Três são os gêneros de meditação. O primeiro consiste no exame dos costumes, o segundo na indagação dos mandamentos, o terceiro na investigação das obras divinas. 
 
-Nas obras de Deus, as em que Ele cria pela potência, as em que modera pela sabedoria, as em que coopera pela graça, as quais todas tanto mais alguém conhecerá o quanto sejam dignas de admiração quanto mais atentamente tiver se habituado em meditar as maravilhas de Deus.
+Nos costumes a meditação examina os vícios e as virtudes. Nos mandamentos divinos, os que preceituam, os que prometem, os que ameaçam. Nas obras de Deus, as em que Ele cria pela potência, as em que modera pela sabedoria, as em que coopera pela graça, as quais todas tanto mais alguém conhecerá o quanto sejam dignas de admiração quanto mais atentamente tiver se habituado em meditar as maravilhas de Deus.
 
-Do confiar à memória aquilo que aprendemos
+## Do confiar à memória aquilo que aprendemos
 
 A memória custodia, recolhendo-as, as coisas que o engenho investiga e encontra.
+
 Importa que as coisas que dividimos ao aprender, as recolhamos, confiando-as à memória: recolher é reduzir a uma certa breve e sucinta suma as coisas das quais mais extensamente se escreveu ou se disputou, o que foi chamado pelos antigos de epílogo, isto é, uma breve recapitulação do que foi dito.
 
 A memória do homem se regozija na brevidade, e se se divide em muitas coisas, torna-se menor em cada uma delas.
 
 Devemos, portanto, em todo estudo ou doutrina recolher algo certo e breve, que guardemos na arca da memória, de onde posteriormente, sendo necessário, as possamos retirar. Será também necessário revolvê-las frequentemente chamando-as, para que não envelheçam pela longa interrupção, do ventre da memória ao paladar.
 
-As três visões da alma racional. Diferença entre meditação e contemplação
+## As três visões da alma racional — diferença entre meditação e contemplação
 
 Três são as visões da alma racional: o pensamento, a meditação e a contemplação.
 
@@ -95,7 +95,7 @@ Entre a meditação e a contemplação o que parece ser relevante é que a medit
 
 A meditação é, portanto, um certo vagar curioso da mente, um investigar sagaz do obscuro, um desatar do que é intrincado. A contemplação é aquela vivacidade da inteligência que, possuindo todas as coisas, as abarca em uma visão plenamente manifesta, e isto de tal maneira que aquilo que a meditação busca, a contemplação possui.
 
-Dois gêneros de contemplação
+## Dois gêneros de contemplação
 
 Há, porém, dois gêneros de contemplação. Um deles, que é o primeiro e que pertence aos principiantes, consiste na consideração das criaturas. O outro, que é o último e que pertence aos perfeitos, consiste na contemplação do Criador.
 
@@ -107,15 +107,15 @@ Na meditação a perturbação das paixões carnais, surgindo importunamente, ob
 
 Portanto, na meditação temos solicitude; na especulação, admiração; na contemplação, doçura.
 
-Três partes da exposição
+## Três partes da exposição
 
 A exposição contém três partes: a letra, o sentido e a sentença. A letra é a correta ordenação das palavras, a qual também chamamos de construção. O sentido é um delineamento simples e adequado que a letra tem diante de si como um primeiro semblante. A sentença é uma mais profunda inteligência, a qual não pode ser encontrada senão pela exposição ou interpretação. Para que uma exposição se torne perfeita requerem-se, nesta ordem, primeiro a letra, depois o sentido e posteriormente a sentença.
 
-Os três gêneros de vaidades
+## Os três gêneros de vaidades
 
 Três são os gêneros de vaidades. O primeiro é a vaidade da mutabilidade, que está em todas as coisas caducas por sua condição. O segundo é a vaidade da curiosidade ou da cobiça, que está na mente dos homens pelo amor desordenado das coisas transitórias e vãs. O terceiro é a vaidade da mortalidade, que está nos corpos humanos pela penalidade.
 
-As obrigações da eloquência
+## As obrigações da eloquência
 
 Disse Agostinho, famoso por sua eloquência, e o disse com verdade, que o homem eloquente deve aprender a falar de tal modo que ensine, que deleite e que submeta. A isto acrescentou que o ensinar pertence à necessidade, o deleitar à suavidade e o submeter à vitória.
 
@@ -125,7 +125,7 @@ Quem, portanto, se esforça no falar em persuadir o que é bom, não despreze ne
 
 O mesmo Agostinho parece ter querido que ao ensino, ao deleite e à submissão também pertençam outras três coisas, ao dizer, de modo semelhante:
 
-Será eloquente aquele que puder dizer o pequeno com humildade, o moderado com moderação, o grande com elevação.
+> Será eloquente aquele que puder dizer o pequeno com humildade, o moderado com moderação, o grande com elevação.
 
 Quem deseja conhecer e ensinar aprenda, portanto, quanto há para se ensinar e adquira a faculdade de dizê-las como convém a um homem de Igreja. Quem, na verdade, querendo ensinar, às vezes não é entendido, não julgue ainda ter dito o que deseja àquele a quem quer ensinar, porque, mesmo que tenha dito o que ele próprio entendeu, ainda não foi considerado como tendo-o dito àquele por quem não foi entendido. Se, porém, foi entendido, de qualquer modo que o tenha dito, o disse.
 

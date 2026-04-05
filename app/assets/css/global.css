@@ -47,10 +47,14 @@
     --color-selection: #2d2d2d;
 }
 
-html { background-color: var(--color-paper); scroll-behavior: smooth; }
+html {
+    background-color: var(--color-paper);
+    scroll-behavior: smooth;
+}
 
 body {
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
     font-family: var(--font-body);
     color: var(--color-ink);
     background-color: var(--color-paper);
@@ -62,7 +66,9 @@ body {
 }
 
 /* Títulos de Página (H1) e Seções (H2, H3) */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
@@ -71,27 +77,50 @@ h1, h2, h3 {
     font-family: var(--font-heading);
     font-weight: 700;
     color: var(--color-ink);
+
+    &>svg {
+        width: 28px;
+        height: 28px;
+        color: var(--color-gold);
+        flex-shrink: 0;
+    }
+
+    & .anchor-link {
+        color: var(--color-ink);
+
+        &>svg {
+            transition: opacity 0.3s ease;
+            opacity: 0.5;
+            width: 1.2rem;
+            color: var(--color-gold);
+            vertical-align: text-bottom;
+            margin-left: .3rem;
+        }
+
+        &:hover {
+            &>svg {
+                opacity: 1;
+            }
+        }
+    }
 }
 
-h1 { font-size: 2.2rem; }
-h2 { font-size: 1.6rem; line-height: 1.8rem;}
-h3 { font-size: 1.4rem; }
-
-/* Ícones nos títulos */
-h1 svg, h2 svg, h3 svg {
-    width: 28px;
-    height: 28px;
-    color: var(--color-gold);
-    flex-shrink: 0;
+h1 {
+    font-size: 2.2rem;
 }
 
-h2 svg, h3 svg {
-    width: 24px;
-    height: 24px;
+h2 {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
 }
 
 /* Containers de Layout */
-main, section {
+main,
+section {
     max-width: 800px;
     margin: var(--space-xs) auto;
     padding: var(--space-xs) 0;
@@ -112,7 +141,8 @@ hr {
 hr::after {
     content: "◈";
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--color-paper);
     padding: 0 var(--space-sm);
@@ -121,7 +151,8 @@ hr::after {
 }
 
 /* Grade Universal de Manuscritos */
-.sacred-grid, .grid-container {
+.sacred-grid,
+.grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--space-xl);
@@ -130,10 +161,23 @@ hr::after {
 }
 
 /* --- Elementos Comuns --- */
-a { color: var(--color-gold); text-decoration: none; transition: all var(--transition-base); }
-a:hover { color: var(--color-ink); }
-img { border-radius: 12px; }
-svg { vertical-align: middle; }
+a {
+    color: var(--color-gold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+a:hover {
+    color: var(--color-ink);
+}
+
+img {
+    border-radius: 12px;
+}
+
+svg {
+    vertical-align: middle;
+}
 
 /* Botões Sacros */
 .sacred-btn {
@@ -152,14 +196,19 @@ svg { vertical-align: middle; }
     cursor: pointer;
     background: transparent;
 }
-.sacred-btn:hover { background: var(--color-gold); color: var(--color-paper); }
+
+.sacred-btn:hover {
+    background: var(--color-gold);
+    color: var(--color-paper);
+}
 
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.4s;
+    transition: all 0.4s;
 }
+
 .page-enter-from,
 .page-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
+    opacity: 0;
+    filter: blur(1rem);
 }
