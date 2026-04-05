@@ -1,7 +1,7 @@
 <template>
     <article class="manuscript-preview-start">
         <NuxtLink :to="slug" class="preview-image-link">
-            <NuxtImg :src="'/img/'+imgUrl" :alt="title" class="preview-img" preset="card" />
+            <NuxtImg :src="'/img/ai/'+imgUrl" :alt="title" class="preview-img" preset="card" />
         </NuxtLink>
         <div class="preview-content">
             <h2 class="preview-title">

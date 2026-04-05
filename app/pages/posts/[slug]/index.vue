@@ -48,8 +48,8 @@ useSeoMeta({
   title: () => pageData.value?.post?.title,
   ogType: 'article',
   description: () => pageData.value?.post?.description,
-  ogImage: () => pageData.value?.post?.imgUrl ? `${config.public.site.url}/img/${pageData.value.post.imgUrl}` : undefined,
-  twitterImage: () => pageData.value?.post?.imgUrl ? `${config.public.site.url}/img/${pageData.value.post.imgUrl}` : undefined
+  ogImage: () => pageData.value?.post?.imgUrl ? `${config.public.site.url}/img/ai/${pageData.value.post.imgUrl}` : undefined,
+  twitterImage: () => pageData.value?.post?.imgUrl ? `${config.public.site.url}/img/ai/${pageData.value.post.imgUrl}` : undefined
 }, {
   mode: 'server',
 });

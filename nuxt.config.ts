@@ -142,6 +142,8 @@ export default defineNuxtConfig({
   },
 
   image: {
+    provider: 'ipxStatic',
+    domains: ['orarelabutar.com'],
     format: ['webp'],
     presets: {
       avatar: {
@@ -163,12 +165,7 @@ export default defineNuxtConfig({
       'md': 768,
       'lg': 1024,
       'xl': 1280
-    },
-    // provider: 'cloudflare',
-    // cloudflare: {
-    //   baseURL: 'https://orarelabutar.com'
-    // },
-    // domains: ['orarelabutar.com'],
+    }
   },
 
   dir: {

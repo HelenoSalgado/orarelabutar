@@ -15,7 +15,7 @@ export default {
       '__nuxt_content/sobre/sql_dump.txt'
     ],
     concurrency: 3,
-    failOnError: false
+    failOnError: true
   },
   compressPublicAssets: true,
   routeRules: {
@@ -23,6 +23,12 @@ export default {
       trailingSlash: false
     }
   },
+  publicAssets: [
+    {
+      baseURL: '/',
+      dir: 'public',
+    }
+  ],
   esbuild: { 
     options: { 
       legalComments: 'none',

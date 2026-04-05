@@ -10,7 +10,7 @@ export default defineTransformer({
         }
         const slug = file.slug
 
-        if(slug) file.imgUrl = `ai/${slug}.png`
+        if(slug) file.imgUrl = `${slug}.png`
         
         return file
     }
