@@ -1,51 +1,76 @@
 <template>
   <header class="frontispiece">
-    <div class="theme-toggle" :title="isDark ? 'Tema Papiro' : 'Tema Penumbra'" :aria-label="isDark ? 'Mudar para tema claro' : 'Mudar para tema escuro'" @click="toggleTheme">
-        <IconsMoon v-if="!isDark" class="theme-icon" />
-        <IconsSun v-else class="theme-icon" />
+    <div class="header-container">
+      <!-- Lado Esquerdo: Logo e Título -->
+      <NuxtLink to="/" class="logo-area">
+        <NuxtImg src="/img/licoes1-p.webp" alt="logo" class="logo-img" width="40" height="40"/>
+        <h1 class="site-title">Orar e Labutar</h1>
+      </NuxtLink>
+
+      <!-- Centro: Navegação Desktop -->
+      <nav class="sacred-nav desktop-only">
+        <NuxtLink v-for="link in navLinks" :key="link.to" :to="link.to">
+          <component :is="link.icon" class="icon" /> {{ link.label }}
+        </NuxtLink>
+      </nav>
+
+      <!-- Lado Direito: Ações (Tema e Menu Mobile) -->
+      <div class="actions-area">
+        <div 
+          class="theme-toggle" 
+          :title="isDark ? 'Tema Papiro' : 'Tema Penumbra'" 
+          @click="toggleTheme"
+        >
+          <IconsMoon v-if="!isDark" class="theme-icon" />
+          <IconsSun v-else class="theme-icon" />
+        </div>
+
+        <button class="hamburguer-btn" aria-label="Menu" @click="isMenuOpen = !isMenuOpen">
+          <div v-for="i in 3" :key="i" class="line" :class="{ 'open': isMenuOpen }"/>
+        </button>
+      </div>
     </div>
 
-    <button class="hamburguer-btn" aria-label="Menu" @click="isMenuOpen = !isMenuOpen">
-      <div class="line" :class="{ 'open': isMenuOpen }"/>
-      <div class="line" :class="{ 'open': isMenuOpen }"/>
-      <div class="line" :class="{ 'open': isMenuOpen }"/>
-    </button>
-
-    <NuxtLink to="/" class="logo-link">
-      <NuxtImg src="/img/licoes1-p.webp" alt="logo" class="logo-img" width="64" height="64"/>
-      <h1>Orar e Labutar</h1>
-    </NuxtLink>
-
-    <nav class="sacred-nav desktop-only">
-      <NuxtLink to="/"><IconsHome class="icon"/> Home</NuxtLink>
-      <NuxtLink to="/sobre"><IconsGlobe class="icon"/> Sobre</NuxtLink>
-      <NuxtLink to="/posts"><IconsEdit2 class="icon"/> Artigos</NuxtLink>
-      <NuxtLink to="/podcast"><IconsMusic class="icon"/> Podcast</NuxtLink>
-      <NuxtLink to="/pdfs"><IconsBook class="icon"/> PDFs</NuxtLink>
-      <NuxtLink to="/links-uteis"><IconsLink class="icon"/> Links</NuxtLink>
-    </nav>
-
+    <!-- Menu Lateral Mobile -->
     <Transition name="slide-aside">
       <aside v-if="isMenuOpen" class="sacred-aside">
         <nav class="aside-nav">
-          <NuxtLink to="/" @click="isMenuOpen = false"><IconsHome/> Home</NuxtLink>
-          <NuxtLink to="/sobre" @click="isMenuOpen = false"><IconsGlobe/> Sobre</NuxtLink>
-          <NuxtLink to="/posts" @click="isMenuOpen = false"><IconsEdit2/> Artigos</NuxtLink>
-          <NuxtLink to="/podcast" @click="isMenuOpen = false"><IconsMusic/> Podcast</NuxtLink>
-          <NuxtLink to="/pdfs" @click="isMenuOpen = false"><IconsBook/> PDFs</NuxtLink>
-          <NuxtLink to="/links-uteis" @click="isMenuOpen = false"><IconsLink/> Links</NuxtLink>
+          <NuxtLink 
+            v-for="link in navLinks" 
+            :key="link.to" 
+            :to="link.to" 
+            @click="isMenuOpen = false"
+          >
+            <component :is="link.icon" /> {{ link.label }}
+          </NuxtLink>
         </nav>
       </aside>
     </Transition>
     
     <div v-if="isMenuOpen" class="aside-overlay" @click="isMenuOpen = false"/>
-    <hr>
+    <Divisor />
   </header>
 </template>
 
 <script setup>
+import IconsHome from '~/components/icons/Home.vue';
+import IconsGlobe from '~/components/icons/Globe.vue';
+import IconsEdit2 from '~/components/icons/Edit2.vue'; 
+import IconsMusic from '~/components/icons/Music.vue';
+import IconsBook from '~/components/icons/Book.vue';
+import IconsLink from '~/components/icons/Link.vue';
+
 const isMenuOpen = ref(false);
 const isDark = ref(false);
+
+const navLinks = [
+  { to: '/', label: 'Home', icon: IconsHome },
+  { to: '/sobre', label: 'Sobre', icon: IconsGlobe },
+  { to: '/posts', label: 'Artigos', icon: IconsEdit2 },
+  { to: '/audios', label: 'Áudios', icon: IconsMusic },
+  { to: '/pdfs', label: 'PDFs', icon: IconsBook },
+  { to: '/links-uteis', label: 'Links', icon: IconsLink }
+];
 
 const toggleTheme = () => {
     isDark.value = !isDark.value;
@@ -60,109 +85,117 @@ onMounted(() => {
 
 <style scoped>
 .frontispiece {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: var(--space-sm);
   background-color: var(--color-paper);
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: calc(var(--z-header) - 1);
+  width: 100%;;
+  padding: 0; /* Padding será controlado pelo container interno */
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  height: 70px; /* Altura fixa para manter consistência */
   z-index: var(--z-header);
 }
 
-.logo-link {
+.logo-area {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: var(--space-sm);
   text-decoration: none;
   color: var(--color-ink);
+  flex-shrink: 0;
 }
 
 .logo-img {
-  width: 64px;
-  height: 64px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  display: block; /* Garante visibilidade */
 }
 
-.frontispiece h1 {
-  font-size: 1.8rem;
+.site-title {
+  font-size: 1.2rem;
   margin: 0;
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
-  display: block !important; /* Sobrescreve o flex global para o título do header */
-  text-align: center;
+  white-space: nowrap;
 }
 
+/* Navegação Desktop */
 .sacred-nav {
-  margin-top: var(--space-lg);
   display: flex;
-  gap: 1.8rem;
-  font-size: 1rem;
+  gap: 1.5rem;
+  font-size: 1.1rem;
 }
 
 .sacred-nav a {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: 6px;
   color: var(--color-ink);
   font-weight: bold;
+  transition: color 0.2s;
 }
 
-.sacred-nav .icon {
-  width: 16px;
-  height: 16px;
+.sacred-nav a:hover {
   color: var(--color-gold);
 }
 
+.sacred-nav .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--color-gold);
+}
+
+/* Área de Ações */
+.actions-area {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  position: relative;
+  z-index: var(--z-header)
+}
+
 .theme-toggle {
-    position: absolute;
-    top: var(--space-md);
-    left: var(--space-md);
-    cursor: pointer;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .theme-icon {
-    width: 20px;
-    height: 20px;
-    color: var(--color-gold);
+  width: 20px;
+  height: 20px;
+  color: var(--color-gold);
 }
 
 .hamburguer-btn {
-  position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
   background: none;
   border: none;
   cursor: pointer;
-  display: none; /* Escondido por padrão no desktop */
+  display: none; /* Desktop hidden */
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   padding: 5px;
-  z-index: calc(var(--z-aside) + 1); /* Garante que fique acima do aside aberto */
 }
 
 .hamburguer-btn .line {
-  width: 24px;
+  width: 22px;
   height: 2px;
   background-color: var(--color-ink);
   transition: all var(--transition-fast);
-  transform-origin: center;
 }
 
-/* Animação para o X */
-.hamburguer-btn .line.open:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
+.hamburguer-btn .line.open:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburguer-btn .line.open:nth-child(2) { opacity: 0; }
+.hamburguer-btn .line.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.hamburguer-btn .line.open:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburguer-btn .line.open:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
+/* Menu Mobile (Aside) */
 .sacred-aside {
   position: fixed;
   top: 0;
@@ -170,9 +203,9 @@ onMounted(() => {
   width: 280px;
   height: 100vh;
   background-color: var(--color-paper);
-  z-index: var(--z-aside);
-  padding: 6rem var(--space-lg);
+  padding: 5rem var(--space-lg);
   border-left: 1px solid var(--color-gold);
+  box-shadow: -10px 0 30px rgba(0,0,0,0.1);
 }
 
 .aside-nav {
@@ -181,8 +214,38 @@ onMounted(() => {
   gap: var(--space-lg);
 }
 
-@media (max-width: 850px) {
+.aside-nav a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  color: var(--color-ink);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.aside-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+}
+
+/* Responsividade */
+@media (max-width: 1000px) {
   .desktop-only { display: none; }
   .hamburguer-btn { display: flex; }
 }
+
+@media (max-width: 480px) {
+  .site-title { font-size: 0.9rem; }
+  .header-container { 
+    padding: 0 var(--space-sm); 
+  }
+}
+
+/* Transições */
+.slide-aside-enter-active, .slide-aside-leave-active { transition: transform 0.3s ease-out; }
+.slide-aside-enter-from, .slide-aside-leave-to { transform: translateX(100%); }
 </style>

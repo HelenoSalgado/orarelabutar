@@ -134,6 +134,7 @@ export default defineNuxtConfig({
     build: {
       transformers: [
         '~~/transformers/slugify-title.ts',
+        '~~/transformers/audio-source.ts',
         '~~/transformers/slugify-collection.ts',
         '~~/transformers/date-published.ts',
         '~~/transformers/default-images.ts'
@@ -151,7 +152,6 @@ export default defineNuxtConfig({
       },
       card: {
         modifiers: {
-          format: 'webp',
           width: 400,
           height: 300,
           fit: 'cover',
@@ -176,6 +176,9 @@ export default defineNuxtConfig({
     debug: false,
     devtools: {
       vueDevTools: false
+    },
+    image: {
+      provider: 'none'
     }
   }
 

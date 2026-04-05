@@ -62,7 +62,6 @@ body {
     font-size: 1.3rem;
     -webkit-font-smoothing: antialiased;
     transition: background-color var(--transition-slow), color var(--transition-slow);
-    padding: 0 var(--space-sm);
 }
 
 /* Títulos de Página (H1) e Seções (H2, H3) */
@@ -119,11 +118,18 @@ h3 {
 }
 
 /* Containers de Layout */
+main{
+    padding: var(--space-sm);
+}
+
+section{
+    padding: var(--space-sm) 0;
+}
+
 main,
 section {
     max-width: 800px;
     margin: var(--space-xs) auto;
-    padding: var(--space-xs) 0;
 }
 
 /* Divisores ◈ */

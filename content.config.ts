@@ -40,6 +40,15 @@ export default defineContentConfig({
       type: 'page',
       source: 'sobre.md',
       schema: baseSchema
+    }),
+    audios: defineCollection({
+      type: 'page',
+      source: 'audios/**/*.md',
+      schema: baseSchema.extend({
+        urlSourceAudio: z.string().optional(),
+        duration: z.string().optional(),
+        dateFormatted: z.string()
+      })
     })
   }
 })

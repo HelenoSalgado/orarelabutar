@@ -6,7 +6,7 @@
         <NuxtLink to="/">Home</NuxtLink>
         <NuxtLink to="/sobre">Sobre</NuxtLink>
         <NuxtLink to="/posts">Artigos</NuxtLink>
-        <NuxtLink to="/podcast">Podcast</NuxtLink>
+        <NuxtLink to="/audios">Áudios</NuxtLink>
         <NuxtLink to="/pdfs">PDFs</NuxtLink>
         <NuxtLink to="/links-uteis">Links Úteis</NuxtLink>
       </div>
