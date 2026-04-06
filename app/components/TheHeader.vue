@@ -109,7 +109,7 @@ onUnmounted(() => {
   background-color: var(--color-paper);
   position: sticky;
   top: 0;
-  z-index: calc(var(--z-header) - 1);
+  z-index: calc(var(--z-aside) + 1);
   width: 100%;
   padding: 0;
   transition: transform 0.4s ease;
@@ -186,7 +186,7 @@ onUnmounted(() => {
   align-items: center;
   gap: var(--space-md);
   position: relative;
-  z-index: var(--z-header)
+  z-index: calc(var(--z-aside) + 2);
 }
 
 .theme-toggle {
@@ -233,6 +233,7 @@ onUnmounted(() => {
   padding: 5rem var(--space-lg);
   border-left: 1px solid var(--color-gold);
   box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+  z-index: var(--z-aside);
 }
 
 .aside-nav {
@@ -257,6 +258,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.3);
+  z-index: calc(var(--z-aside) - 1);
 }
 
 /* Responsividade */
