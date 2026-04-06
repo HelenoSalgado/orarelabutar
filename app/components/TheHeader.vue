@@ -1,9 +1,9 @@
 <template>
-  <header class="frontispiece">
+  <header class="frontispiece" :class="{ 'header-hidden': !isHeaderVisible && !isMenuOpen }">
     <div class="header-container">
       <!-- Lado Esquerdo: Logo e Título -->
       <NuxtLink to="/" class="logo-area">
-        <NuxtImg src="/img/licoes1-p.webp" alt="logo" class="logo-img" width="40" height="40"/>
+        <NuxtImg src="/img/licoes1-p.webp" alt="logo" class="logo-img" width="50" height="50"/>
         <h1 class="site-title">Orar e Labutar</h1>
       </NuxtLink>
 
@@ -62,6 +62,8 @@ import IconsLink from '~/components/icons/Link.vue';
 
 const isMenuOpen = ref(false);
 const isDark = ref(false);
+const isHeaderVisible = ref(true);
+let lastScrollY = 0;
 
 const navLinks = [
   { to: '/', label: 'Home', icon: IconsHome },
@@ -72,6 +74,20 @@ const navLinks = [
   { to: '/links-uteis', label: 'Links', icon: IconsLink }
 ];
 
+const handleScroll = () => {
+  const currentScrollY = window.scrollY;
+  
+  // Se estiver rolando para baixo e já passou de um certo ponto (ex: 100px)
+  if (currentScrollY > lastScrollY && currentScrollY > 0) {
+    isHeaderVisible.value = false;
+  } else {
+    // Se estiver rolando para cima
+    isHeaderVisible.value = true;
+  }
+  
+  lastScrollY = currentScrollY;
+};
+
 const toggleTheme = () => {
     isDark.value = !isDark.value;
     document.documentElement.classList.toggle('dark-mode', isDark.value);
@@ -80,6 +96,11 @@ const toggleTheme = () => {
 
 onMounted(() => {
     isDark.value = document.documentElement.classList.contains('dark-mode');
+    window.addEventListener('scroll', handleScroll, { passive: true });
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
 });
 </script>
 
@@ -89,8 +110,14 @@ onMounted(() => {
   position: sticky;
   top: 0;
   z-index: calc(var(--z-header) - 1);
-  width: 100%;;
-  padding: 0; /* Padding será controlado pelo container interno */
+  width: 100%;
+  padding: 0;
+  transition: transform 0.4s ease;
+}
+
+.header-hidden {
+  transform: translateY(-100%);
+  opacity: .2;
 }
 
 .header-container {
@@ -114,8 +141,8 @@ onMounted(() => {
 }
 
 .logo-img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
 }
 

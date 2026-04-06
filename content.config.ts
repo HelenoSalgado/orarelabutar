@@ -49,6 +49,16 @@ export default defineContentConfig({
         duration: z.string().optional(),
         dateFormatted: z.string()
       })
+    }),
+    pdfs: defineCollection({
+      type: 'page',
+      source: 'pdfs/**/*.md',
+      schema: baseSchema.extend({
+        author: z.string().optional(),
+        categories: z.array(z.string()).default([]),
+        fileUrl: z.string().optional(),
+        fileSize: z.string().optional(),
+      })
     })
   }
 })

@@ -135,6 +135,7 @@ export default defineNuxtConfig({
       transformers: [
         '~~/transformers/slugify-title.ts',
         '~~/transformers/audio-source.ts',
+        '~~/transformers/pdf-source.ts',
         '~~/transformers/slugify-collection.ts',
         '~~/transformers/date-published.ts',
         '~~/transformers/default-images.ts'
