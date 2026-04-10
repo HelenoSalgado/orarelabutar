@@ -54,6 +54,7 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
         { rel: 'manifest', href: '/pwa/manifest.webmanifest', type: 'application/manifest+json' },
+        { rel: 'preconnect', href: 'https://static.cloudflareinsights.com' },
         {
           rel: 'preload',
           href: '/fonts/gfs-didot/GFSDidot-Regular.ttf',
@@ -160,14 +161,14 @@ export default defineNuxtConfig({
     format: ['avif', 'webp'],
     presets: {
       avatar: {
-        modifiers: { width: 60, height: 60, quality: 90 }
+        modifiers: { width: 60, height: 60, quality: 75 }
       },
       card: {
         modifiers: {
           width: 400,
           height: 300,
           fit: 'cover',
-          quality: 85
+          quality: 75
         }
       }
     },
