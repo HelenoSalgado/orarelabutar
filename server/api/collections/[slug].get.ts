@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
   if (posts.length === 0) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'Collection not found',
+      statusMessage: 'Coleção não encontrada',
     });
   }
 

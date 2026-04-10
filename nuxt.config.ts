@@ -5,6 +5,12 @@ import { theme } from "./utils/theme";
 export default defineNuxtConfig({
   compatibilityDate: "2026-04-04",
 
+  router: {
+    options: {
+      trailingSlash: 'append'
+    }
+  },
+
   experimental: {
     extractAsyncDataHandlers: true,
     sharedPrerenderData: true,
@@ -40,9 +46,13 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       meta: [
         { name: 'theme-color', content: '#161616' },
-        { name: 'format-detection', content: 'telephone=no' }
+        { name: 'format-detection', content: 'telephone=no' },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'apple-mobile-web-app-title', content: 'Orar e Labutar' }
       ],
       link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
         { rel: 'manifest', href: '/pwa/manifest.webmanifest', type: 'application/manifest+json' },
         {
           rel: 'preload',
@@ -73,7 +83,8 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://orarelabutar.com',
-    name: 'Orar e Labutar'
+    name: 'Orar e Labutar',
+    indexable: true
   },
 
   sitemap: {
@@ -91,8 +102,8 @@ export default defineNuxtConfig({
     },
 
     build: {
-      // Mantém true para code splitting de CSS por rota (reaproveitamento de estilos já baixados)
-      cssCodeSplit: false,
+      // Ativado para melhor performance de carregamento (CSS crítico por rota)
+      cssCodeSplit: true,
 
       // Gera um manifesto para análise de bundle
       manifest: false,
@@ -103,8 +114,8 @@ export default defineNuxtConfig({
       // Remove comentários e sourcemaps em produção
       sourcemap: false,
 
-      // Otimizações de performance
-      target: 'esnext',
+      // Otimizações de performance (Target mais compatível que esnext)
+      target: 'es2022',
 
       // Controla tamanho dos chunks para melhor caching
       chunkSizeWarningLimit: 1000,

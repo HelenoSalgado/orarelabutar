@@ -8,7 +8,7 @@ export default {
   minify: true,
   prerender: {
     crawlLinks: true,
-    routes: ['/'],
+    routes: ['/', '/sobre', '/manuscritos', '/autores', '/colecoes', '/temas', '/audios', '/livros', '/links-uteis'],
     ignore: [
       '__nuxt_content/home/sql_dump.txt',
       '__nuxt_content/posts/sql_dump.txt',
@@ -20,7 +20,7 @@ export default {
   compressPublicAssets: true,
   routeRules: {
     '/**': {
-      trailingSlash: false
+      trailingSlash: true
     }
   },
   publicAssets: [
@@ -40,6 +40,6 @@ export default {
   },
   externals: {
     inline: ['#internal/nitro'],
-    external: ['better-sqlite3', 'sharp']
+    // external: ['better-sqlite3', 'sharp']
   }
 } as NitroConfig

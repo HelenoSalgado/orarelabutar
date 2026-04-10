@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
   if (!post) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'Post not found',
+      statusMessage: 'Manuscrito não encontrado',
     });
   }
 

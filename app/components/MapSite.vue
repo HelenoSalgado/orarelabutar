@@ -5,9 +5,12 @@
       <div class="links-list">
         <NuxtLink to="/">Home</NuxtLink>
         <NuxtLink to="/sobre">Sobre</NuxtLink>
-        <NuxtLink to="/posts">Artigos</NuxtLink>
+        <NuxtLink to="/manuscritos">Artigos</NuxtLink>
+        <NuxtLink to="/autores">Autores</NuxtLink>
+        <NuxtLink to="/colecoes">Coleções</NuxtLink>
+        <NuxtLink to="/temas">Temas</NuxtLink>
         <NuxtLink to="/audios">Áudios</NuxtLink>
-        <NuxtLink to="/pdfs">PDFs</NuxtLink>
+        <NuxtLink to="/livros">Livros</NuxtLink>
         <NuxtLink to="/links-uteis">Links Úteis</NuxtLink>
       </div>
     </div>

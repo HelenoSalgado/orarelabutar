@@ -8,7 +8,7 @@
 v-for="post in tagData.posts" :key="post.id"
                   :title="post.title"
                   :description="post.description"
-                  :slug="'/posts/' + post.slug"
+                  :slug="'/manuscritos/' + post.slug"
                   :img-url="post.imgUrl"
                 />
     </main>

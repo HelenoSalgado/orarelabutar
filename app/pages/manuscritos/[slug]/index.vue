@@ -72,6 +72,7 @@ useSeoMeta({
   width: 100%;
   max-width: 800px;
   margin: var(--space-lg) auto;
+  padding: 0 1rem;
 }
 
 .navigator-posts a {
@@ -109,5 +110,6 @@ useSeoMeta({
 
 .related-posts {
   margin: var(--space-lg) auto;
+  padding: 1rem;
 }
 </style>

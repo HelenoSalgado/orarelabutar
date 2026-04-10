@@ -68,9 +68,9 @@ let lastScrollY = 0;
 const navLinks = [
   { to: '/', label: 'Home', icon: IconsHome },
   { to: '/sobre', label: 'Sobre', icon: IconsGlobe },
-  { to: '/posts', label: 'Artigos', icon: IconsEdit2 },
+  { to: '/manuscritos', label: 'Artigos', icon: IconsEdit2 },
   { to: '/audios', label: 'Áudios', icon: IconsMusic },
-  { to: '/pdfs', label: 'PDFs', icon: IconsBook },
+  { to: '/livros', label: 'PDFs', icon: IconsBook },
   { to: '/links-uteis', label: 'Links', icon: IconsLink }
 ];
 

@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   if (!slug) {
     throw createError({
       statusCode: 400,
-      statusMessage: 'Slug is required',
+      statusMessage: 'O identificador é obrigatório',
     });
   }
 
@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
   if (!pdf) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'PDF not found',
+      statusMessage: 'PDF não encontrado',
     });
   }
 

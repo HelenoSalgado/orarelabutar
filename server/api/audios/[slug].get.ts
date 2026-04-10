@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   if (!slug) {
     throw createError({
       statusCode: 400,
-      statusMessage: 'Slug is required',
+      statusMessage: 'O identificador é obrigatório',
     });
   }
 
@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
   if (!audio) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'Audio not found',
+      statusMessage: 'Áudio não encontrado',
     });
   }
 

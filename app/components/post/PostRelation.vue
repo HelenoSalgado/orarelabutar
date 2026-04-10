@@ -1,11 +1,11 @@
 <template>
     <div class="post-card-related">
-        <NuxtLink :href="'/posts/' + slug" class="related-img-link">
+        <NuxtLink :href="'/manuscritos/' + slug" class="related-img-link">
             <NuxtImg class="post-card-related-img" :src="'/img/ai/' + imgUrl" :alt="title" loading="lazy" width="300"
                 height="200" />
         </NuxtLink>
         <div class="post-card-related-text">
-            <NuxtLink :href="'/posts/' + slug" class="related-title-link">
+            <NuxtLink :href="'/manuscritos/' + slug" class="related-title-link">
                 <h3>{{ title }}</h3>
             </NuxtLink>
             <p>{{ description }}</p>

@@ -6,18 +6,17 @@
     
     <div v-else-if="error" class="error-container">
       PDF não encontrado na biblioteca.
-      <NuxtLink to="/pdfs" class="back-link">
+      <NuxtLink to="/livros" class="back-link">
         <IconsArrowLeft class="icon-back" />
         Voltar para a biblioteca
       </NuxtLink>
     </div>
-    
+
     <div v-else-if="pdf" class="pdf-detail">
-      <NuxtLink to="/pdfs" class="back-link">
+      <NuxtLink to="/livros" class="back-link">
         <IconsArrowLeft class="icon-back" />
         Voltar para a biblioteca
-      </NuxtLink>
-      
+      </NuxtLink>      
       <div class="pdf-hero">
         <!-- Coluna Esquerda: Capa e Categorias -->
         <div class="pdf-hero-aside">

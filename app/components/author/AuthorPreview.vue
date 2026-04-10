@@ -4,7 +4,7 @@
         <div>
             <h3>{{ auth.title }}</h3>
             <p v-if="auth.createdAt">Desde {{ auth.createdAt }}</p>
-            <NuxtLink :to="'/authors/'+auth.slug">Ver Perfil</NuxtLink>
+            <NuxtLink :to="'/autores/'+auth.slug">Ver Perfil</NuxtLink>
         </div>
     </div>
 </template>

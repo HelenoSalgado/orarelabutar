@@ -1,6 +1,6 @@
 <template>
     <div class="sacred-collection-card">
-      <NuxtLink :href="'/collection/'+slug" class="collection-link">
+      <NuxtLink :href="'/colecoes/'+slug" class="collection-link">
         <NuxtImg :src="'/img/ai/'+imgUrl" :alt="title" loading="lazy" width="300" height="300" class="collection-img"/>
         <div class="collection-info">
           <h3 class="collection-title">{{ title }}</h3>

@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
   if (!author) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'Author not found',
+      statusMessage: 'Autor não encontrado',
     });
   }
 

@@ -4,7 +4,7 @@
     <div class="pdf-card-aside">
       <div class="pdf-cover-wrapper">
         <NuxtLink :to="'/pdfs/' + slug">
-          <NuxtImg :src="imgUrl" :alt="title" class="pdf-cover" />
+          <NuxtImg :src="imgUrl" :alt="title" class="pdf-cover" loading="lazy" decoding="async" />
         </NuxtLink>
       </div>
       <div v-if="validCategories.length > 0" class="pdf-card-categories">
