@@ -5,12 +5,6 @@ import { theme } from "./utils/theme";
 export default defineNuxtConfig({
   compatibilityDate: "2026-04-04",
 
-  router: {
-    options: {
-      trailingSlash: 'append'
-    }
-  },
-
   experimental: {
     extractAsyncDataHandlers: true,
     sharedPrerenderData: true,
@@ -30,7 +24,7 @@ export default defineNuxtConfig({
   },
 
   features: {
-    inlineStyles: true
+    inlineStyles: false
   },
 
   app: {
@@ -103,14 +97,16 @@ export default defineNuxtConfig({
     },
 
     build: {
-      // Ativado para melhor performance de carregamento (CSS crítico por rota)
-      cssCodeSplit: true,
+      
+      cssCodeSplit: false,
 
       // Gera um manifesto para análise de bundle
       manifest: false,
 
       // Reduz tamanho do bundle
       minify: 'esbuild',
+
+      cssMinify: true,
 
       // Remove comentários e sourcemaps em produção
       sourcemap: false,
@@ -125,7 +121,7 @@ export default defineNuxtConfig({
         cache: true,
         output: {
           compact: true,
-          inlineDynamicImports: true,
+          inlineDynamicImports: false,
           sourcemap: false
         }
       }
@@ -161,14 +157,14 @@ export default defineNuxtConfig({
     format: ['avif', 'webp'],
     presets: {
       avatar: {
-        modifiers: { width: 60, height: 60, quality: 75 }
+        modifiers: { width: 60, height: 60, quality: 80 }
       },
       card: {
         modifiers: {
           width: 400,
           height: 300,
           fit: 'cover',
-          quality: 75
+          quality: 70
         }
       }
     },

@@ -40,7 +40,7 @@ const config = useRuntimeConfig();
 const route = useRoute();
 const slug = route.params.slug as string;
 
-const { data: pageData } = await useFetch(`/api/posts/${slug}`);
+const { data: pageData } = await useFetch(`/api/posts/${slug}`, { mode: 'cors' });
 
 const imgUrl = computed(() => `${config.public.site.url}/img/ai/${pageData.value?.post?.imgUrl}`);
 
