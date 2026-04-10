@@ -25,6 +25,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "convert-images": "node scripts/convert_to_webp.mjs",
     "test": "vitest run",
     "nuxtup": "nuxi upgrade"
   },
