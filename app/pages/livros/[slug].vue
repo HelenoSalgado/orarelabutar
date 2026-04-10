@@ -3,7 +3,7 @@
     <div v-if="pending" class="loading-container">
       Carregando detalhes do PDF...
     </div>
-    
+
     <div v-else-if="error" class="error-container">
       PDF não encontrado na biblioteca.
       <NuxtLink to="/livros" class="back-link">
@@ -16,7 +16,7 @@
       <NuxtLink to="/livros" class="back-link">
         <IconsArrowLeft class="icon-back" />
         Voltar para a biblioteca
-      </NuxtLink>      
+      </NuxtLink>
       <div class="pdf-hero">
         <!-- Coluna Esquerda: Capa e Categorias -->
         <div class="pdf-hero-aside">
@@ -29,12 +29,12 @@
             </span>
           </div>
         </div>
-        
+
         <!-- Coluna Direita: Metadados e Ações -->
         <div class="pdf-hero-main">
           <h1 class="pdf-title">{{ pdf.title }}</h1>
           <p v-if="pdf.author" class="pdf-author-name">Por {{ pdf.author }}</p>
-          
+
           <div class="pdf-description-intro">
             <p>{{ pdf.description }}</p>
           </div>
@@ -46,15 +46,12 @@
           </div>
         </div>
       </div>
-  
+
       <ContentRenderer :value="pdf" class="article-body" />
-    
+
       <Divisor margin />
-      
-      <SocialShare
-        :slug="'pdfs/' + pdf.slug"
-        :description="pdf.description"
-      />
+
+      <SocialShare :slug="'livros/' + pdf.slug" :description="pdf.description" />
     </div>
   </main>
 </template>
@@ -83,7 +80,8 @@ definePageMeta({
 </script>
 
 <style scoped>
-.loading-container, .error-container {
+.loading-container,
+.error-container {
   text-align: center;
   padding: var(--space-xl) 0;
   font-style: italic;
@@ -209,7 +207,7 @@ definePageMeta({
     align-items: center;
     text-align: center;
   }
-  
+
   .pdf-hero-main {
     align-items: center;
   }
@@ -218,7 +216,7 @@ definePageMeta({
     text-align: center;
     font-size: 2.2rem;
   }
-  
+
   .pdf-hero-aside {
     width: 220px;
   }

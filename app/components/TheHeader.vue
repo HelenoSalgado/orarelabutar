@@ -66,11 +66,11 @@ const isHeaderVisible = ref(true);
 let lastScrollY = 0;
 
 const navLinks = [
-  { to: '/', label: 'Home', icon: IconsHome },
+  { to: '/', label: 'Início', icon: IconsHome },
   { to: '/sobre', label: 'Sobre', icon: IconsGlobe },
-  { to: '/manuscritos', label: 'Artigos', icon: IconsEdit2 },
+  { to: '/manuscritos', label: 'Escritos', icon: IconsEdit2 },
   { to: '/audios', label: 'Áudios', icon: IconsMusic },
-  { to: '/livros', label: 'PDFs', icon: IconsBook },
+  { to: '/livros', label: 'Livros', icon: IconsBook },
   { to: '/links-uteis', label: 'Links', icon: IconsLink }
 ];
 

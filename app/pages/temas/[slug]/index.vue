@@ -11,6 +11,8 @@ v-for="post in tagData.posts" :key="post.id"
                   :slug="'/manuscritos/' + post.slug"
                   :img-url="post.imgUrl"
                 />
+        <hr>
+        <SocialShare :slug="'temas/' + slug" :description="'Explore o tema ' + tagData.tag.title" />
     </main>
 </template>
 

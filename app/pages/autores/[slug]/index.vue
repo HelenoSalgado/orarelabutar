@@ -10,7 +10,7 @@
         <ContentRenderer :value="authorData.author.body" />
       </article>
       <hr>
-      <SocialShare :slug="'author/' + authorData.author.slug" :description="authorData.author.description" />
+      <SocialShare :slug="'autores/' + authorData.author.slug" :description="authorData.author.description" />
     </div>
 
     <section v-if="authorData?.posts?.length">

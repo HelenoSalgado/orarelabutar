@@ -39,7 +39,7 @@
     <Divisor margin />
     
     <SocialShare
-      slug="pdfs"
+      slug="livros"
       description="Baixe manuscritos e livros digitais clássicos para o seu crescimento espiritual."
     />
   </main>

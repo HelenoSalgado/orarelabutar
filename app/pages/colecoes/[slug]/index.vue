@@ -10,12 +10,12 @@
 v-for="post in collectionData.posts" :key="post.id"
             :title="post.title"
             :description="post.description"
-            :slug="'/posts/' + post.slug"
+            :slug="'/manuscritos/' + post.slug"
             :img-url="post.imgUrl"
           />
       </div>
       <hr>
-      <SocialShare :slug="'/collection/'+slug" :description="'Veja uma coleção de artigos de '+collectionData.collection.author "/>
+      <SocialShare :slug="'colecoes/'+slug" :description="'Veja uma coleção de artigos de '+collectionData.collection.author "/>
   </main>
 </template>
 

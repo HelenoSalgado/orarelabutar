@@ -3,7 +3,7 @@
     <!-- Coluna Esquerda: Capa e Categoria -->
     <div class="pdf-card-aside">
       <div class="pdf-cover-wrapper">
-        <NuxtLink :to="'/pdfs/' + slug">
+        <NuxtLink :to="'/livros/' + slug">
           <NuxtImg :src="imgUrl" :alt="title" class="pdf-cover" loading="lazy" decoding="async" />
         </NuxtLink>
       </div>
@@ -18,7 +18,7 @@
     <div class="pdf-card-main">
       <div class="pdf-header">
         <h3 class="pdf-title">
-          <NuxtLink :to="'/pdfs/' + slug">{{ title }}</NuxtLink>
+          <NuxtLink :to="'/livros/' + slug">{{ title }}</NuxtLink>
         </h3>
         <p v-if="author" class="pdf-author">{{ author }}</p>
       </div>
@@ -26,7 +26,7 @@
       <p v-if="description" class="pdf-description">{{ description }}</p>
 
       <div class="pdf-footer">
-        <NuxtLink :to="'/pdfs/' + slug" class="sacred-btn btn-sm">
+        <NuxtLink :to="'/livros/' + slug" class="sacred-btn btn-sm">
           Ver Detalhes ◈
         </NuxtLink>
       </div>

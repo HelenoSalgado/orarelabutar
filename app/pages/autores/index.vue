@@ -8,10 +8,14 @@
             <AuthorCard v-for="author in authors" :key="author.id" 
                 :title="author.title" :img-url="author.imgUrl" 
                 :slug="author.slug" :description="author.description" />
-        </div>
-    </main>
-</template>
-
+                </div>
+                <Divisor margin />
+                <SocialShare
+                slug="autores"
+                description="Conheça os autores do blog Orar e Labutar."
+                />
+                </main>
+                </template>
 <script setup lang="ts">
 defineOptions({
     name: 'AuthorsIndex'

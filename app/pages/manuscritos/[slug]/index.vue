@@ -7,14 +7,14 @@
 
       <div class="article-interactions">
         <LikeButton :slug="pageData.post.slug" />
-        <SocialShare :slug="pageData.post.slug" :description="pageData.post.description" />
+        <SocialShare :slug="'manuscritos/' + pageData.post.slug" :description="pageData.post.description" />
       </div>
     </main>
     <div class="navigator-posts">
-      <NuxtLink v-if="pageData.surroundings?.[0]" :to="pageData.surroundings[0].slug">
+      <NuxtLink v-if="pageData.surroundings?.[0]" :to="'/manuscritos/' + pageData.surroundings[0].slug">
         &lang; Post Anterior
       </NuxtLink>
-      <NuxtLink v-if="pageData.surroundings?.[1]" :to="pageData.surroundings[1].slug">
+      <NuxtLink v-if="pageData.surroundings?.[1]" :to="'/manuscritos/' + pageData.surroundings[1].slug">
         Próximo Post &rang;
       </NuxtLink>
     </div>
