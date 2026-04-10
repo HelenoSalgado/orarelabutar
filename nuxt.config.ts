@@ -30,7 +30,7 @@ export default defineNuxtConfig({
   },
 
   features: {
-    inlineStyles: false
+    inlineStyles: true
   },
 
   app: {
@@ -157,17 +157,17 @@ export default defineNuxtConfig({
   image: {
     provider: 'ipxStatic',
     domains: ['orarelabutar.com'],
-    format: ['webp'],
+    format: ['avif', 'webp'],
     presets: {
       avatar: {
-        modifiers: { width: 60, height: 60 }
+        modifiers: { width: 60, height: 60, quality: 90 }
       },
       card: {
         modifiers: {
           width: 400,
           height: 300,
           fit: 'cover',
-          quality: 80
+          quality: 85
         }
       }
     },
@@ -178,6 +178,11 @@ export default defineNuxtConfig({
       'lg': 1024,
       'xl': 1280
     }
+  },
+
+  routeRules: {
+    '/img/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
+    '/_nuxt/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } }
   },
 
   dir: {

@@ -1,7 +1,7 @@
 <template>
     <article class="manuscript-preview-start">
         <NuxtLink :to="slug" class="preview-image-link">
-            <NuxtImg :src="'/img/ai/'+imgUrl" :alt="title" class="preview-img" preset="card" loading="lazy" decoding="async" />
+            <NuxtImg :src="'/img/ai/'+imgUrl" :alt="title" class="preview-img" preset="card" :loading="loading || 'lazy'" :fetchpriority="fetchpriority || 'auto'" decoding="async" />
         </NuxtLink>
         <div class="preview-content">
             <h2 class="preview-title">
@@ -16,7 +16,14 @@
 </template>
 
 <script setup lang="ts">
-defineProps(['title', 'description', 'slug', 'imgUrl']);
+defineProps<{
+    title: string,
+    description: string,
+    slug: string,
+    imgUrl: string,
+    loading?: 'lazy' | 'eager',
+    fetchpriority?: 'high' | 'low' | 'auto'
+}>();
 </script>
 
 <style scoped>

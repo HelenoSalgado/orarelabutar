@@ -10,7 +10,7 @@ export default defineTransformer({
         }
         const slug = file.slug
 
-        if(slug) file.imgUrl = `${slug}.png`
+        if(slug) file.imgUrl = `${slug}.webp`
         
         return file
     }

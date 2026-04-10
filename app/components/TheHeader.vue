@@ -74,18 +74,24 @@ const navLinks = [
   { to: '/links-uteis', label: 'Links', icon: IconsLink }
 ];
 
+let ticking = false;
+
 const handleScroll = () => {
-  const currentScrollY = window.scrollY;
-  
-  // Se estiver rolando para baixo e já passou de um certo ponto (ex: 100px)
-  if (currentScrollY > lastScrollY && currentScrollY > 0) {
-    isHeaderVisible.value = false;
-  } else {
-    // Se estiver rolando para cima
-    isHeaderVisible.value = true;
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        isHeaderVisible.value = false;
+      } else {
+        isHeaderVisible.value = true;
+      }
+      
+      lastScrollY = currentScrollY;
+      ticking = false;
+    });
+    ticking = true;
   }
-  
-  lastScrollY = currentScrollY;
 };
 
 const toggleTheme = () => {

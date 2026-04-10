@@ -5,8 +5,9 @@
             <span>Posts Recentes</span>
         </h1>
         <div class="sacred-grid">
-            <PostPreview v-for="post in homeData?.posts" :key="post.id" :title="post.title"
-                :description="post.description" :slug="'/manuscritos/' + post.slug" :img-url="post.imgUrl" />
+            <PostPreview v-for="(post, index) in homeData?.posts" :key="post.id" :title="post.title"
+                :description="post.description" :slug="'/manuscritos/' + post.slug" :img-url="post.imgUrl"
+                :loading="index === 0 ? 'eager' : 'lazy'" :fetchpriority="index === 0 ? 'high' : 'auto'" />
         </div>
 
         <hr>
