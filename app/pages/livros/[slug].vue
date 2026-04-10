@@ -49,10 +49,12 @@
 
       <ContentRenderer :value="pdf" class="article-body" />
 
-      <Divisor margin />
+      <hr />
 
-      <SocialShare :slug="'livros/' + pdf.slug" :description="pdf.description" />
-    </div>
+      <SocialShare
+      :slug="'livros/' + pdf.slug"
+      :description="pdf.description"
+      />    </div>
   </main>
 </template>
 

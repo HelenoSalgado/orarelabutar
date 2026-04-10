@@ -13,7 +13,7 @@ v-for="post in posts" :key="post.id"
               :img-url="post.imgUrl"
             />
         </div>
-        <Divisor margin />
+        <hr />
         <SocialShare
             slug="manuscritos"
             description="Explore os manuscritos e artigos do blog Orar e Labutar."

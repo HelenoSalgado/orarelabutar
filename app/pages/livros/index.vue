@@ -36,7 +36,7 @@
       Nenhum PDF encontrado na biblioteca.
     </div>
 
-    <Divisor margin />
+    <hr />
     
     <SocialShare
       slug="livros"
