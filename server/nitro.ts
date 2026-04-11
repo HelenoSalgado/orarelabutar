@@ -2,9 +2,6 @@ import type { NitroConfig } from 'nitropack'
 
 export default {
   preset: 'cloudflare-pages',
-  experimental: {
-    earlyHints: true
-  },
   hooks: {
     'prerender:generate'(route) {
       const routesToSkip = ['/index.html', '/200.html', '/404.html', '_redirects']
