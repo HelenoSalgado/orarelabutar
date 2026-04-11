@@ -31,12 +31,12 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
-        { 
-          rel: 'manifest', 
-          href: '/pwa/manifest.webmanifest', 
-          type: 'application/manifest+json',
-          crossorigin: 'use-credentials'
-        },
+        // { 
+        //   rel: 'manifest', 
+        //   href: '/pwa/manifest.webmanifest', 
+        //   type: 'application/manifest+json',
+        //   crossorigin: 'use-credentials'
+        // },
         {
           rel: 'preload',
           href: '/css/main.css',
@@ -181,8 +181,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/img/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
-    '/_nuxt/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
-    '/pwa/manifest.webmanifest': { headers: { 'Cache-Control': 'public, max-age=86400, stale-while-revalidate=31536000' } }
+    '/_nuxt/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } }
   },
 
   dir: {
