@@ -34,10 +34,7 @@
 
       <hr>
 
-      <SocialShare
-        :slug="'audios/' + audio.slug"
-        :description="audio.description"
-      />
+      <SocialShare :slug="'audios/' + audio.slug" :description="audio.description" />
     </div>
   </main>
 </template>
@@ -49,22 +46,22 @@ const slug = route.params.slug as string;
 
 const { data: audio, pending, error } = await useFetch(`/api/audios/${slug}`);
 
-watchEffect(() => {
-  if (audio.value) {
-    useSeoMeta({
-      title: audio.value.title,
-      description: audio.value.description,
-      ogDescription: audio.value.description,
-      ogImage: () => audio.value?.imgUrl ? `${config.public.site.url}${audio.value.imgUrl}` : `${config.public.site.url}/img/podcast.jpg`,
-      twitterDescription: audio.value.description,
-      twitterImage: () => audio.value?.imgUrl ? `${config.public.site.url}${audio.value.imgUrl}` : `${config.public.site.url}/img/podcast.jpg`,
-    });
-  }
-});
+if (import.meta.server) {
+  useSeoMeta({
+    ogType: 'music.song',
+    title: audio.value?.title,
+    ogTitle: audio.value?.title,
+    twitterTitle: audio.value?.title,
+    description: audio.value?.description,
+    ogDescription: audio.value?.description,
+    twitterDescription: audio.value?.description,
+    ogImage: () => audio.value?.imgUrl ? `${config.public.site.url}${audio.value.imgUrl}` : `${config.public.site.url}/img/podcast.jpg`,
+    twitterImage: () => audio.value?.imgUrl ? `${config.public.site.url}${audio.value.imgUrl}` : `${config.public.site.url}/img/podcast.jpg`,
+    ogAudioSecureUrl: audio.value?.urlSourceAudio,
+    ogAudioUrl: audio.value?.urlSourceAudio
+  });
+}
 
-definePageMeta({
-  title: 'Áudio'
-})
 </script>
 
 <style scoped>

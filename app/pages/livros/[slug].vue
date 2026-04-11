@@ -51,10 +51,8 @@
 
       <hr />
 
-      <SocialShare
-      :slug="'livros/' + pdf.slug"
-      :description="pdf.description"
-      />    </div>
+      <SocialShare :slug="'livros/' + pdf.slug" :description="pdf.description" />
+    </div>
   </main>
 </template>
 
@@ -65,20 +63,18 @@ const slug = route.params.slug as string;
 
 const { data: pdf, pending, error } = await useFetch(`/api/pdfs/${slug}`);
 
-watchEffect(() => {
-  if (pdf.value) {
-    useSeoMeta({
-      title: `${pdf.value.title} - PDF`,
-      description: pdf.value.description,
-      ogDescription: pdf.value.description,
-      ogImage: () => pdf.value?.imgUrl ? `${config.public.site.url}${pdf.value.imgUrl}` : `${config.public.site.url}/img/pdfs-e-ebooks.jpg`,
-    });
-  }
-});
-
-definePageMeta({
-  title: 'Biblioteca'
-})
+if (import.meta.server) {
+  useSeoMeta({
+    ogType: 'book',
+    title: pdf.value?.title,
+    ogTitle: pdf.value?.title,
+    twitterTitle: pdf.value?.title,
+    description: pdf.value?.description,
+    ogDescription: pdf.value?.description,
+    twitterDescription: pdf.value?.description,
+    ogImage: pdf.value?.imgUrl ? `${config.public.site.url}${pdf.value.imgUrl}` : `${config.public.site.url}/img/pdfs-e-ebooks.jpg`
+  });
+}
 </script>
 
 <style scoped>

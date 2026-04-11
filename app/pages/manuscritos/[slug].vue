@@ -40,19 +40,26 @@ const config = useRuntimeConfig();
 const route = useRoute();
 const slug = route.params.slug as string;
 
-const { data: pageData } = await useFetch(`/api/posts/${slug}`, { mode: 'cors' });
-
-const imgUrl = computed(() => `${config.public.site.url}/img/ai/${pageData.value?.post?.imgUrl}`);
-
-
-useSeoMeta({
-  title: pageData.value?.post?.title,
-  ogType: 'article',
-  description: pageData.value?.post?.description,
-  ogImage: imgUrl.value,
-  twitterImage: imgUrl.value,
-  twitterDescription: pageData.value?.post?.description
+const { data: pageData } = await useFetch(`/api/posts/${slug}`, {
+  mode: 'same-origin'
 });
+
+const imgUrl = `${config.public.site.url}/img/ai/${pageData.value?.post?.imgUrl}`;
+
+if (import.meta.server) {
+  useSeoMeta({
+    ogType: 'article',
+    title: pageData.value?.post.title,
+    ogTitle: pageData.value?.post.title,
+    twitterTitle: pageData.value?.post.title,
+    description: pageData.value?.post?.description,
+    ogDescription: pageData.value?.post?.description,
+    twitterDescription: pageData.value?.post?.description,
+    ogImage: imgUrl,
+    twitterImage: imgUrl,
+  });
+}
+
 </script>
 
 <style scoped>

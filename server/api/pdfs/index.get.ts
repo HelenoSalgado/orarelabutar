@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
     return {
       ...pdf,
       // Apenas mantém categorias que possuem um arquivo correspondente em content/tags/
-      validCategories: pdf.categories.filter(cat => validTagSlugs.has(cat))
+      validCategories: (pdf.categories || []).filter(cat => validTagSlugs.has(cat))
     };
   });
 });

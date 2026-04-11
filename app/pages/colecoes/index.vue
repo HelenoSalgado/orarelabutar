@@ -5,9 +5,9 @@
             <span>Coleções</span>
         </h1>
         <div class="sacred-grid">
-            <PostCollection v-for="collection in collections" :key="collection.name"
-                :title="collection.name" :img-url="collection.imgUrl" :author="collection.authors.join(', ')"
-                :slug="collection.slug" :count="collection.count" />
+            <PostCollection v-for="collection in collections" :key="collection.name" :title="collection.name"
+                :img-url="collection.imgUrl" :author="collection.authors.join(', ')" :slug="collection.slug"
+                :count="collection.count" />
         </div>
     </main>
 </template>
@@ -19,12 +19,15 @@ defineOptions({
 
 const { data: collections } = await useFetch('/api/collections');
 
-useSeoMeta({
-    title: 'Coleções',
-    description: 'Explore nossas coleções temáticas de manuscritos.'
-});
+if (import.meta.server) {
+    useSeoMeta({
+        title: 'Coleções',
+        ogTitle: 'Coleções',
+        twitterTitle: 'Coleções',
+        description: 'Explore as coleções temáticas de manuscritos do blog Orar e Labutar.',
+        ogDescription: 'Explore as coleções temáticas de manuscritos do blog Orar e Labutar.',
+        twitterDescription: 'Explore as coleções temáticas de manuscritos do blog Orar e Labutar.'
+    });
+}
 
-definePageMeta({
-    title: 'Coleções'
-});
 </script>

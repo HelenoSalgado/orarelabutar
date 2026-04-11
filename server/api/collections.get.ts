@@ -9,17 +9,19 @@ export default defineEventHandler(async (event) => {
 
   const collectionsMap = allRelated.reduce((acc: Record<string, { name: string, slug: string, imgUrl: string, authors: Set<string>, count: number }>, post) => {
     if (post.collection) {
-      if (!acc[post.collection]) {
-        acc[post.collection] = {
+      let group = acc[post.collection];
+      if (!group) {
+        group = {
           name: post.collection,
           slug: slugify(post.collection),
           imgUrl: post.imgUrl,
           authors: new Set(),
           count: 0
         };
+        acc[post.collection] = group;
       }
-      if (post.author) acc[post.collection].authors.add(post.author);
-      acc[post.collection].count++;
+      if (post.author) group.authors.add(post.author);
+      group.count++;
     }
     return acc;
   }, {});

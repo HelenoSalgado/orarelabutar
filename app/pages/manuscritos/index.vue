@@ -32,15 +32,13 @@ const { data: posts } = await useFetch('/api/posts');
 
 useSeoMeta({
     title: 'Artigos',
+    ogTitle: 'Artigos',
+    twitterTitle: 'Artigos',
     ogType: 'website',
-    description: 'Todos os artigos publicados no blog Orar e Labutar.',
-    ogDescription: 'Todos os artigos publicados no blog Orar e Labutar.',
-    ogImage: () => `${config.public.site.url}/img/artigos.jpg`,
-    twitterDescription: 'Todos os artigos publicados no blog Orar e Labutar.',
-    twitterImage: () => `${config.public.site.url}/img/artigos.jpg`,
-});
-
-definePageMeta({
-   title: 'Artigos'
+    description: 'Confira todos os artigos publicados no blog Orar e Labutar.',
+    ogDescription: 'Confira todos os artigos publicados no blog Orar e Labutar.',
+    twitterDescription: 'Confira todos os artigos publicados no blog Orar e Labutar.',
+    ogImage: `${config.public.site.url}/img/artigos.jpg`,
+    twitterImage: `${config.public.site.url}/img/artigos.jpg`,
 });
 </script>

@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
   }
 
   // Use metadata from the first post
-  const firstPost = posts[0];
+  const firstPost = posts[0]!;
   const collection = {
     title: firstPost.collection,
     author: firstPost.author,

@@ -51,18 +51,18 @@ const { data: authorData } = await useFetch<{ author: AuthorsCollectionItem, pos
 
 const { data: authors } = await useFetch('/api/authors');
 
-const title = computed(() => `Orar e Labutar | ${authorData.value?.author?.title || ''}`);
-
-useSeoMeta({
-  title: () => title.value,
-  ogTitle: () => title.value,
-  description: () => authorData.value?.author?.description,
-  ogDescription: () => authorData.value?.author?.description,
-  ogImage: () => authorData.value?.author?.imgUrl ? `${config.public.site.url}/img/${authorData.value.author.imgUrl}` : undefined,
-  twitterTitle: () => title.value,
-  twitterDescription: () => authorData.value?.author?.description,
-  twitterImage: () => authorData.value?.author?.imgUrl ? `${config.public.site.url}/img/${authorData.value.author.imgUrl}` : undefined,
-});
+if (import.meta.server) {
+  useSeoMeta({
+    title: authorData.value?.author?.title,
+    ogTitle: authorData.value?.author?.title,
+    twitterTitle: authorData.value?.author?.title,
+    description: authorData.value?.author?.description,
+    ogDescription: authorData.value?.author?.description,
+    twitterDescription: authorData.value?.author?.description,
+    ogImage: () => authorData.value?.author?.imgUrl ? `${config.public.site.url}/img/${authorData.value.author.imgUrl}` : undefined,
+    twitterImage: () => authorData.value?.author?.imgUrl ? `${config.public.site.url}/img/${authorData.value.author.imgUrl}` : undefined,
+  });
+}
 </script>
 
 <style scoped>

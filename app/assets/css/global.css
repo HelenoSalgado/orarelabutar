@@ -383,7 +383,7 @@ svg {
 }
 
 /* Lettrine / Capitular */
-.article-body p:first-of-type::first-letter {
+/* .article-body p:first-of-type::first-letter {
     float: left;
     font-size: 4rem;
     line-height: 0.8;
@@ -391,7 +391,7 @@ svg {
     padding-right: 8px;
     font-weight: bold;
     color: var(--color-gold);
-}
+} */
 
 /* --- Detail Page Layout --- */
 .detail-header {

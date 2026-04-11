@@ -3,9 +3,9 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 const baseSchema = z.object({
   title: z.string(),
   description: z.string().optional(),
-  imgUrl: z.string().optional(),
+  imgUrl: z.string(),
   createdAt: z.string().optional(),
-  slug: z.string().optional(), // Injetada dinamicamente via transformador
+  slug: z.string() // Injetada dinamicamente via transformador
 })
 
 export default defineContentConfig({
@@ -17,8 +17,8 @@ export default defineContentConfig({
         description: z.string(), // Torna obrigatório para posts
         author: z.string(),
         collection: z.string().optional(),
-        collectionSlug: z.string().optional(), // Injetada via transformador
-        categories: z.array(z.string()).optional(),
+        collectionSlug: z.string(), // Injetada via transformador
+        categories: z.array(z.string()).default([]),
         updatedAt: z.string().optional(),
         dateFormatted: z.string(),
         published: z.boolean()
@@ -45,8 +45,8 @@ export default defineContentConfig({
       type: 'page',
       source: 'audios/**/*.md',
       schema: baseSchema.extend({
-        urlSourceAudio: z.string().optional(),
-        duration: z.string().optional(),
+        urlSourceAudio: z.string(),
+        duration: z.string(),
         dateFormatted: z.string()
       })
     }),
@@ -54,9 +54,9 @@ export default defineContentConfig({
       type: 'page',
       source: 'pdfs/**/*.md',
       schema: baseSchema.extend({
-        author: z.string().optional(),
+        author: z.string(),
         categories: z.array(z.string()).default([]),
-        fileUrl: z.string().optional(),
+        fileUrl: z.string(),
         fileSize: z.string().optional(),
       })
     })

@@ -5,56 +5,10 @@ import nitro from "./server/nitro";
 export default defineNuxtConfig({
   compatibilityDate: "2026-04-09",
 
-  experimental: {
-    extractAsyncDataHandlers: true,
-    sharedPrerenderData: true,
-    entryImportMap: false,
-    asyncContext: true,
-    lazyHydration: true,
-    payloadExtraction: 'client',
-    asyncEntry: true,
-    defaults: {
-      nuxtLink: {
-        prefetchOn: {
-          interaction: true
-        },
-        trailingSlash: 'append'
-      }
-    },
-    buildCache: true,
-    viteEnvironmentApi: true,
-  },
-
-  features: {
-    inlineStyles: false
-  },
-
-  sourcemap: false,
-
-  telemetry: false,
-
-  ssr: true,
-
-  vite: {
-    appType: 'mpa',
-    ssr: {
-      target: 'webworker',
-      optimizeDeps: {
-        include: ['vue'],
-        exclude: ['@nuxt/content']
-      }
-    },
-    build: {
-      cssCodeSplit: false,
-      modulePreload: false,
-      cssMinify: true,
-      rollupOptions: {
-        output: {
-          // Unifica tudo em um único chunk para simplificar requests HTTP
-          manualChunks: () => 'app'
-        }
-      }
-    }
+  typescript: {
+    typeCheck: true,
+    builder: 'vite',
+    strict: true
   },
 
   app: {
@@ -112,6 +66,46 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/global.css'],
+
+  experimental: {
+    extractAsyncDataHandlers: true,
+    sharedPrerenderData: true,
+    entryImportMap: false,
+    asyncContext: true,
+    lazyHydration: true,
+    payloadExtraction: 'client',
+    asyncEntry: true,
+    defaults: {
+      nuxtLink: {
+        prefetchOn: {
+          interaction: true
+        },
+        trailingSlash: 'append'
+      }
+    },
+    buildCache: true,
+    viteEnvironmentApi: true,
+    clientNodeCompat: true
+  },
+
+  features: {
+    inlineStyles: false
+  },
+
+  sourcemap: false,
+
+  telemetry: false,
+
+  vite: {
+    build: {
+      cssCodeSplit: false,
+      sourcemap: false,
+      minify: true,
+      modulePreload: false,
+      cssMinify: true,
+      target: 'esnext'
+    }
+  },
 
   modules: [
     "@nuxt/content",

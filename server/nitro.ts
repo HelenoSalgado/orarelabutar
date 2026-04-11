@@ -33,9 +33,11 @@ export default {
     },
     wrangler: {
       minify: true,
-      compatibility_date: '2026-04-09'
+      compatibility_date: '2026-04-09',
+      compatibility_flags: ['nodejs_compat']
     }
   },
+  static: true,
   compressPublicAssets: true,
   routeRules: {
     '/**': {

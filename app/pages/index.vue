@@ -36,16 +36,14 @@ const config = useRuntimeConfig();
 const { data: homeData } = await useFetch('/api/home');
 
 useSeoMeta({
-    title: 'Home',
     ogType: 'website',
+    title: 'Início',
+    ogTitle: 'Início',
+    twitterTitle: 'Início',
     description: 'Veja os artigos mais recentes. Conheça o propósito deste blog.',
     ogDescription: 'Veja os artigos mais recentes. Conheça o propósito deste blog.',
-    ogImage: () => `${config.public.site.url}/img/licoes1-mobile.jpg`,
     twitterDescription: 'Veja os artigos mais recentes. Conheça o propósito deste blog.',
-    twitterImage: () => `${config.public.site.url}/img/licoes1-mobile.jpg`,
-});
-
-definePageMeta({
-    title: 'Home'
+    ogImage: `${config.public.site.url}/img/licoes1-mobile.jpg`,
+    twitterImage: `${config.public.site.url}/img/licoes1-mobile.jpg`,
 });
 </script>

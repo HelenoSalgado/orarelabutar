@@ -23,12 +23,15 @@ defineOptions({
 
 const { data: tags } = await useFetch('/api/tags');
 
-useSeoMeta({
-    title: 'Temas',
-    description: 'Explore os temas e categorias dos manuscritos.'
-});
+if (import.meta.server) {
+    useSeoMeta({
+        title: 'Temas',
+        ogTitle: 'Temas',
+        twitterTitle: 'Temas',
+        description: 'Explore os temas e categorias dos manuscritos.',
+        ogDescription: 'Explore os temas e categorias dos manuscritos.',
+        twitterDescription: 'Explore os temas e categorias dos manuscritos.'
+    });
+}
 
-definePageMeta({
-    title: 'Temas'
-});
 </script>

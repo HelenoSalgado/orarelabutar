@@ -46,6 +46,7 @@
     "sharp": "^0.34.5",
     "vite": "^7.3.2",
     "vitest": "^4.1.2",
+    "vue-tsc": "^3.2.6",
     "wrangler": "^4.81.1"
   },
   "dependencies": {
