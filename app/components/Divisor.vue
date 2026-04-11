@@ -34,7 +34,6 @@ defineProps({
   background: linear-gradient(to right, transparent, var(--color-gold), transparent);
 }
 
-/* Invertendo os gradientes para o diamante central */
 .divisor-container .line:first-child {
   background: linear-gradient(to right, transparent, var(--color-gold));
 }

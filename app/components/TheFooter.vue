@@ -2,13 +2,13 @@
   <footer class="colophon">
     <MapSite />
     <div class="sacred-social">
-        <a href="https://instagram.com/orarelabutar" target="_blank" title="Instagram">
+        <a href="https://instagram.com/orarelabutar" target="_blank" title="Instagram" class="social-icon-link">
             <IconsInstagram class="social-icon" />
         </a>
-        <a href="https://youtube.com/@orarelabutar" target="_blank" title="Youtube">
+        <a href="https://youtube.com/@orarelabutar" target="_blank" title="Youtube" class="social-icon-link">
             <IconsYoutube class="social-icon" />
         </a>
-        <a href="mailto:contato@orarelabutar.com" title="E-mail">
+        <a href="mailto:contato@orarelabutar.com" title="E-mail" class="social-icon-link">
             <IconsEmail class="social-icon" />
         </a>
     </div>
@@ -27,33 +27,6 @@
   align-items: center;
   text-align: center;
   margin-top: var(--space-2xl);
-}
-
-.colophon-ornament {
-  color: var(--color-gold);
-  font-size: 2rem;
-  margin-bottom: var(--space-xl);
-  opacity: 0.3;
-}
-
-.sacred-social {
-    margin-top: var(--space-lg);
-    display: flex;
-    align-items: center;
-    gap: var(--space-lg); /* Aumentado gap para dispensar separadores */
-}
-
-.social-icon {
-    width: 20px;
-    height: 20px;
-    color: var(--color-gold);
-    opacity: 0.8;
-    transition: all var(--transition-base);
-}
-
-.social-icon:hover {
-    color: var(--color-ink);
-    transform: translateY(-2px);
 }
 
 .copyright {
@@ -80,12 +53,19 @@
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    justify-content: center; /* Para o flex global de títulos */
+    justify-content: center;
 }
 
 :deep(.map-site a) {
     display: block;
-    font-size: 1rem; /* Aumentado */
+    font-size: 1rem;
     margin-bottom: var(--space-xs);
+}
+
+.sacred-social {
+    margin-top: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
 }
 </style>

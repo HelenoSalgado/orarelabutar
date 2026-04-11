@@ -1,30 +1,60 @@
 import { defineNuxtConfig } from "nuxt/config";
 import nitro from "./server/nitro";
-import { theme } from "./utils/theme";
+//import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineNuxtConfig({
-  compatibilityDate: "2026-04-04",
+  compatibilityDate: "2026-04-09",
 
   experimental: {
     extractAsyncDataHandlers: true,
     sharedPrerenderData: true,
-    renderJsonPayloads: true,
     entryImportMap: false,
     asyncContext: true,
     lazyHydration: true,
+    payloadExtraction: 'client',
+    asyncEntry: true,
     defaults: {
       nuxtLink: {
         prefetchOn: {
           interaction: true
-        }
+        },
+        trailingSlash: 'append'
       }
     },
     buildCache: true,
-    viteEnvironmentApi: true
+    viteEnvironmentApi: true,
   },
 
   features: {
     inlineStyles: false
+  },
+
+  sourcemap: false,
+
+  telemetry: false,
+
+  ssr: true,
+
+  vite: {
+    appType: 'mpa',
+    ssr: {
+      target: 'webworker',
+      optimizeDeps: {
+        include: ['vue'],
+        exclude: ['@nuxt/content']
+      }
+    },
+    build: {
+      cssCodeSplit: false,
+      modulePreload: false,
+      cssMinify: true,
+      rollupOptions: {
+        output: {
+          // Unifica tudo em um único chunk para simplificar requests HTTP
+          manualChunks: () => 'app'
+        }
+      }
+    }
   },
 
   app: {
@@ -48,19 +78,12 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
         { rel: 'manifest', href: '/pwa/manifest.webmanifest', type: 'application/manifest+json' },
-        { rel: 'preconnect', href: 'https://static.cloudflareinsights.com' },
         {
           rel: 'preload',
           href: '/fonts/gfs-didot/GFSDidot-Regular.ttf',
           type: 'font/ttf',
           as: 'font',
           crossorigin: 'anonymous'
-        }
-      ],
-      script: [
-        {
-          innerHTML: theme,
-          type: 'text/javascript'
         }
       ]
     }
@@ -90,50 +113,21 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/global.css'],
 
-  vite: {
-    optimizeDeps: {
-      include: ['vue'],
-      exclude: ['@nuxt/content']
-    },
-
-    build: {
-      
-      cssCodeSplit: false,
-
-      // Gera um manifesto para análise de bundle
-      manifest: false,
-
-      // Reduz tamanho do bundle
-      minify: 'esbuild',
-
-      cssMinify: true,
-
-      // Remove comentários e sourcemaps em produção
-      sourcemap: false,
-
-      // Otimizações de performance (Target mais compatível que esnext)
-      target: 'es2022',
-
-      // Controla tamanho dos chunks para melhor caching
-      chunkSizeWarningLimit: 1000,
-
-      rollupOptions: {
-        cache: true,
-        output: {
-          compact: true,
-          inlineDynamicImports: false,
-          sourcemap: false
-        }
-      }
-    }
-  },
-
   modules: [
     "@nuxt/content",
     "@nuxt/image",
     "@nuxt/eslint",
-    "@nuxtjs/sitemap"
+    "@nuxtjs/sitemap",
+    "@nuxtjs/color-mode"
   ],
+
+  colorMode: {
+    classSuffix: '',
+    preference: 'light',
+    storageKey: 'ol-color-mode',
+    fallback: 'dark',
+    storage: 'cookie'
+  },
 
   content: {
     renderer: {
@@ -167,6 +161,9 @@ export default defineNuxtConfig({
           quality: 70
         }
       }
+    },
+    ipxStatic: {
+      maxAge: 31536000
     },
     screens: {
       'xs': 320,

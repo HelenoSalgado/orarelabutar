@@ -6,7 +6,7 @@
           <h3 class="author-title">{{ title }}</h3>
           <p class="author-desc" v-if="description">{{ description }}</p>
           <span class="read-more">Ver Perfil &rang;</span>
-        </div> 
+        </div>
       </NuxtLink>
     </div>
 </template>
@@ -73,13 +73,5 @@ defineProps<{
     -webkit-box-orient: vertical;
     overflow: hidden;
     height: 2.8rem;
-}
-
-.read-more {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: var(--color-gold);
-    font-weight: bold;
-    letter-spacing: 0.1rem;
 }
 </style>

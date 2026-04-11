@@ -20,18 +20,18 @@ defineProps(['authors'])
     align-items: center;
     gap: var(--space-sm);
 }
-img{
+.card-author img{
     width: 70px;
     height: 70px;
     border-radius: 50%;
 }
-h3, p, a{
+.card-author h3, .card-author p, .card-author a{
     margin: 0;
 }
-p, a{
+.card-author p, .card-author a{
     font-size: small;
 }
-a{
+.card-author a{
     text-decoration: none;
     font-weight: bold;
     color: var(--color-gold);

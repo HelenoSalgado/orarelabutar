@@ -16,14 +16,14 @@
 
       <!-- Lado Direito: Ações (Tema e Menu Mobile) -->
       <div class="actions-area">
-        <div 
-          class="theme-toggle" 
-          :title="isDark ? 'Tema Papiro' : 'Tema Penumbra'" 
+        <button
+          class="theme-toggle"
+          :title="colorMode.value === 'dark' ? 'Tema Papiro' : 'Tema Penumbra'"
           @click="toggleTheme"
         >
-          <IconsMoon v-if="!isDark" class="theme-icon" />
+          <IconsMoon v-if="colorMode.value === 'light'" class="theme-icon" />
           <IconsSun v-else class="theme-icon" />
-        </div>
+        </button>
 
         <button class="hamburguer-btn" aria-label="Menu" @click="isMenuOpen = !isMenuOpen">
           <div v-for="i in 3" :key="i" class="line" :class="{ 'open': isMenuOpen }"/>
@@ -35,10 +35,10 @@
     <Transition name="slide-aside">
       <aside v-if="isMenuOpen" class="sacred-aside">
         <nav class="aside-nav">
-          <NuxtLink 
-            v-for="link in navLinks" 
-            :key="link.to" 
-            :to="link.to" 
+          <NuxtLink
+            v-for="link in navLinks"
+            :key="link.to"
+            :to="link.to"
             @click="isMenuOpen = false"
           >
             <component :is="link.icon" /> {{ link.label }}
@@ -46,7 +46,7 @@
         </nav>
       </aside>
     </Transition>
-    
+
     <div v-if="isMenuOpen" class="aside-overlay" @click="isMenuOpen = false"/>
     <Divisor />
   </header>
@@ -55,13 +55,14 @@
 <script setup>
 import IconsHome from '~/components/icons/Home.vue';
 import IconsGlobe from '~/components/icons/Globe.vue';
-import IconsEdit2 from '~/components/icons/Edit2.vue'; 
+import IconsEdit2 from '~/components/icons/Edit2.vue';
 import IconsMusic from '~/components/icons/Music.vue';
 import IconsBook from '~/components/icons/Book.vue';
 import IconsLink from '~/components/icons/Link.vue';
 
+const colorMode = useColorMode();
+
 const isMenuOpen = ref(false);
-const isDark = ref(false);
 const isHeaderVisible = ref(true);
 let lastScrollY = 0;
 
@@ -78,15 +79,15 @@ let ticking = false;
 
 const handleScroll = () => {
   if (!ticking) {
-    window.requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         isHeaderVisible.value = false;
       } else {
         isHeaderVisible.value = true;
       }
-      
+
       lastScrollY = currentScrollY;
       ticking = false;
     });
@@ -95,18 +96,15 @@ const handleScroll = () => {
 };
 
 const toggleTheme = () => {
-    isDark.value = !isDark.value;
-    document.documentElement.classList.toggle('dark-mode', isDark.value);
-    localStorage.setItem('theme', isDark.value ? 'dark' : 'light');
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
 };
 
 onMounted(() => {
-    isDark.value = document.documentElement.classList.contains('dark-mode');
-    window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('scroll', handleScroll, { passive: true });
 });
 
 onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('scroll', handleScroll);
 });
 </script>
 
@@ -133,7 +131,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: var(--space-sm) var(--space-md);
-  height: 70px; /* Altura fixa para manter consistência */
+  height: 70px;
   z-index: var(--z-header);
 }
 
@@ -199,6 +197,9 @@ onUnmounted(() => {
   cursor: pointer;
   display: flex;
   align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .theme-icon {
@@ -211,7 +212,7 @@ onUnmounted(() => {
   background: none;
   border: none;
   cursor: pointer;
-  display: none; /* Desktop hidden */
+  display: none;
   flex-direction: column;
   gap: 5px;
   padding: 5px;
@@ -275,8 +276,8 @@ onUnmounted(() => {
 
 @media (max-width: 480px) {
   .site-title { font-size: 0.9rem; }
-  .header-container { 
-    padding: 0 var(--space-sm); 
+  .header-container {
+    padding: 0 var(--space-sm);
   }
 }
 

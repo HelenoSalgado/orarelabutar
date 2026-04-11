@@ -32,43 +32,4 @@ definePageMeta({
 .about-page {
     margin-top: var(--space-lg);
 }
-
-.title-icon-flex-start {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-xl);
-}
-
-.sacred-icon {
-    width: 24px;
-    color: var(--color-gold);
-}
-
-.manuscript-body {
-    font-size: 1.3rem; /* Fonte aumentada conforme solicitado */
-    line-height: 1.8;
-}
-
-.manuscript-body p {
-    margin-bottom: var(--space-lg);
-    text-align: justify;
-}
-
-.manuscript-body blockquote {
-    border-left: 3px solid var(--color-gold);
-    background: var(--color-gold-muted);
-    padding: var(--space-lg);
-    margin: var(--space-xl) 0;
-    font-style: italic;
-    font-size: 1.4rem;
-}
-
-.sacred-ornament {
-    text-align: center;
-    color: var(--color-gold);
-    font-size: 2rem;
-    margin: var(--space-2xl) 0;
-    opacity: 0.5;
-}
 </style>

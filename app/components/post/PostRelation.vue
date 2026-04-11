@@ -1,6 +1,6 @@
 <template>
     <div class="post-card-related">
-        <NuxtLink :href="'/manuscritos/' + slug" class="related-img-link">
+        <NuxtLink :href="'/manuscritos/' + slug" class="preview-image-link">
             <NuxtImg class="post-card-related-img" :src="'/img/ai/' + imgUrl" :alt="title" loading="lazy" width="300"
                 height="200" />
         </NuxtLink>
@@ -26,13 +26,6 @@ defineProps(['title', 'description', 'imgUrl', 'slug']);
 
 .post-card-related:hover {
     transform: translateY(-3px);
-}
-
-.related-img-link {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px var(--color-shadow);
 }
 
 .post-card-related-img {

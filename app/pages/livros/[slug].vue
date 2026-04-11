@@ -17,10 +17,10 @@
         <IconsArrowLeft class="icon-back" />
         Voltar para a biblioteca
       </NuxtLink>
-      <div class="pdf-hero">
+      <div class="hero-layout">
         <!-- Coluna Esquerda: Capa e Categorias -->
-        <div class="pdf-hero-aside">
-          <div class="pdf-cover-wrapper">
+        <div class="hero-aside">
+          <div class="hero-cover-wrapper">
             <NuxtImg :src="pdf.imgUrl" :alt="pdf.title" class="pdf-cover" />
           </div>
           <div class="pdf-tags-column">
@@ -31,8 +31,8 @@
         </div>
 
         <!-- Coluna Direita: Metadados e Ações -->
-        <div class="pdf-hero-main">
-          <h1 class="pdf-title">{{ pdf.title }}</h1>
+        <div class="hero-main">
+          <h1 class="hero-title">{{ pdf.title }}</h1>
           <p v-if="pdf.author" class="pdf-author-name">Por {{ pdf.author }}</p>
 
           <div class="pdf-description-intro">
@@ -82,98 +82,6 @@ definePageMeta({
 </script>
 
 <style scoped>
-.loading-container,
-.error-container {
-  text-align: center;
-  padding: var(--space-xl) 0;
-  font-style: italic;
-  color: var(--color-ink-muted);
-}
-
-.back-link {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-lg);
-  color: var(--color-gold);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.icon-back {
-  width: 18px;
-  height: 18px;
-}
-
-.pdf-hero {
-  display: flex;
-  gap: var(--space-xl);
-  align-items: flex-start;
-  margin-bottom: var(--space-lg);
-}
-
-/* Coluna Esquerda */
-.pdf-hero-aside {
-  width: 250px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.pdf-cover-wrapper {
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 15px 35px var(--color-shadow);
-  border: 1px solid var(--color-gold-muted);
-  aspect-ratio: 2/3;
-  background: var(--color-gold-muted);
-}
-
-.pdf-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.pdf-tags-column {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-}
-
-.pdf-category-tag {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--color-gold);
-  border: 1px solid var(--color-gold);
-  padding: 7px 12px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: var(--color-gold-muted);
-  line-height: normal;
-}
-
-/* Coluna Direita */
-.pdf-hero-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.pdf-title {
-  font-size: 2.8rem;
-  line-height: 1.1;
-  margin: 0;
-  text-align: left;
-  color: var(--color-ink);
-}
-
 .pdf-author-name {
   font-size: 1.4rem;
   font-style: italic;
@@ -198,29 +106,31 @@ definePageMeta({
   font-size: 1.1rem;
 }
 
-.article-body {
-  margin-top: var(--space-3xl);
-  text-align: justify;
+.pdf-tags-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
 }
 
-@media (max-width: 850px) {
-  .pdf-hero {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+.pdf-category-tag {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  padding: 7px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: var(--color-gold-muted);
+  line-height: normal;
+}
 
-  .pdf-hero-main {
-    align-items: center;
-  }
-
-  .pdf-title {
-    text-align: center;
-    font-size: 2.2rem;
-  }
-
-  .pdf-hero-aside {
-    width: 220px;
-  }
+.hero-title {
+  font-size: 2.8rem;
+  line-height: 1.1;
+  margin: 0;
+  text-align: left;
+  color: var(--color-ink);
 }
 </style>

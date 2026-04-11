@@ -12,3 +12,4 @@ sw.*
 dist/*
 public/img/ai/*prompt.txt
 lh-report.json
+docs

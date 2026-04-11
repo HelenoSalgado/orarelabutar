@@ -105,11 +105,17 @@ const onLoadedMetadata = () => {
 
 const seek = (event: MouseEvent) => {
   if (!audioRef.value || !duration.value) return
-  const container = event.currentTarget as HTMLElement
-  const rect = container.getBoundingClientRect()
-  const x = event.clientX - rect.left
-  const percentage = x / rect.width
-  audioRef.value.currentTime = percentage * duration.value
+  
+  // Evita forced reflow usando requestAnimationFrame para leitura assíncrona
+  requestAnimationFrame(() => {
+    const container = event.currentTarget as HTMLElement
+    if (!container) return
+    
+    const rect = container.getBoundingClientRect()
+    const x = event.clientX - rect.left
+    const percentage = x / rect.width
+    audioRef.value!.currentTime = percentage * duration.value
+  })
 }
 
 const formatTime = (seconds: number) => {

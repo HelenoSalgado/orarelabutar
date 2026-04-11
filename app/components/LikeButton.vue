@@ -1,9 +1,7 @@
 <template>
-    <div class="amei-wrapper">
-        <div class="amei-container" :class="{ 'amei-animation': animating, 'is-liked': isLiked }" @click="updateLike">
-            <span class="count-likes">{{ likes }}</span>
-            <LazyIconsHeart :style="{ fill: isLiked ? '#ff0000' : 'transparent', stroke: isLiked ? '#ff0000' : '#eb8484' }" />
-        </div>
+    <div class="amei-container" :class="{ 'amei-animation': animating, 'is-liked': isLiked }" @click="updateLike">
+        <span class="count-likes">{{ likes }}</span>
+        <LazyIconsHeart :style="{ fill: isLiked ? '#ff0000' : 'transparent', stroke: isLiked ? '#ff0000' : '#eb8484' }" />
     </div>
 </template>
 
@@ -30,7 +28,7 @@ const fetchLikes = async () => {
             likes.value = data.likes;
         }
     } catch {
-        // Silently fail or use a more robust logging service
+        // Silently fail
     }
 };
 
@@ -44,7 +42,7 @@ const createLike = async () => {
         const data = await res.json();
         likes.value = data.likes;
     } catch {
-        // Silently fail or use a more robust logging service
+        // Silently fail
     }
 };
 
@@ -63,7 +61,7 @@ const updateLike = async () => {
         const data = await res.json();
         likes.value = data.likes;
     } catch {
-        // Silently fail or use a more robust logging service
+        // Silently fail
     }
 
     setTimeout(() => {
@@ -78,10 +76,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.amei-wrapper {
-    display: flex;
-    align-items: center;
-}
 .amei-container {
     display: inline-flex;
     align-items: center;

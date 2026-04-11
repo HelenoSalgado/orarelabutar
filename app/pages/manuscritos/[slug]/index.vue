@@ -56,47 +56,6 @@ useSeoMeta({
 </script>
 
 <style scoped>
-.article-interactions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin: var(--space-sm) 0;
-  border-top: 1px solid var(--color-gold-muted);
-  padding-top: var(--space-sm);
-}
-
-.navigator-posts {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 800px;
-  margin: var(--space-lg) auto;
-  padding: 0 1rem;
-}
-
-.navigator-posts a {
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: var(--color-gold);
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-}
-
-.title-icon-flex-start {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  width: 100%;
-  text-align: left;
-  margin-bottom: var(--space-lg);
-}
-
-.title-icon-flex-start .icon {
-  width: 20px;
-  color: var(--color-gold);
-}
-
 :deep(.dissemination-seals) {
   margin: 0;
   padding: 0;
@@ -104,7 +63,7 @@ useSeoMeta({
   opacity: 1;
 }
 
-:deep(.amei-wrapper) {
+:deep(.amei-container) {
   margin: 0;
 }
 

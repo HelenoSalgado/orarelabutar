@@ -1,14 +1,14 @@
 <template>
-    <div class="sacred-collection-card">
+    <article class="sacred-collection-card">
       <NuxtLink :href="'/colecoes/'+slug" class="collection-link">
         <NuxtImg :src="'/img/ai/'+imgUrl" :alt="title" loading="lazy" width="300" height="300" class="collection-img"/>
         <div class="collection-info">
           <h3 class="collection-title">{{ title }}</h3>
           <p class="collection-author">Compilado por {{ author }}</p>
           <span class="collection-count">{{ count }} manuscritos</span>
-        </div> 
+        </div>
       </NuxtLink>
-    </div>
+    </article>
 </template>
 
 <script setup lang="ts">
@@ -41,7 +41,7 @@ defineProps(['title', 'imgUrl', 'author', 'slug', 'count']);
     object-fit: cover;
     border: 1px solid var(--color-gold);
     padding: 5px;
-    border-radius: 50%; /* Coleções com formato circular clássico */
+    border-radius: 50%;
     filter: sepia(0.2);
 }
 
