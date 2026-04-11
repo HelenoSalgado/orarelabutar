@@ -8,9 +8,6 @@
         <a href="https://youtube.com/@orarelabutar" target="_blank" title="Youtube" class="social-icon-link">
             <IconsYoutube class="social-icon" />
         </a>
-        <a href="mailto:contato@orarelabutar.com" title="E-mail" class="social-icon-link">
-            <IconsEmail class="social-icon" />
-        </a>
     </div>
     <p class="copyright">
         Anno Domini {{ new Date().getFullYear() }} — Orar e Labutar
