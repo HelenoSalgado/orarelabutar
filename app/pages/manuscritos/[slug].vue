@@ -6,7 +6,6 @@
         :slug-author="pageData.author?.slug" :avatar-author="pageData.author?.imgUrl" :img-url="pageData.post.imgUrl" />
 
       <div class="article-interactions">
-        <LikeButton :slug="pageData.post.slug" />
         <SocialShare :slug="'manuscritos/' + pageData.post.slug" :description="pageData.post.description" />
       </div>
     </main>

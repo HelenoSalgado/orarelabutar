@@ -2,6 +2,9 @@ import type { NitroConfig } from 'nitropack'
 
 export default {
   preset: 'cloudflare-pages',
+  experimental: {
+    earlyHints: true
+  },
   hooks: {
     'prerender:generate'(route) {
       const routesToSkip = ['/index.html', '/200.html', '/404.html', '_redirects']
@@ -40,9 +43,14 @@ export default {
   static: true,
   compressPublicAssets: true,
   routeRules: {
+    // Aplica trailingSlash apenas em caminhos sem ponto (evita arquivos estáticos)
     '/**': {
       trailingSlash: true
-    }
+    },
+    // Regras específicas para ignorar a regra global em arquivos estáticos comuns
+    '/css/**': { trailingSlash: false },
+    '/img/**': { trailingSlash: false },
+    '/_nuxt/**': { trailingSlash: false }
   },
   publicAssets: [
     {

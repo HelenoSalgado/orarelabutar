@@ -10,7 +10,13 @@ const config = useRuntimeConfig();
 
 useHead({
   link: [
-    { rel: 'canonical', href: computed(() => `${config.public.site.url}${route.path}`) }
+    { 
+      rel: 'canonical', 
+      href: computed(() => {
+        const path = route.path.endsWith('/') ? route.path : `${route.path}/`
+        return `${config.public.site.url}${path}`
+      }) 
+    }
   ]
 });
 

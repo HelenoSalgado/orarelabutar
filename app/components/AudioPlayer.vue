@@ -124,6 +124,14 @@ const formatTime = (seconds: number) => {
   const secs = Math.floor(seconds % 60)
   return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
 }
+
+onBeforeUnmount(() => {
+  if (audioRef.value) {
+    audioRef.value.pause()
+    audioRef.value.src = ''
+    audioRef.value.load()
+  }
+})
 </script>
 
 <style scoped>
