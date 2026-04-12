@@ -10,6 +10,7 @@ export default {
       }
     }
   },
+  ssg: true,
   output: {
     publicDir: 'dist',
   },

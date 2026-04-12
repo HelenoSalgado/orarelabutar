@@ -1,14 +1,12 @@
 <template>
-    <article class="sacred-collection-card">
-      <NuxtLink :href="'/colecoes/'+slug" class="collection-link">
+    <NuxtLink :href="'/colecoes/'+slug" class="sacred-collection-card">
         <NuxtImg :src="'/img/ai/'+imgUrl" :alt="title" loading="lazy" width="300" height="300" class="collection-img"/>
         <div class="collection-info">
-          <h3 class="collection-title">{{ title }}</h3>
-          <p class="collection-author">Compilado por {{ author }}</p>
-          <span class="collection-count">{{ count }} manuscritos</span>
+            <h3 class="collection-title">{{ title }}</h3>
+            <p class="collection-author">Compilado por {{ author }}</p>
+            <span class="collection-count">{{ count }} manuscritos</span>
         </div>
-      </NuxtLink>
-    </article>
+    </NuxtLink>
 </template>
 
 <script setup lang="ts">
@@ -21,18 +19,16 @@ defineProps(['title', 'imgUrl', 'author', 'slug', 'count']);
     max-width: 320px;
     margin: var(--space-sm);
     transition: transform var(--transition-base);
-}
-
-.sacred-collection-card:hover {
-    transform: translateY(-5px);
-}
-
-.collection-link {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     color: var(--color-ink);
+    text-decoration: none;
+}
+
+.sacred-collection-card:hover {
+    transform: translateY(-5px);
 }
 
 .collection-img {

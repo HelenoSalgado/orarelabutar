@@ -1,5 +1,5 @@
 <template>
-  <header class="frontispiece" :class="{ 'header-hidden': !isHeaderVisible && !isMenuOpen }">
+  <header class="frontispiece">
     <div class="header-container">
       <!-- Lado Esquerdo: Logo e Título -->
       <NuxtLink to="/" class="logo-area">
@@ -8,7 +8,7 @@
       </NuxtLink>
 
       <!-- Centro: Navegação Desktop -->
-      <nav class="sacred-nav desktop-only">
+      <nav class="sacred-nav">
         <NuxtLink v-for="link in navLinks" :key="link.to" :to="link.to">
           <component :is="link.icon" class="icon" /> {{ link.label }}
         </NuxtLink>
@@ -16,38 +16,27 @@
 
       <!-- Lado Direito: Ações (Tema e Menu Mobile) -->
       <div class="actions-area">
-        <button
-          class="theme-toggle"
-          :title="colorMode.value === 'dark' ? 'Tema Papiro' : 'Tema Penumbra'"
-          @click="toggleTheme"
-        >
-          <IconsMoon v-if="colorMode.value === 'light'" class="theme-icon" />
-          <IconsSun v-else class="theme-icon" />
+        <button class="theme-toggle" title="Alterar tema">
+          <IconsMoon class="theme-icon icon-light" />
+          <IconsSun class="theme-icon icon-dark" />
         </button>
 
-        <button class="hamburguer-btn" aria-label="Menu" @click="isMenuOpen = !isMenuOpen">
-          <div v-for="i in 3" :key="i" class="line" :class="{ 'open': isMenuOpen }"/>
+        <button class="hamburguer-btn" aria-label="Menu">
+          <div class="line"/><div class="line"/><div class="line"/>
         </button>
       </div>
     </div>
 
-    <!-- Menu Lateral Mobile -->
-    <Transition name="slide-aside">
-      <aside v-if="isMenuOpen" class="sacred-aside">
-        <nav class="aside-nav">
-          <NuxtLink
-            v-for="link in navLinks"
-            :key="link.to"
-            :to="link.to"
-            @click="isMenuOpen = false"
-          >
-            <component :is="link.icon" /> {{ link.label }}
-          </NuxtLink>
-        </nav>
-      </aside>
-    </Transition>
+    <!-- Menu Lateral Mobile (sempre no DOM, JS controla via classes) -->
+    <aside class="sacred-aside">
+      <nav class="aside-nav">
+        <NuxtLink v-for="link in navLinks" :key="link.to" :to="link.to">
+          <component :is="link.icon" /> {{ link.label }}
+        </NuxtLink>
+      </nav>
+    </aside>
 
-    <div v-if="isMenuOpen" class="aside-overlay" @click="isMenuOpen = false"/>
+    <div class="aside-overlay"/>
     <Divisor />
   </header>
 </template>
@@ -60,12 +49,6 @@ import IconsMusic from '~/components/icons/Music.vue';
 import IconsBook from '~/components/icons/Book.vue';
 import IconsLink from '~/components/icons/Link.vue';
 
-const colorMode = useColorMode();
-
-const isMenuOpen = ref(false);
-const isHeaderVisible = ref(true);
-let lastScrollY = 0;
-
 const navLinks = [
   { to: '/', label: 'Início', icon: IconsHome },
   { to: '/sobre', label: 'Sobre', icon: IconsGlobe },
@@ -74,38 +57,6 @@ const navLinks = [
   { to: '/livros', label: 'Livros', icon: IconsBook },
   { to: '/links-uteis', label: 'Links', icon: IconsLink }
 ];
-
-let ticking = false;
-
-const handleScroll = () => {
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        isHeaderVisible.value = false;
-      } else {
-        isHeaderVisible.value = true;
-      }
-
-      lastScrollY = currentScrollY;
-      ticking = false;
-    });
-    ticking = true;
-  }
-};
-
-const toggleTheme = () => {
-  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
-};
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll, { passive: true });
-});
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
-});
 </script>
 
 <style scoped>
@@ -160,7 +111,7 @@ onUnmounted(() => {
 
 /* Navegação Desktop */
 .sacred-nav {
-  display: flex;
+  display: none;
   gap: 1.5rem;
   font-size: 1.1rem;
 }
@@ -208,6 +159,11 @@ onUnmounted(() => {
   color: var(--color-gold);
 }
 
+.icon-dark { display: none; }
+.icon-light { display: block; }
+.dark .icon-dark { display: block; }
+.dark .icon-light { display: none; }
+
 .hamburguer-btn {
   background: none;
   border: none;
@@ -225,11 +181,11 @@ onUnmounted(() => {
   transition: all var(--transition-fast);
 }
 
-.hamburguer-btn .line.open:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburguer-btn .line.open:nth-child(2) { opacity: 0; }
-.hamburguer-btn .line.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.hamburguer-btn.open .line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburguer-btn.open .line:nth-child(2) { opacity: 0; }
+.hamburguer-btn.open .line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Menu Mobile (Aside) */
+/* Menu Mobile (Aside) — oculto por padrão, JS adiciona classe .open */
 .sacred-aside {
   position: fixed;
   top: 0;
@@ -241,6 +197,12 @@ onUnmounted(() => {
   border-left: 1px solid var(--color-gold);
   box-shadow: -10px 0 30px rgba(0,0,0,0.1);
   z-index: var(--z-aside);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+}
+
+.sacred-aside.open {
+  transform: translateX(0);
 }
 
 .aside-nav {
@@ -266,12 +228,23 @@ onUnmounted(() => {
   height: 100%;
   background: rgba(0,0,0,0.3);
   z-index: calc(var(--z-aside) - 1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.aside-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* Responsividade */
 @media (max-width: 1000px) {
-  .desktop-only { display: none; }
   .hamburguer-btn { display: flex; }
+}
+
+@media (min-width: 1000px){
+  .sacred-nav { display: flex; }
 }
 
 @media (max-width: 480px) {
@@ -280,8 +253,4 @@ onUnmounted(() => {
     padding: 0 var(--space-sm);
   }
 }
-
-/* Transições */
-.slide-aside-enter-active, .slide-aside-leave-active { transition: transform 0.3s ease-out; }
-.slide-aside-enter-from, .slide-aside-leave-to { transform: translateX(100%); }
 </style>

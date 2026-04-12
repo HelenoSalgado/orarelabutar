@@ -1,6 +1,7 @@
 import { defineNuxtConfig } from "nuxt/config";
 import nitro from "./server/nitro";
 //import { cloudflare } from "@cloudflare/vite-plugin";
+import type { NuxtLiteOptions } from './nuxt-lite/src';
 
 export default defineNuxtConfig({
   compatibilityDate: "2026-04-09",
@@ -39,17 +40,14 @@ export default defineNuxtConfig({
         // },
         {
           rel: 'preload',
-          href: '/css/main.css',
-          as: 'style',
-          fetchpriority: 'high'
-        },
-        {
-          rel: 'preload',
           href: '/fonts/gfs-didot/GFSDidot-Regular.ttf',
           type: 'font/ttf',
           as: 'font',
           crossorigin: 'anonymous'
         }
+      ],
+      script: [
+        { src: '/js/header.js', defer: true }
       ]
     }
   },
@@ -99,32 +97,37 @@ export default defineNuxtConfig({
     clientNodeCompat: true
   },
 
-  features: {
-    inlineStyles: false
-  },
-
   sourcemap: false,
 
   telemetry: false,
 
   vite: {
     build: {
-      cssCodeSplit: false,
       sourcemap: false,
-      minify: true,
+      minify: false,
       modulePreload: false,
-      cssMinify: true,
+      cssMinify: false,
       target: 'esnext'
     }
   },
 
   modules: [
+    "./nuxt-lite/src/module",
     "@nuxt/content",
     "@nuxt/image",
     "@nuxt/eslint",
     "@nuxtjs/sitemap",
     "@nuxtjs/color-mode"
   ],
+
+  nuxtLite: {
+    cleanHtml: true,
+    payloadExtraction: true,
+    hydration: true,
+    prefetchRoutes: true,
+    optimizeCss: 'file',
+    stripAttributes: ['data-v-', '__vue_ssr__', 'data-server-rendered']
+  } as NuxtLiteOptions,
 
   colorMode: {
     classSuffix: '',

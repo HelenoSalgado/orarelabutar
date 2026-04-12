@@ -2,11 +2,9 @@
   <div class="pdf-card">
     <!-- Coluna Esquerda: Capa e Categoria -->
     <div class="pdf-card-aside">
-      <div class="pdf-cover-wrapper">
-        <NuxtLink :to="'/livros/' + slug">
-          <NuxtImg :src="imgUrl" :alt="title" class="pdf-cover" loading="lazy" decoding="async" />
-        </NuxtLink>
-      </div>
+      <NuxtLink :to="'/livros/' + slug" class="pdf-cover-link">
+        <NuxtImg :src="imgUrl" :alt="title" class="pdf-cover" loading="lazy" decoding="async" />
+      </NuxtLink>
       <div v-if="validCategories.length > 0" class="pdf-card-categories">
         <span v-for="cat in validCategories" :key="cat" class="pdf-category-tag">
           {{ cat }}
@@ -16,12 +14,10 @@
 
     <!-- Coluna Direita: Informações -->
     <div class="pdf-card-main">
-      <div class="pdf-header">
-        <h3 class="pdf-title">
-          <NuxtLink :to="'/livros/' + slug">{{ title }}</NuxtLink>
-        </h3>
-        <p v-if="author" class="pdf-author">{{ author }}</p>
-      </div>
+      <h3 class="pdf-title">
+        <NuxtLink :to="'/livros/' + slug">{{ title }}</NuxtLink>
+      </h3>
+      <p v-if="author" class="pdf-author">{{ author }}</p>
 
       <p v-if="description" class="pdf-description">{{ description }}</p>
 
@@ -53,8 +49,18 @@ defineProps<{
   justify-content: center;
 }
 
-.pdf-header {
-  margin-bottom: var(--space-xs);
+.pdf-cover-link {
+  display: block;
+  width: 100%;
+}
+
+.pdf-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px var(--color-shadow);
 }
 
 @media (max-width: 600px) {

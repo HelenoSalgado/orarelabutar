@@ -62,7 +62,7 @@ if (import.meta.server) {
 </script>
 
 <style scoped>
-:deep(.dissemination-seals) {
+:deep(.seals-grid) {
   margin: 0;
   padding: 0;
   border: none;

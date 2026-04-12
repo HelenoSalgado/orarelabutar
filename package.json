@@ -22,7 +22,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate && bash ./scripts/isolate_css.sh",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "convert-images": "node scripts/convert_to_webp.mjs",

@@ -55,10 +55,7 @@
           <span>{{ formatTime(duration) }}</span>
         </div>
         <div class="progress-container" @click="seek">
-          <div class="progress-bar-bg"></div>
-          <div class="progress-bar-fill" :style="{ width: progress + '%' }">
-            <div class="progress-knob"></div>
-          </div>
+          <div class="progress-bar-fill" :style="{ width: progress + '%' }"></div>
         </div>
       </div>
     </div>
@@ -298,7 +295,8 @@ onBeforeUnmount(() => {
   align-items: center;
 }
 
-.progress-bar-bg {
+.progress-container::before {
+  content: '';
   position: absolute;
   width: 100%;
   height: 4px;
@@ -314,7 +312,8 @@ onBeforeUnmount(() => {
   transition: width 0.1s linear;
 }
 
-.progress-knob {
+.progress-bar-fill::after {
+  content: '';
   position: absolute;
   right: -8px;
   top: -6px;
@@ -328,7 +327,7 @@ onBeforeUnmount(() => {
   transition: transform 0.2s ease;
 }
 
-.progress-container:hover .progress-knob {
+.progress-container:hover .progress-bar-fill::after {
   transform: scale(1);
 }
 

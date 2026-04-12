@@ -6,10 +6,8 @@
         </div>
         <p class="newsletter-desc">Seja avisado quando novos artigos forem publicados.</p>
         <form class="newsletter-form" @submit.prevent="handleSubmit">
-            <div class="input-group">
-                <input v-model="name" type="text" placeholder="Seu Nome" required class="sacred-input">
-                <input v-model="email" type="email" placeholder="Seu melhor e-mail" required class="sacred-input">
-            </div>
+            <input v-model="name" type="text" placeholder="Seu Nome" required class="sacred-input">
+            <input v-model="email" type="email" placeholder="Seu melhor e-mail" required class="sacred-input">
             <button class="sacred-btn newsletter-btn" type="submit">Inscrever-se</button>
         </form>
     </section>
@@ -58,21 +56,12 @@ const handleSubmit = () => {
 }
 
 .newsletter-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
     gap: var(--space-md);
-}
-
-.input-group {
-    display: flex;
-    gap: var(--space-sm);
-    width: 100%;
-    max-width: 600px;
+    align-items: center;
 }
 
 .sacred-input {
-    flex: 1;
     background: var(--color-paper);
     border: 1px solid var(--color-gold);
     padding: 0.8rem 1rem;
@@ -90,16 +79,16 @@ const handleSubmit = () => {
 }
 
 .newsletter-btn {
-    width: 100%;
-    max-width: 200px;
+    width: auto;
+    justify-self: center;
 }
 
 @media (max-width: 600px) {
-    .input-group {
-        flex-direction: column;
+    .newsletter-form {
+        grid-template-columns: 1fr;
     }
     .newsletter-btn {
-        max-width: 100%;
+        width: 100%;
     }
 }
 </style>

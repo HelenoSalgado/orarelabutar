@@ -452,13 +452,9 @@ svg {
     gap: var(--space-xs);
 }
 
-.pdf-cover-wrapper {
+.pdf-cover-link {
+    display: block;
     width: 100%;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px var(--color-shadow);
-    aspect-ratio: 2/3;
-    background: var(--color-gold-muted);
 }
 
 .pdf-cover {

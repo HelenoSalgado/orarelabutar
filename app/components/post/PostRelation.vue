@@ -4,12 +4,10 @@
             <NuxtImg class="post-card-related-img" :src="'/img/ai/' + imgUrl" :alt="title" loading="lazy" width="300"
                 height="200" />
         </NuxtLink>
-        <div class="post-card-related-text">
-            <NuxtLink :href="'/manuscritos/' + slug" class="related-title-link">
-                <h3>{{ title }}</h3>
-            </NuxtLink>
-            <p>{{ description }}</p>
-        </div>
+        <NuxtLink :href="'/manuscritos/' + slug" class="related-title-link">
+            <h3>{{ title }}</h3>
+        </NuxtLink>
+        <p class="post-description">{{ description }}</p>
     </div>
 </template>
 <script setup lang="ts">
@@ -35,13 +33,13 @@ defineProps(['title', 'description', 'imgUrl', 'slug']);
     display: block;
 }
 
-.post-card-related-text h3 {
+.post-card-related h3 {
     margin: 0;
     color: var(--color-ink);
     line-height: 1.4;
 }
 
-.post-card-related-text p {
+.post-description {
     line-height: 1.6rem;
 }
 
