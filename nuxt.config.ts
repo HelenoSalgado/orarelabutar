@@ -121,12 +121,7 @@ export default defineNuxtConfig({
   ],
 
   nuxtLite: {
-    cleanHtml: true,
-    payloadExtraction: true,
-    hydration: true,
-    prefetchRoutes: true,
-    optimizeCss: 'file',
-    stripAttributes: ['data-v-', '__vue_ssr__', 'data-server-rendered']
+    optimizeCss: 'file'
   } as NuxtLiteOptions,
 
   colorMode: {
@@ -189,6 +184,21 @@ export default defineNuxtConfig({
 
   dir: {
     public: 'public'
+  },
+
+  $production: {
+    app: {
+      head: {
+        link: [
+          {
+            rel: 'preconnect',
+            href: 'https://static.cloudflareinsights.com',
+            as: 'fetch',
+            fetchpriority: 'high'
+          }
+        ]
+      }
+    }
   },
 
   $development: {
