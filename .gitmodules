@@ -2,3 +2,6 @@
 	path = ai-image-util
 	url = https://github.com/HelenoSalgado/ai-image-util.git
 	branch = master
+[submodule "nuxt-lite"]
+	path = nuxt-lite
+	url = https://github.com/HelenoSalgado/nuxt-lite.git
