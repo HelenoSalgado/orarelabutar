@@ -121,7 +121,7 @@ export default defineNuxtConfig({
   ],
 
   nuxtLite: {
-    optimizeCss: 'inline'
+    optimizeCss: 'file'
   } as NuxtLiteOptions,
 
   colorMode: {
