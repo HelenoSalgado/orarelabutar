@@ -6,6 +6,10 @@
     font-display: swap;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 :root {
     --color-paper: #fdfaf6;
     --color-ink: #1a1a1a;
@@ -50,6 +54,7 @@
 html {
     background-color: var(--color-paper);
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -62,6 +67,7 @@ body {
     font-size: 1.3rem;
     -webkit-font-smoothing: antialiased;
     transition: background-color var(--transition-slow), color var(--transition-slow);
+    overflow-x: hidden;
 }
 
 /* Títulos de Página (H1) e Seções (H2, H3) */
@@ -325,6 +331,7 @@ svg {
 }
 
 /* --- Responsive Grids --- */
+
 .audio-grid,
 .pdf-grid,
 .grid-container {
@@ -332,6 +339,10 @@ svg {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--space-lg);
     margin-top: var(--space-xl);
+}
+
+.pdf-grid{
+    margin-bottom: var(--space-3xl);
 }
 
 @media (max-width: 600px) {

@@ -27,7 +27,6 @@ const slugShared = useShareMedia(slug, description);
 .seals-grid {
     display: flex;
     gap: var(--space-md);
-    justify-content: center;
     align-items: center;
 }
 

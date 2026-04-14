@@ -186,20 +186,20 @@ export default defineNuxtConfig({
     public: 'public'
   },
 
-  $production: {
-    app: {
-      head: {
-        link: [
-          {
-            rel: 'preconnect',
-            href: 'https://static.cloudflareinsights.com',
-            as: 'fetch',
-            fetchpriority: 'high'
-          }
-        ]
-      }
-    }
-  },
+  // $production: {
+  //   app: {
+  //     head: {
+  //       link: [
+  //         {
+  //           rel: 'preconnect',
+  //           href: 'https://static.cloudflareinsights.com',
+  //           as: 'fetch',
+  //           fetchpriority: 'high'
+  //         }
+  //       ]
+  //     }
+  //   }
+  // },
 
   $development: {
     debug: false,

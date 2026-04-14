@@ -195,7 +195,7 @@ const navLinks = [
   background-color: var(--color-paper);
   padding: 5rem var(--space-lg);
   border-left: 1px solid var(--color-gold);
-  box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
   z-index: var(--z-aside);
   transform: translateX(100%);
   transition: transform 0.3s ease-out;
