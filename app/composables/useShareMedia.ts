@@ -1,6 +1,6 @@
 export const useShareMedia = (slug: string, description: string) => {
   const config = useRuntimeConfig();
-  const slugShared = `${config.public.site.url}/${slug}`;
+  const slugShared = `${config.public.site.url}/${slug}/`;
 
   const x = () => `https://twitter.com/intent/tweet?url=${encodeURIComponent(slugShared)}&text=${encodeURIComponent(description)}`;
   const facebook = () => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(slugShared)}`;
