@@ -111,7 +111,7 @@ export default defineNuxtConfig({
   ],
 
   nuxtLite: {
-    optimizeCss: 'inline',
+    optimizeCss: 'file',
     optimizeSeo: {
       optimizeSeo: 'analyze',
     },
