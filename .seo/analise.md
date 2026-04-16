@@ -1,8 +1,8 @@
 # Relatório de Análise SEO (nuxt-lite)
 
-- **Data:** 16/04/2026, 13:00:57
+- **Data:** 16/04/2026, 14:54:16
 - **Páginas Analisadas:** 21
-- **Total de Problemas:** 108
+- **Total de Problemas:** 127
 - **Score Médio:** 95/100
 
 ## Índice por Rota
@@ -22,8 +22,8 @@
 - [/livros/tratado-da-religiao-crista-volume-4 (Score: 99)](#livros-tratado-da-religiao-crista-volume-4)
 - [/manuscritos (Score: 100)](#manuscritos)
 - [/audios (Score: 100)](#audios)
-- [/livros (Score: 100)](#livros)
 - [/links-uteis (Score: 100)](#links-uteis)
+- [/livros (Score: 100)](#livros)
 - [/manuscritos/ao-redor-do-portao (Score: 100)](#manuscritos-ao-redor-do-portao)
 - [/manuscritos/opusculo-sobre-o-modo-de-aprender-e-meditar (Score: 100)](#manuscritos-opusculo-sobre-o-modo-de-aprender-e-meditar)
 - [/autores/charles-h-spurgeon (Score: 100)](#autores-charles-h-spurgeon)
@@ -39,6 +39,7 @@
 | ⚠️ | `Title-too-short` | Title tem 26 caracteres (mínimo recomendado: 30) | Aumentar para pelo menos 30 caracteres |
 | ❌ | `OG Title-below-minimum` | OG Title tem 9 caracteres (mínimo: 10) | Aumentar para pelo menos 10 caracteres |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: img no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
 
@@ -98,6 +99,7 @@
 | ⚠️ | `dom-depth` | Aninhamento excessivo: span no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: p no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
 
 ---
 
@@ -112,6 +114,7 @@
 | ⚠️ | `dom-depth` | Aninhamento excessivo: span no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: p no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
 
 ---
 
@@ -176,6 +179,7 @@
 | ⚠️ | `dom-depth` | Aninhamento excessivo: span no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: p no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
 
 ---
 
@@ -189,6 +193,7 @@
 | ⚠️ | `dom-depth` | Aninhamento excessivo: span no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: p no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
 
 ---
 
@@ -217,6 +222,13 @@
 
 ---
 
+### Rota: `/links-uteis` { #links-uteis }
+**Score:** 100/100
+
+✅ Nenhum problema encontrado.
+
+---
+
 ### Rota: `/livros` { #livros }
 **Score:** 100/100
 
@@ -242,19 +254,14 @@
 
 ---
 
-### Rota: `/links-uteis` { #links-uteis }
-**Score:** 100/100
-
-✅ Nenhum problema encontrado.
-
----
-
 ### Rota: `/manuscritos/ao-redor-do-portao` { #manuscritos-ao-redor-do-portao }
 **Score:** 100/100
 
 | Severidade | Regra | Mensagem | Sugestão |
 |---|---|---|---|
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: img no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
 
@@ -266,6 +273,18 @@
 | Severidade | Regra | Mensagem | Sugestão |
 |---|---|---|---|
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
 
 ---
 

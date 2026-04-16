@@ -107,24 +107,21 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxt/image",
     "@nuxt/eslint",
-    "@nuxtjs/sitemap",
-    "@nuxtjs/color-mode"
+    "@nuxtjs/sitemap"
   ],
 
   nuxtLite: {
     optimizeCss: 'file',
     optimizeSeo: {
       optimizeSeo: 'analyze',
+    },
+    optimizeSvg: true,
+    colorMode: {
+      storageKey: 'ol-color-mode',
+      preference: 'light',
+      fallback: 'dark'
     }
   } as NuxtLiteOptions,
-
-  colorMode: {
-    classSuffix: '',
-    preference: 'light',
-    storageKey: 'ol-color-mode',
-    fallback: 'dark',
-    storage: 'cookie'
-  },
 
   content: {
     renderer: {
