@@ -1,5 +1,5 @@
 import { queryCollection } from '@nuxt/content/server';
-import { slugify } from '~~/server/utils/slugify';
+import { slugify } from '../utils/slugify';
 
 export default defineEventHandler(async (event) => {
   const [posts, allRelated] = await Promise.all([

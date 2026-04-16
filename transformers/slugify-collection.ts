@@ -1,4 +1,5 @@
 import { defineTransformer } from '@nuxt/content'
+import type { Post } from '../types/content'
 
 function slugify(text: string) {
     return text
@@ -17,8 +18,9 @@ export default defineTransformer({
     name: 'slugify-collection',
     extensions: ['.md'],
     transform(file) {
-        if (file.collection && !file.collectionSlug) {
-            file.collectionSlug = slugify(file.collection)
+        const post = file as unknown as Post
+        if (post.collection && !post.collectionSlug) {
+            post.collectionSlug = slugify(post.collection)
         }
         return file
     }

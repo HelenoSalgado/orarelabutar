@@ -2,10 +2,10 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 const baseSchema = z.object({
   title: z.string(),
-  description: z.string().optional(),
-  imgUrl: z.string().optional(),
-  createdAt: z.string().optional(),
-  slug: z.string() // Injetada dinamicamente via transformador
+  description: z.string(),
+  imgUrl: z.string(),
+  createdAt: z.string(),
+  slug: z.string()
 })
 
 export default defineContentConfig({

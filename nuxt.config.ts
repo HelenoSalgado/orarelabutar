@@ -111,7 +111,7 @@ export default defineNuxtConfig({
   ],
 
   nuxtLite: {
-    optimizeCss: 'file',
+    optimizeCss: 'inline',
     optimizeSeo: {
       optimizeSeo: 'analyze',
     },
@@ -186,6 +186,9 @@ export default defineNuxtConfig({
     debug: false,
     devtools: {
       vueDevTools: false
+    },
+    image: {
+      provider: 'none'
     }
   }
 

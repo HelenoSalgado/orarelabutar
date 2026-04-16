@@ -3,7 +3,7 @@
     <div class="biograpy">
       <article>
         <div class="biograpy-box-image">
-          <NuxtImg :src="'/img/' + authorData.author.imgUrl" :alt="authorData.author.title" width="800px" height="400px"
+          <NuxtImg :src="'/img/' + authorData.author.imgUrl" :alt="authorData.author.title" width="800px" height="250px"
             sizes="xs:320px, sm:640px, md:768px" />
         </div>
         <h1>{{ authorData.author.title }}</h1>
