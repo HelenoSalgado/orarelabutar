@@ -1,8 +1,15 @@
 <template>
     <div class="post-card-related">
         <NuxtLink :href="'/manuscritos/' + slug" class="preview-image-link">
-            <NuxtImg class="post-card-related-img" :src="'/img/ai/' + imgUrl" :alt="title" loading="lazy" width="300"
-                height="200" />
+            <NuxtImg 
+                class="post-card-related-img" 
+                :src="'/img/ai/' + imgUrl" 
+                :alt="title" 
+                preset="card"
+                loading="lazy" 
+                width="300"
+                height="200" 
+            />
         </NuxtLink>
         <NuxtLink :href="'/manuscritos/' + slug" class="related-title-link">
             <h3>{{ title }}</h3>

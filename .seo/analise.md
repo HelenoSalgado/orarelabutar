@@ -1,6 +1,6 @@
 # Relatório de Análise SEO (nuxt-lite)
 
-- **Data:** 16/04/2026, 10:48:56
+- **Data:** 16/04/2026, 13:00:57
 - **Páginas Analisadas:** 21
 - **Total de Problemas:** 108
 - **Score Médio:** 95/100
@@ -22,8 +22,8 @@
 - [/livros/tratado-da-religiao-crista-volume-4 (Score: 99)](#livros-tratado-da-religiao-crista-volume-4)
 - [/manuscritos (Score: 100)](#manuscritos)
 - [/audios (Score: 100)](#audios)
-- [/links-uteis (Score: 100)](#links-uteis)
 - [/livros (Score: 100)](#livros)
+- [/links-uteis (Score: 100)](#links-uteis)
 - [/manuscritos/ao-redor-do-portao (Score: 100)](#manuscritos-ao-redor-do-portao)
 - [/manuscritos/opusculo-sobre-o-modo-de-aprender-e-meditar (Score: 100)](#manuscritos-opusculo-sobre-o-modo-de-aprender-e-meditar)
 - [/autores/charles-h-spurgeon (Score: 100)](#autores-charles-h-spurgeon)
@@ -217,13 +217,6 @@
 
 ---
 
-### Rota: `/links-uteis` { #links-uteis }
-**Score:** 100/100
-
-✅ Nenhum problema encontrado.
-
----
-
 ### Rota: `/livros` { #livros }
 **Score:** 100/100
 
@@ -246,6 +239,13 @@
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `heading-skip` | Heading pulou níveis: h3 após h1 (faltando h2) | Manter hierarquia sequencial de headings |
+
+---
+
+### Rota: `/links-uteis` { #links-uteis }
+**Score:** 100/100
+
+✅ Nenhum problema encontrado.
 
 ---
 

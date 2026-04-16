@@ -28,21 +28,14 @@ export default defineNuxtConfig({
         { name: 'apple-mobile-web-app-title', content: 'Orar e Labutar' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
-        // { 
-        //   rel: 'manifest', 
-        //   href: '/pwa/manifest.webmanifest', 
-        //   type: 'application/manifest+json',
-        //   crossorigin: 'use-credentials'
-        // },
         {
           rel: 'preload',
           href: '/fonts/gfs-didot/GFSDidot-Regular.ttf',
-          type: 'font/ttf',
           as: 'font',
           crossorigin: 'anonymous'
-        }
+        },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
       ],
       script: [
         { src: '/js/header.js', defer: true }
@@ -152,17 +145,22 @@ export default defineNuxtConfig({
   image: {
     provider: 'ipxStatic',
     domains: ['orarelabutar.com'],
-    format: ['avif', 'webp'],
+    format: ['webp', 'avif'],
+    quality: 80,
+    densities: [1, 2],
     presets: {
+      logo: {
+        modifiers: { fit: 'cover', width: 50, height: 50, quality: 80 }
+      },
       avatar: {
-        modifiers: { width: 60, height: 60, quality: 80 }
+        modifiers: { fit: 'cover', width: 300, height: 300, quality: 70 }
       },
       card: {
         modifiers: {
-          width: 400,
-          height: 300,
           fit: 'cover',
-          quality: 70
+          quality: 65,
+          width: 400,
+          height: 250
         }
       }
     },
@@ -170,11 +168,11 @@ export default defineNuxtConfig({
       maxAge: 31536000
     },
     screens: {
-      'xs': 320,
-      'sm': 640,
-      'md': 768,
-      'lg': 1024,
-      'xl': 1280
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280
     }
   },
 
@@ -187,28 +185,10 @@ export default defineNuxtConfig({
     public: 'public'
   },
 
-  // $production: {
-  //   app: {
-  //     head: {
-  //       link: [
-  //         {
-  //           rel: 'preconnect',
-  //           href: 'https://static.cloudflareinsights.com',
-  //           as: 'fetch',
-  //           fetchpriority: 'high'
-  //         }
-  //       ]
-  //     }
-  //   }
-  // },
-
   $development: {
     debug: false,
     devtools: {
       vueDevTools: false
-    },
-    image: {
-      provider: 'none'
     }
   }
 

@@ -3,7 +3,7 @@
     <div class="header-container">
       <!-- Lado Esquerdo: Logo e Título -->
       <NuxtLink to="/" class="logo-area">
-        <NuxtImg src="/img/licoes1-p.webp" alt="logo" class="logo-img" width="50" height="50"/>
+        <NuxtImg src="/img/licoes1-p.webp" alt="logo" class="logo-img" preset="logo" />
         <span class="site-title">Orar e Labutar</span>
       </NuxtLink>
 

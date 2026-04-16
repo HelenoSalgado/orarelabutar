@@ -1,6 +1,13 @@
 <template>
     <NuxtLink :href="'/colecoes/'+slug" class="sacred-collection-card">
-        <NuxtImg :src="'/img/ai/'+imgUrl" :alt="title" loading="lazy" width="300" height="300" class="collection-img"/>
+        <NuxtImg 
+            :src="'/img/ai/'+imgUrl" 
+            :alt="title" 
+            loading="lazy" 
+            preset="avatar"
+            sizes="xs:300px sm:300px"
+            class="collection-img"
+        />
         <div class="collection-info">
             <h3 class="collection-title">{{ title }}</h3>
             <p class="collection-author">Compilado por {{ author }}</p>

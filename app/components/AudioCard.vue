@@ -1,7 +1,15 @@
 <template>
   <article class="preview-card audio-card">
     <NuxtLink :to="'/audios/' + slug" class="preview-image-link">
-      <NuxtImg :src="imgUrl" :alt="title" class="preview-img" preset="card" loading="lazy" decoding="async" />
+      <NuxtImg 
+        :src="imgUrl" 
+        :alt="title" 
+        class="preview-img" 
+        preset="card" 
+        sizes="xs:100vw sm:100vw md:400px"
+        loading="lazy" 
+        decoding="async" 
+      />
       <div v-if="duration" class="audio-duration">
         <span>{{ duration }}</span>
       </div>

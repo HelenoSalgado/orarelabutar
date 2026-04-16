@@ -1,7 +1,16 @@
 <template>
     <article class="preview-card manuscript-preview-start">
         <NuxtLink :to="slug" class="preview-image-link">
-            <NuxtImg :src="'/img/ai/'+imgUrl" :alt="title" class="preview-img" preset="card" :loading="loading || 'lazy'" :fetchpriority="fetchpriority || 'auto'" decoding="async" />
+            <NuxtImg 
+                :src="'/img/ai/'+imgUrl" 
+                :alt="title" 
+                class="preview-img" 
+                preset="card"
+                sizes="xs:100vw sm:100vw md:400px"
+                :loading="loading || 'lazy'" 
+                :fetchpriority="fetchpriority || 'auto'" 
+                decoding="async" 
+            />
         </NuxtLink>
         <div class="preview-content">
             <h2 class="preview-title">
@@ -20,7 +29,7 @@ defineProps<{
     title: string,
     description: string,
     slug: string,
-    imgUrl: string,
+    imgUrl: string | undefined,
     loading?: 'lazy' | 'eager',
     fetchpriority?: 'high' | 'low' | 'auto'
 }>();
