@@ -21,12 +21,15 @@ defineOptions({
 const { data: authors } = await useFetch('/api/authors');
 
 if (import.meta.server) {
+    const title = 'Autores e Biografias';
+    const description = 'Conheça os autores, pregadores e teólogos cujos manuscritos e reflexões cristãs estão disponíveis para leitura e meditação no Orar e Labutar.';
     useSeoMeta({
-        title: 'Autores',
-        ogTitle: 'Autores',
-        twitterTitle: 'Autores',
-        description: 'Conheça os autores dos manuscritos e reflexões do blog Orar e Labutar.',
-        ogDescription: 'Conheça os autores dos manuscritos e reflexões do Blog Orar e Labutar.'
+        title,
+        ogTitle: title,
+        twitterTitle: title,
+        description,
+        ogDescription: description,
+        twitterDescription: description
     });
 }
 

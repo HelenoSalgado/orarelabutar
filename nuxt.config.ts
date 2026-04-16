@@ -22,11 +22,9 @@ export default defineNuxtConfig({
         lang: 'pt-BR'
       },
       charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
+      viewport: 'width=device-width, initial-scale=1.0',
       meta: [
         { name: 'theme-color', content: '#161616' },
-        { name: 'format-detection', content: 'telephone=no' },
-        { name: 'robots', content: 'index, follow' },
         { name: 'apple-mobile-web-app-title', content: 'Orar e Labutar' }
       ],
       link: [
@@ -121,7 +119,10 @@ export default defineNuxtConfig({
   ],
 
   nuxtLite: {
-    optimizeCss: 'file'
+    optimizeCss: 'file',
+    optimizeSeo: {
+      optimizeSeo: 'analyze',
+    }
   } as NuxtLiteOptions,
 
   colorMode: {

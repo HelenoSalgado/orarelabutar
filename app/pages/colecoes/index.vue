@@ -20,13 +20,15 @@ defineOptions({
 const { data: collections } = await useFetch('/api/collections');
 
 if (import.meta.server) {
+    const title = 'Coleções Temáticas de Manuscritos';
+    const description = 'Explore nossa curadoria de coleções temáticas, reunindo os melhores manuscritos, artigos e reflexões cristãs organizados por assunto e autor.';
     useSeoMeta({
-        title: 'Coleções',
-        ogTitle: 'Coleções',
-        twitterTitle: 'Coleções',
-        description: 'Explore as coleções temáticas de manuscritos do blog Orar e Labutar.',
-        ogDescription: 'Explore as coleções temáticas de manuscritos do blog Orar e Labutar.',
-        twitterDescription: 'Explore as coleções temáticas de manuscritos do blog Orar e Labutar.'
+        title,
+        ogTitle: title,
+        twitterTitle: title,
+        description,
+        ogDescription: description,
+        twitterDescription: description
     });
 }
 

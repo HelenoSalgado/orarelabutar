@@ -42,12 +42,16 @@ const config = useRuntimeConfig();
 const { data: pdfs, pending, error } = await useFetch('/api/pdfs');
 
 if (import.meta.server) {
+  const title = 'Biblioteca de PDFs e E-books';
+  const description = 'Baixe obras clássicas, manuscritos e livros digitais cristãos em formato PDF para auxiliar em seus estudos bíblicos e meditações diárias.';
   useSeoMeta({
-    title: 'PDFs e E-books',
-    description: 'Baixe manuscritos e livros digitais clássicos para o seu crescimento espiritual.',
-    ogDescription: 'Baixe manuscritos e livros digitais clássicos para o seu crescimento espiritual.',
+    title,
+    ogTitle: title,
+    twitterTitle: title,
+    description,
+    ogDescription: description,
+    twitterDescription: description,
     ogImage: `${config.public.site.url}/img/pdfs-e-ebooks.jpg`,
-    twitterDescription: 'Baixe manuscritos e livros digitais clássicos para o seu crescimento espiritual.',
     twitterImage: `${config.public.site.url}/img/pdfs-e-ebooks.jpg`,
   });
 }

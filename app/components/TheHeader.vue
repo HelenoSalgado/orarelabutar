@@ -4,7 +4,7 @@
       <!-- Lado Esquerdo: Logo e Título -->
       <NuxtLink to="/" class="logo-area">
         <NuxtImg src="/img/licoes1-p.webp" alt="logo" class="logo-img" width="50" height="50"/>
-        <h1 class="site-title">Orar e Labutar</h1>
+        <span class="site-title">Orar e Labutar</span>
       </NuxtLink>
 
       <!-- Centro: Navegação Desktop -->
@@ -16,12 +16,12 @@
 
       <!-- Lado Direito: Ações (Tema e Menu Mobile) -->
       <div class="actions-area">
-        <button class="theme-toggle" title="Alterar tema">
+        <button type="button" class="theme-toggle" title="Alterar tema">
           <IconsMoon class="theme-icon icon-light" />
           <IconsSun class="theme-icon icon-dark" />
         </button>
 
-        <button class="hamburguer-btn" aria-label="Menu">
+        <button type="button" class="hamburguer-btn" aria-label="Menu">
           <div class="line"/><div class="line"/><div class="line"/>
         </button>
       </div>

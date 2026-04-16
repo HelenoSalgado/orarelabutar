@@ -1,6 +1,6 @@
 ---
 title: Ao redor do portão
-description: "MILHÕES DE HOMENS estão nas regiões periféricas, longe de Deus e da paz; por estes oramos e a estes damos advertência. Mas agora temos que lidar com um grupo menor, que não está longe do reino, mas chegou até o portão que fica no início do caminho da vida."
+description: "Uma conversa amigável com os que buscam a respeito da fé no Senhor Jesus Cristo. Um convite para ultrapassar o limiar e entrar no caminho da vida eterna."
 author: Charles H. Spurgeon
 categories: [evangelismo]
 createdAt: 2024-03-11

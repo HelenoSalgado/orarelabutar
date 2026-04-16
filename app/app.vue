@@ -25,7 +25,6 @@ if (import.meta.server) {
     titleTemplate(titleChunk) {
       return titleChunk ? `${titleChunk} | Orar e Labutar` : 'Orar e Labutar';
     },
-    author: 'Heleno Salgado',
     ogLocale: 'pt-BR',
     ogSiteName: 'Orar e Labutar',
     ogUrl: () => `${config.public.site.url}${route.path}`,

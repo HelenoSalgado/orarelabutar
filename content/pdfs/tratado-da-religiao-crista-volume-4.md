@@ -1,7 +1,7 @@
 ---
-title: TRATADO DA RELIGIÃO CRISTÃ - VOLUME 3
+title: TRATADO DA RELIGIÃO CRISTÃ - VOLUME 4
 author: "João Calvino"
-description: "Indiscutivelmente, é João Calvino o pensador máximo da Reforma e sua famosa obra, as chamadas Institutas, o magnum opus não apenas de seus escritos, mas de toda a literatura produzida pelos Reformadores."
+description: "Obra-prima de João Calvino sobre a Reforma Protestante. O Volume 4 aborda a Santa Igreja Universal e os meios externos pelos quais Deus nos chama a Cristo."
 categories: ["evangelismo"]
 ---
 

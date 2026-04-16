@@ -46,11 +46,12 @@ const { data: pageData } = await useFetch(`/api/posts/${slug}`, {
 const imgUrl = `${config.public.site.url}/img/ai/${pageData.value?.post?.imgUrl}`;
 
 if (import.meta.server) {
+  const title = pageData.value?.post.title;
   useSeoMeta({
     ogType: 'article',
-    title: pageData.value?.post.title,
-    ogTitle: pageData.value?.post.title,
-    twitterTitle: pageData.value?.post.title,
+    title,
+    ogTitle: title,
+    twitterTitle: title,
     description: pageData.value?.post?.description,
     ogDescription: pageData.value?.post?.description,
     twitterDescription: pageData.value?.post?.description,

@@ -33,8 +33,17 @@ async function convertDir(dir) {
         console.log(`Converting ${fullPath} to ${outputPath}...`);
         
         try {
-          const image = sharp(fullPath);
+          let image = sharp(fullPath);
           const metadata = await image.metadata();
+
+          // Se estiver na pasta 'ai', redimensionar para o tamanho ideal de metatags (1200x630)
+          if (fullPath.includes(path.join('img', 'ai'))) {
+            console.log(`  -> Redimensionando para 1200x630 (tamanho metatags)...`);
+            image = image.resize(1200, 630, {
+              fit: 'cover',
+              position: 'center'
+            });
+          }
 
           await image
             .webp({ 

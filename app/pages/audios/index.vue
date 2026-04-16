@@ -34,14 +34,16 @@ const config = useRuntimeConfig();
 const { data: audios, pending, error } = await useFetch('/api/audios');
 
 if (import.meta.server) {
+  const title = 'Áudios e Meditações Cristãs';
+  const description = 'Ouça nossa coleção de áudios, meditações e estudos teológicos para sua edificação e crescimento espiritual no Orar e Labutar.';
   useSeoMeta({
-    title: 'Áudios',
-    ogTitle: 'Áudios',
-    twitterTitle: 'Áudios',
-    description: 'Coleção de áudios, meditações e estudos para ouvir e refletir.',
-    ogDescription: 'Coleção de áudios, meditações e estudos para ouvir e refletir.',
+    title,
+    ogTitle: title,
+    twitterTitle: title,
+    description,
+    ogDescription: description,
     ogImage: () => `${config.public.site.url}/img/podcast.jpg`,
-    twitterDescription: 'Coleção de áudios, meditações e estudos para ouvir e refletir.',
+    twitterDescription: description,
     twitterImage: () => `${config.public.site.url}/img/podcast.jpg`,
   });
 }

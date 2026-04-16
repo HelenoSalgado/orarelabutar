@@ -14,10 +14,10 @@
     </div>
 
     <section v-if="authorData?.posts?.length">
-      <h3>
+      <h2>
         <IconsUser />
         <span>Deste Autor</span>
-      </h3>
+      </h2>
       <div class="grid-container">
         <PostRelation v-for="post in authorData.posts" :key="post.id" :title="post.title" :img-url="post.imgUrl"
           :slug="post.slug" />
@@ -25,10 +25,10 @@
     </section>
 
     <section class="all-authors-section">
-      <h3>
+      <h2>
         <IconsUsers />
         <span>Autores</span>
-      </h3>
+      </h2>
       <div class="container-authors">
         <AuthorPreview :authors />
       </div>

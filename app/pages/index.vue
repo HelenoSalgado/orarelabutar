@@ -35,15 +35,19 @@ const config = useRuntimeConfig();
 
 const { data: homeData } = await useFetch('/api/home');
 
-useSeoMeta({
-    ogType: 'website',
-    title: 'Início',
-    ogTitle: 'Início',
-    twitterTitle: 'Início',
-    description: 'Veja os artigos mais recentes. Conheça o propósito deste blog.',
-    ogDescription: 'Veja os artigos mais recentes. Conheça o propósito deste blog.',
-    twitterDescription: 'Veja os artigos mais recentes. Conheça o propósito deste blog.',
-    ogImage: `${config.public.site.url}/img/licoes1-mobile.jpg`,
-    twitterImage: `${config.public.site.url}/img/licoes1-mobile.jpg`,
-});
+if (import.meta.server) {
+    const title = 'Manuscritos, Livros e Reflexões Cristãs';
+    const description = 'Um espaço dedicado à meditação na Palavra de Deus, oferecendo manuscritos históricos, livros clássicos e reflexões para o fortalecimento da fé e crescimento espiritual.';
+    useSeoMeta({
+        ogType: 'website',
+        title,
+        ogTitle: title,
+        twitterTitle: title,
+        description,
+        ogDescription: description,
+        twitterDescription: description,
+        ogImage: `${config.public.site.url}/img/licoes1-mobile.jpg`,
+        twitterImage: `${config.public.site.url}/img/licoes1-mobile.jpg`,
+    });
+}
 </script>

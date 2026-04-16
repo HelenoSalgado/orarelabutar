@@ -3,7 +3,7 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 const baseSchema = z.object({
   title: z.string(),
   description: z.string().optional(),
-  imgUrl: z.string(),
+  imgUrl: z.string().optional(),
   createdAt: z.string().optional(),
   slug: z.string() // Injetada dinamicamente via transformador
 })
@@ -34,7 +34,9 @@ export default defineContentConfig({
     tags: defineCollection({
       type: 'page',
       source: 'tags/*.md',
-      schema: baseSchema
+      schema: baseSchema.extend({
+        seoTitle: z.string().optional()
+      })
     }),
     sobre: defineCollection({
       type: 'page',

@@ -20,11 +20,15 @@ defineOptions({
 const config = useRuntimeConfig();
 
 if (import.meta.server) {
+    const title = 'Links Úteis e Referências Teológicas';
+    const description = 'Uma seleção de links e sites recomendados para quem deseja se aprofundar no estudo do cristianismo, teologia e educação clássica.';
     useSeoMeta({
-        title: 'Links Uteis',
-        description: 'Links recomendadados para se aprofundar no estudo do cristianismo e teologia.',
-        ogDescription: 'Links recomendadados para se aprofundar no estudo do cristianismo e teologia.',
-        twitterDescription: 'Links recomendadados para se aprofundar no estudo do cristianismo e teologia.',
+        title,
+        ogTitle: title,
+        twitterTitle: title,
+        description,
+        ogDescription: description,
+        twitterDescription: description,
         ogImage: `${config.public.site.url}/img/links-uteis.jpg`,
         twitterImage: `${config.public.site.url}/img/links-uteis.jpg`,
     });

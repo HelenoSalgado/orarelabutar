@@ -30,15 +30,19 @@ const config = useRuntimeConfig();
 
 const { data: posts } = await useFetch('/api/posts');
 
-useSeoMeta({
-    title: 'Artigos',
-    ogTitle: 'Artigos',
-    twitterTitle: 'Artigos',
-    ogType: 'website',
-    description: 'Confira todos os artigos publicados no blog Orar e Labutar.',
-    ogDescription: 'Confira todos os artigos publicados no blog Orar e Labutar.',
-    twitterDescription: 'Confira todos os artigos publicados no blog Orar e Labutar.',
-    ogImage: `${config.public.site.url}/img/artigos.jpg`,
-    twitterImage: `${config.public.site.url}/img/artigos.jpg`,
-});
+if (import.meta.server) {
+    const title = 'Manuscritos e Artigos';
+    const description = 'Confira nossa coleção completa de manuscritos, artigos teológicos e meditações cristãs publicadas no blog Orar e Labutar.';
+    useSeoMeta({
+        title,
+        ogTitle: title,
+        twitterTitle: title,
+        ogType: 'website',
+        description,
+        ogDescription: description,
+        twitterDescription: description,
+        ogImage: `${config.public.site.url}/img/artigos.jpg`,
+        twitterImage: `${config.public.site.url}/img/artigos.jpg`,
+    });
+}
 </script>

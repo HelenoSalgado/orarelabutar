@@ -1,6 +1,6 @@
 ---
 title: Opúsculo sobre o modo de aprender e meditar
-description: "O bom estudante deve ser humilde e manso, inteiramente alheio aos cuidados do mundo e às tentações dos prazeres, e solícito em aprender de boa vontade de todos. Nunca presuma de sua ciência; não queira parecer douto, mas sê-lo."
+description: "Descubra os ensinamentos de Hugo de São Vitor sobre humildade, leitura e os três tipos de meditação para organizar o estudo com foco na santidade."
 author: Hugo de São Vitor
 categories: [pedagogia]
 createdAt: 2024-10-28
@@ -131,4 +131,4 @@ Quem deseja conhecer e ensinar aprenda, portanto, quanto há para se ensinar e a
 
 Deve, portanto, o doutor das divinas Escrituras ser defensor da reta fé, debelador do erro, e ensinar o bem; e neste trabalho de pregação conciliar os adversos, levantar os indolentes, declarar aos ignorantes o que devem agir e o que devem esperar. Onde tiver encontrado, ou ele próprio os tiver feito, homens benévolos, atentos e dóceis, há de completar o restante conforme a causa o exija. Se os que ouvem devem ser ensinados, seja-o feito por meio de narração; se, todavia, necessitar que aquilo de que trata seja claramente conhecido, para que as coisas que são duvidosas se tornem certas, raciocine através dos documentos utilizados.
 
-Fonte: [https://cristianismo.org](cristianismo.org.br)
+Fonte: [https://cristianismo.org.br](https://cristianismo.org.br)

@@ -27,14 +27,17 @@ const slug = route.params.slug as string;
 const { data: tagData } = await useFetch<{ tag: TagsCollectionItem, posts: PostsCollectionItem[] }>(`/api/tags/${slug}`);
 
 if (import.meta.server) {
+    const title = tagData.value?.tag?.seoTitle || `Tema: ${tagData.value?.tag?.title}`;
+    const description = `Explore todos os textos, manuscritos e recursos cristãos sobre o tema ${tagData.value?.tag?.title}. ${tagData.value?.tag?.description}`;
+    
     useSeoMeta({
-        title: tagData.value?.tag?.title,
-        ogTitle: tagData.value?.tag?.title,
-        description: tagData.value?.tag?.description,
-        ogDescription: tagData.value?.tag?.description,
+        title,
+        ogTitle: title,
+        description,
+        ogDescription: description,
         ogImage: `${config.public.site.url}/img/licoes1-mobile.jpg`,
-        twitterTitle: tagData.value?.tag?.title,
-        twitterDescription: tagData.value?.tag?.description,
+        twitterTitle: title,
+        twitterDescription: description,
         twitterImage: `${config.public.site.url}/img/licoes1-mobile.jpg`,
     });
 }

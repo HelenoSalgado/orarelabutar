@@ -24,13 +24,15 @@ defineOptions({
 const { data: tags } = await useFetch('/api/tags');
 
 if (import.meta.server) {
+    const title = 'Explore os Temas e Categorias';
+    const description = 'Navegue pelos diversos temas, tópicos e categorias de manuscritos, livros e reflexões cristãs disponíveis no blog.';
     useSeoMeta({
-        title: 'Temas',
-        ogTitle: 'Temas',
-        twitterTitle: 'Temas',
-        description: 'Explore os temas e categorias dos manuscritos.',
-        ogDescription: 'Explore os temas e categorias dos manuscritos.',
-        twitterDescription: 'Explore os temas e categorias dos manuscritos.'
+        title,
+        ogTitle: title,
+        twitterTitle: title,
+        description,
+        ogDescription: description,
+        twitterDescription: description
     });
 }
 

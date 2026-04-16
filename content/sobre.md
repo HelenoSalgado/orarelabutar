@@ -1,6 +1,6 @@
 ---
-title: Sobre
-description: "Este site tem como missão ser mais um instrumento de aprendizado para o leitor cristão, para que saiba o que fazer e conheça a vontade de Deus."
+title: "Conheça a missão e o propósito do nosso Blog"
+description: "O Orar e Labutar tem como missão ser um instrumento de aprendizado para o leitor cristão, oferecendo recursos para meditação na Palavra de Deus e crescimento espiritual."
 imgUrl: sobre.webp
 author: Heleno Salgado
 createdAt: 2024-03-11

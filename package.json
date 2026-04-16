@@ -23,7 +23,7 @@
     "prebuild": "cd nuxt-lite && npm install && npm run build:runtime",
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "npm run prebuild && nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "convert-images": "node scripts/convert_to_webp.mjs",

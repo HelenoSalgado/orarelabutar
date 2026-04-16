@@ -24,14 +24,14 @@
 
       <!-- Seção de Controles (agora acima do progresso) -->
       <div class="controls-section">
-        <button class="control-btn skip" @click="skip(-10)" aria-label="Voltar 10 segundos">
+        <button type="button" class="control-btn skip" @click="skip(-10)" aria-label="Voltar 10 segundos">
           <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
             <path d="M12.5 5.5v13L3 12l9.5-6.5zM21 5.5v13L11.5 12 21 5.5z"/>
           </svg>
           <span class="skip-label">10s</span>
         </button>
 
-        <button class="main-play-btn" @click="togglePlay" :aria-label="isPlaying ? 'Pausar' : 'Ouvir'">
+        <button type="button" class="main-play-btn" @click="togglePlay" :aria-label="isPlaying ? 'Pausar' : 'Ouvir'">
           <svg v-if="!isPlaying" viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
             <path d="M8 5.14v14.13L19 12 8 5.14z"/>
           </svg>
@@ -40,7 +40,7 @@
           </svg>
         </button>
 
-        <button class="control-btn skip" @click="skip(10)" aria-label="Avançar 10 segundos">
+        <button type="button" class="control-btn skip" @click="skip(10)" aria-label="Avançar 10 segundos">
           <span class="skip-label">10s</span>
           <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
             <path d="M1.5 5.5v13L11 12 1.5 5.5zM11.5 5.5v13l9.5-6.5-9.5-6.5z"/>
