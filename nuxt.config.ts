@@ -111,11 +111,12 @@ export default defineNuxtConfig({
   ],
 
   nuxtLite: {
-    optimizeCss: 'file',
+    optimizeCss: true,
     optimizeSeo: {
       optimizeSeo: 'analyze',
     },
     optimizeSvg: true,
+    pruneOutput: true,
     colorMode: {
       storageKey: 'ol-color-mode',
       preference: 'light',

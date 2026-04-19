@@ -48,6 +48,7 @@ defineProps(['title', 'description', 'imgUrl', 'slug']);
 
 .post-description {
     line-height: 1.6rem;
+    margin-top: 0;
 }
 
 .related-title-link {

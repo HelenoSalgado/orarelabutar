@@ -1,6 +1,6 @@
 # Relatório de Análise SEO (nuxt-lite)
 
-- **Data:** 16/04/2026, 16:44:27
+- **Data:** 19/04/2026, 18:35:24
 - **Páginas Analisadas:** 21
 - **Total de Problemas:** 127
 - **Score Médio:** 95/100
