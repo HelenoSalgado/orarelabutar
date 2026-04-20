@@ -25,7 +25,7 @@ const { data: authors } = await useFetch('/api/authors');
 
 if (import.meta.server) {
     const title = 'Autores e Biografias';
-    const description = 'Conheça os autores, pregadores e teólogos cujos manuscritos e reflexões cristãs estão disponíveis para leitura e meditação no Orar e Labutar.';
+    const description = 'Conheça os autores, pregadores e teólogos cujos manuscritos e reflexões cristãs estão disponíveis neste blog.';
     useSeoMeta({
         title,
         ogTitle: title,
@@ -37,5 +37,4 @@ if (import.meta.server) {
         twitterImage: `${config.public.site.url}/img/licoes1-mobile.jpg`
     });
 }
-
 </script>
