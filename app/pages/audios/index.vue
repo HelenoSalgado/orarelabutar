@@ -34,8 +34,8 @@ const config = useRuntimeConfig();
 const { data: audios, pending, error } = await useFetch('/api/audios');
 
 if (import.meta.server) {
-  const title = 'Áudios e Meditações Cristãs';
-  const description = 'Ouça nossa coleção de áudios, meditações e estudos teológicos para sua edificação e crescimento espiritual no Orar e Labutar.';
+  const title = 'Áudios e Reflexões Cristãs';
+  const description = 'Ouça nossa coleção de áudios, meditações e estudos teológicos para sua edificação e crescimento espiritual.';
   useSeoMeta({
     title,
     ogTitle: title,
