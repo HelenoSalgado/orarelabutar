@@ -1,10 +1,9 @@
 ---
-title: "Missão e Propósito: Orar e Labutar"
-description: "A missão do Orar e Labutar é oferecer recursos para meditação na Palavra de Deus e crescimento espiritual do leitor cristão."
+title: "Missão e Propósito"
+description: "Oferecemos recursos para meditação na Palavra de Deus e crescimento espiritual do leitor cristão."
 imgUrl: sobre.webp
 author: Heleno Salgado
 createdAt: 2024-03-11
-updatedAt: 2024-03-11
 ---
 
 **Senhor, que queres que eu faça?** (Atos 9.6)
