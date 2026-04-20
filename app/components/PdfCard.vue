@@ -14,9 +14,9 @@
 
     <!-- Coluna Direita: Informações -->
     <div class="pdf-card-main">
-      <h3 class="pdf-title">
+      <h2 class="pdf-title">
         <NuxtLink :to="'/livros/' + slug">{{ title }}</NuxtLink>
-      </h3>
+      </h2>
       <p v-if="author" class="pdf-author">{{ author }}</p>
 
       <p v-if="description" class="pdf-description">{{ description }}</p>

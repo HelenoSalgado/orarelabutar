@@ -149,8 +149,7 @@ hr {
 }
 
 /* Grade Universal de Manuscritos */
-.sacred-grid,
-.grid-container {
+.sacred-grid, .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--space-xl);

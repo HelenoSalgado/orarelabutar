@@ -28,7 +28,7 @@ const { data: tagData } = await useFetch<{ tag: TagsCollectionItem, posts: Posts
 
 if (import.meta.server) {
     const title = tagData.value?.tag?.seoTitle || `Tema: ${tagData.value?.tag?.title}`;
-    const description = `Explore todos os textos, manuscritos e recursos cristãos sobre o tema ${tagData.value?.tag?.title}. ${tagData.value?.tag?.description}`;
+    const description = tagData.value?.tag?.description || `Explore todos os textos, manuscritos e recursos cristãos sobre o tema ${tagData.value?.tag?.title}.`;
     
     useSeoMeta({
         title,

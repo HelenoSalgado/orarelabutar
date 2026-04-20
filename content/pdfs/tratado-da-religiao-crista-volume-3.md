@@ -1,7 +1,7 @@
 ---
 title: TRATADO DA RELIGIÃO CRISTÃ - VOLUME 3
 author: "João Calvino"
-description: "Obra-prima de João Calvino sobre a Reforma Protestante. O Volume 3 foca no conhecimento de Deus como Santificador e na recepção da Graça de Cristo pelo Espírito."
+description: "Obra-prima de João Calvino sobre a Reforma Protestante. O Volume 3 aborda como recebemos a graça de Cristo pelo Espírito Santo e seus frutos."
 categories: ["evangelismo"]
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Despertar
-description: "Ser despertado para as coisas eternas é uma misericórdia. Descubra por que o despertar espiritual é o primeiro passo para encontrar a verdadeira salvação."
+title: "Despertar: O Primeiro Passo para a Salvação"
+description: "Descubra por que o despertar espiritual é o primeiro passo para encontrar a verdadeira salvação e o perigo de permanecer na insensibilidade espiritual."
 author: Charles H. Spurgeon
 categories: [evangelismo]
 createdAt: 2024-03-11

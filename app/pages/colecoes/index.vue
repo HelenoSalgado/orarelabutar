@@ -17,6 +17,8 @@ defineOptions({
     name: 'CollectionsIndex'
 });
 
+const config = useRuntimeConfig();
+
 const { data: collections } = await useFetch('/api/collections');
 
 if (import.meta.server) {
@@ -28,7 +30,9 @@ if (import.meta.server) {
         twitterTitle: title,
         description,
         ogDescription: description,
-        twitterDescription: description
+        twitterDescription: description,
+        ogImage: `${config.public.site.url}/img/artigos.jpg`,
+        twitterImage: `${config.public.site.url}/img/artigos.jpg`
     });
 }
 

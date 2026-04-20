@@ -8,11 +8,9 @@
             sizes="xs:300px sm:300px"
             class="collection-img"
         />
-        <div class="collection-info">
-            <h3 class="collection-title">{{ title }}</h3>
-            <p class="collection-author">Compilado por {{ author }}</p>
-            <span class="collection-count">{{ count }} manuscritos</span>
-        </div>
+        <h2 class="collection-title">{{ title }}</h2>
+        <p class="collection-author">Compilado por {{ author }}</p>
+        <span class="collection-count">{{ count }} manuscritos</span>
     </NuxtLink>
 </template>
 
@@ -32,6 +30,7 @@ defineProps(['title', 'imgUrl', 'author', 'slug', 'count']);
     text-align: center;
     color: var(--color-ink);
     text-decoration: none;
+    gap: var(--space-xs);
 }
 
 .sacred-collection-card:hover {
@@ -46,18 +45,12 @@ defineProps(['title', 'imgUrl', 'author', 'slug', 'count']);
     padding: 5px;
     border-radius: 50%;
     filter: sepia(0.2);
-}
-
-.collection-info {
-    margin-top: var(--space-md);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: var(--space-sm);
 }
 
 .collection-title {
     font-size: 1.2rem;
-    margin: 0 0 var(--space-xs) 0;
+    margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
 }
@@ -70,7 +63,7 @@ defineProps(['title', 'imgUrl', 'author', 'slug', 'count']);
 }
 
 .collection-count {
-    margin-top: var(--space-sm);
+    margin-top: var(--space-xs);
     font-size: 0.75rem;
     text-transform: uppercase;
     color: var(--color-gold);

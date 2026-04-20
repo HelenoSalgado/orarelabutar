@@ -64,6 +64,7 @@ const slug = route.params.slug as string;
 const { data: pdf, pending, error } = await useFetch(`/api/pdfs/${slug}`);
 
 if (import.meta.server) {
+  const imgUrl = pdf.value?.imgUrl ? `${config.public.site.url}${pdf.value.imgUrl}` : `${config.public.site.url}/img/pdfs-e-ebooks.jpg`;
   useSeoMeta({
     ogType: 'book',
     title: pdf.value?.title,
@@ -72,7 +73,8 @@ if (import.meta.server) {
     description: pdf.value?.description,
     ogDescription: pdf.value?.description,
     twitterDescription: pdf.value?.description,
-    ogImage: pdf.value?.imgUrl ? `${config.public.site.url}${pdf.value.imgUrl}` : `${config.public.site.url}/img/pdfs-e-ebooks.jpg`
+    ogImage: imgUrl,
+    twitterImage: imgUrl
   });
 }
 </script>

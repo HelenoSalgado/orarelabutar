@@ -9,7 +9,7 @@
                 sizes="xs:100vw sm:100vw md:400px"
                 :loading="loading || 'lazy'" 
                 :fetchpriority="fetchpriority || 'auto'" 
-                decoding="async" 
+                decoding="async"
             />
         </NuxtLink>
         <div class="preview-content">

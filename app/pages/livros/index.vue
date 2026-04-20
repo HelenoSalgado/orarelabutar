@@ -6,6 +6,7 @@
     </h1>
 
     <article>
+      <h2 class="sr-only">Biblioteca Digital de Obras Clássicas</h2>
       <p>
         Disponibilizamos aqui uma seleção de obras clássicas e contemporâneas em formato digital para auxiliar em seus
         estudos e meditações. Todos os arquivos são de domínio público ou licenciados para livre distribuição.

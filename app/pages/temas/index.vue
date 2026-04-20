@@ -21,18 +21,22 @@ defineOptions({
     name: 'TagsIndex'
 });
 
+const config = useRuntimeConfig();
+
 const { data: tags } = await useFetch('/api/tags');
 
 if (import.meta.server) {
     const title = 'Explore os Temas e Categorias';
-    const description = 'Navegue pelos diversos temas, tópicos e categorias de manuscritos, livros e reflexões cristãs disponíveis no blog.';
+    const description = 'Navegue pelos diversos temas, tópicos e categorias de manuscritos, livros e reflexões cristãs disponíveis no Orar e Labutar para seu crescimento espiritual.';
     useSeoMeta({
         title,
         ogTitle: title,
         twitterTitle: title,
         description,
         ogDescription: description,
-        twitterDescription: description
+        twitterDescription: description,
+        ogImage: `${config.public.site.url}/img/artigos.jpg`,
+        twitterImage: `${config.public.site.url}/img/artigos.jpg`
     });
 }
 

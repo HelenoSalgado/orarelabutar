@@ -151,12 +151,12 @@ export default defineNuxtConfig({
         modifiers: { fit: 'cover', width: 50, height: 50, quality: 80 }
       },
       avatar: {
-        modifiers: { fit: 'cover', width: 300, height: 300, quality: 70 }
+        modifiers: { fit: 'cover', width: 300, height: 300, quality: 80 }
       },
       card: {
         modifiers: {
           fit: 'cover',
-          quality: 65,
+          quality: 75,
           width: 400,
           height: 250
         }

@@ -1,7 +1,7 @@
 ---
 title: Hugo de São Vitor
 imgUrl: hugo-de-sao-vitor.webp
-description: "Hugo de São Vitor (1096-1141) foi um teólogo agostiniano místico e filósofo saxão, mestre na escola da Abadia de São Vitor em Paris e figura central da pedagogia cristã."
+description: "Teólogo agostiniano e filósofo saxão (1096-1141), mestre na escola da Abadia de São Vitor em Paris e figura central da pedagogia cristã."
 ---
 
 Hugo de São Vitor nasceu na Saxônia, que hoje faz parte do território da Alemanha, no ano de 1096. Ainda jovem sentiu a vocação religiosa e mudou-se para Paris com a intenção de ingressar no Mosteiro de São Vitor, no qual residiu até a sua morte em 1141. Ele viveu, portanto, na primeira metade do século dos anos 1100.

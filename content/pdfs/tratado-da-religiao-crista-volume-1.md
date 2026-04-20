@@ -1,7 +1,7 @@
 ---
 title: TRATADO DA RELIGIÃO CRISTÃ - VOLUME 1
 author: "João Calvino"
-description: "Obra-prima de João Calvino e marco da Reforma Protestante. O Volume 1 trata do conhecimento de Deus como Criador e a autoridade das Escrituras."
+description: "Obra-prima de João Calvino e marco da Reforma Protestante. O Volume 1 trata do conhecimento de Deus como Criador e a autoridade das Escrituras Sagradas."
 categories: ["evangelismo"]
 ---
 

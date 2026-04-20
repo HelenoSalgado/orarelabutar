@@ -1,6 +1,6 @@
 ---
-title: "Conheça a missão e o propósito do nosso Blog"
-description: "O Orar e Labutar tem como missão ser um instrumento de aprendizado para o leitor cristão, oferecendo recursos para meditação na Palavra de Deus e crescimento espiritual."
+title: "Missão e Propósito: Orar e Labutar"
+description: "A missão do Orar e Labutar é oferecer recursos para meditação na Palavra de Deus e crescimento espiritual do leitor cristão."
 imgUrl: sobre.webp
 author: Heleno Salgado
 createdAt: 2024-03-11

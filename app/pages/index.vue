@@ -37,7 +37,7 @@ const { data: homeData } = await useFetch('/api/home');
 
 if (import.meta.server) {
     const title = 'Manuscritos, Livros e Reflexões Cristãs';
-    const description = 'Um espaço dedicado à meditação na Palavra de Deus, oferecendo manuscritos históricos, livros clássicos e reflexões para o fortalecimento da fé e crescimento espiritual.';
+    const description = 'Espaço dedicado à meditação na Palavra de Deus, com manuscritos históricos, livros clássicos e reflexões para o crescimento espiritual.';
     useSeoMeta({
         ogType: 'website',
         title,

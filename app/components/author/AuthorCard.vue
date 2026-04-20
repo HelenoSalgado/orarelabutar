@@ -1,11 +1,9 @@
 <template>
     <NuxtLink :to="'/autores/'+slug" class="sacred-author-card">
         <NuxtImg :src="'/img/'+imgUrl" :alt="title" loading="lazy" width="200" height="200" class="author-img"/>
-        <div class="author-info">
-            <h3 class="author-title">{{ title }}</h3>
-            <p class="author-desc" v-if="description">{{ description }}</p>
-            <span class="read-more">Ver Perfil &rang;</span>
-        </div>
+        <h2 class="author-title">{{ title }}</h2>
+        <p class="author-desc" v-if="description">{{ description }}</p>
+        <span class="read-more">Ver Perfil &rang;</span>
     </NuxtLink>
 </template>
 
@@ -29,6 +27,7 @@ defineProps<{
     text-align: center;
     color: var(--color-ink);
     text-decoration: none;
+    gap: var(--space-xs);
 }
 
 .sacred-author-card:hover {
@@ -43,18 +42,12 @@ defineProps<{
     padding: 5px;
     border-radius: 50%;
     filter: sepia(0.2);
-}
-
-.author-info {
-    margin-top: var(--space-md);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: var(--space-sm);
 }
 
 .author-title {
     font-size: 1.2rem;
-    margin: 0 0 var(--space-xs) 0;
+    margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
 }
