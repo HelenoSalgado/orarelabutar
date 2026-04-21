@@ -24,10 +24,18 @@
   // Theme toggle
   var themeBtn = document.querySelector('.theme-toggle')
   if (themeBtn) themeBtn.addEventListener('click', function () {
-    var dark = html.classList.contains('dark')
-    html.classList.remove('dark', 'light')
-    html.classList.add(dark ? 'light' : 'dark')
-    try { document.cookie = 'ol-color-mode=' + (dark ? 'light' : 'dark') + ';path=/;max-age=31536000' } catch (e) {}
+    var themes = ['light', 'sepia', 'dark']
+    var current = 'light'
+    if (html.classList.contains('dark')) current = 'dark'
+    else if (html.classList.contains('sepia')) current = 'sepia'
+    
+    var nextIndex = (themes.indexOf(current) + 1) % themes.length
+    var nextTheme = themes[nextIndex]
+    
+    html.classList.remove('light', 'dark', 'sepia')
+    if (nextTheme !== 'light') html.classList.add(nextTheme)
+    
+    try { document.cookie = 'ol-color-mode=' + nextTheme + ';path=/;max-age=31536000' } catch (e) {}
   })
 
   // Hamburger

@@ -51,6 +51,16 @@
     --color-selection: #2d2d2d;
 }
 
+.sepia {
+    --color-paper: #f4ecd8;
+    --color-ink: #5b4636;
+    --color-ink-muted: #8c715e;
+    --color-gold: #946c00;
+    --color-gold-muted: rgba(148, 108, 0, 0.05);
+    --color-shadow: rgba(91, 70, 54, 0.1);
+    --color-selection: #e6dac1;
+}
+
 html {
     background-color: var(--color-paper);
     scroll-behavior: smooth;
