@@ -173,6 +173,9 @@ useHead({
 }
 
 @media (max-width: 768px) {
+    .scriptorium-newsletter {
+        padding: 3rem 2rem;
+     }
     .form-inputs {
         grid-template-columns: 1fr;
     }
