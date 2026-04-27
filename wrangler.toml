@@ -1,0 +1,13 @@
+name = "orarelabutar-blog"
+compatibility_date = "2026-04-09"
+
+
+[[d1_databases]]
+binding = "DB"
+database_name = "orarelabutar-db"
+database_id = "d5c39f08-54d2-450d-8fb5-d77fdc7bc902"
+remote = true
+
+[[send_email]]
+name = "SEND_EMAIL"
+remote = true

@@ -91,4 +91,15 @@ describe('API Endpoints', async () => {
       }
     }
   })
+
+  it('POST /api/newsletter returns success', async () => {
+    const data = await $fetch<{ success: boolean, message: string }>('/api/newsletter', {
+      method: 'POST',
+      body: {
+        name: 'Test User',
+        email: 'test@example.com'
+      }
+    })
+    expect(data.success).toBe(true)
+  })
 })

@@ -23,6 +23,8 @@
                     :slug="collection.slug" :count="collection.count" />
             </div>
         </section>
+
+        <TheNewsletter />
     </main>
 </template>
 

@@ -1,28 +1,94 @@
 <template>
     <section class="scriptorium-newsletter">
-        <div class="newsletter-header">
-            <IconsEmail class="newsletter-icon" />
-            <h2>Siga o Manuscrito</h2>
-        </div>
-        <p class="newsletter-desc">Seja avisado quando novos artigos forem publicados.</p>
-        <form class="newsletter-form" @submit.prevent="handleSubmit">
-            <input v-model="name" type="text" placeholder="Seu Nome" required class="sacred-input">
-            <input v-model="email" type="email" placeholder="Seu melhor e-mail" required class="sacred-input">
-            <button class="sacred-btn newsletter-btn" type="submit">Inscrever-se</button>
+        <h2>
+            <IconsEmail />
+            <span>Siga o Orar e Labutar</span>
+        </h2>
+        <p class="newsletter-desc">Seja avisado quando novos manuscritos ou conteúdos forem publicados.</p>
+        <form id="newsletter-form" class="newsletter-form" onsubmit="return false;">
+            <div class="form-inputs">
+                <input name="name" type="text" placeholder="Seu Nome" required class="sacred-input">
+                <input name="email" type="email" placeholder="Seu melhor e-mail" required class="sacred-input">
+            </div>
+            <button class="sacred-btn newsletter-btn" type="submit">
+                Inscrever-se
+            </button>
         </form>
+        <p id="newsletter-message" class="newsletter-feedback"></p>
     </section>
 </template>
 
 <script setup lang="ts">
-const name = ref('');
-const email = ref('');
+useHead({
+    script: [
+        {
+            innerHTML: `
+                (function() {
+                    const initNewsletter = () => {
+                        const form = document.getElementById('newsletter-form');
+                        const messageEl = document.getElementById('newsletter-message');
+                        
+                        if (!form || !messageEl || form.dataset.initialized) return;
+                        form.dataset.initialized = "true";
 
-const handleSubmit = () => {
-    // Implement subscription logic or external form action
-    alert('Obrigado por se inscrever!');
-    name.value = '';
-    email.value = '';
-};
+                        form.addEventListener('submit', async (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+
+                            const btn = form.querySelector('button');
+                            const originalBtnText = btn.textContent;
+                            
+                            const formData = new FormData(form);
+                            const data = {
+                                name: formData.get('name'),
+                                email: formData.get('email')
+                            };
+
+                            try {
+                                btn.disabled = true;
+                                btn.textContent = 'Enviando...';
+                                messageEl.textContent = '';
+                                messageEl.classList.remove('error', 'success');
+
+                                const response = await fetch('/api/newsletter', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify(data)
+                                });
+
+                                const result = await response.json();
+
+                                if (response.ok) {
+                                    messageEl.textContent = result.message || 'Inscrito com sucesso!';
+                                    messageEl.classList.add('success');
+                                    form.reset();
+                                } else {
+                                    messageEl.textContent = result.statusMessage || 'Erro ao se inscrever.';
+                                    messageEl.classList.add('error');
+                                }
+                            } catch (err) {
+                                messageEl.textContent = 'Erro de conexão. Tente novamente.';
+                                messageEl.classList.add('error');
+                            } finally {
+                                btn.disabled = false;
+                                btn.textContent = originalBtnText;
+                            }
+                            return false;
+                        });
+                    };
+
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', initNewsletter);
+                    } else {
+                        initNewsletter();
+                    }
+                })();
+            `,
+            tagPosition: 'bodyClose',
+            id: 'newsletter-handler'
+        }
+    ]
+});
 </script>
 
 <style scoped>
@@ -31,34 +97,29 @@ const handleSubmit = () => {
     padding: var(--space-xl);
     border-radius: 12px;
     border: 1px solid var(--color-gold);
-    text-align: center;
+    text-align: left;
     margin: var(--space-2xl) auto;
-}
-
-.newsletter-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-sm);
-}
-
-.newsletter-icon {
-    width: 24px;
-    height: 24px;
-    color: var(--color-gold);
+    max-width: 800px;
 }
 
 .newsletter-desc {
     color: var(--color-ink-muted);
     font-size: 1.1rem;
     margin-bottom: var(--space-lg);
+    text-align: left;
 }
 
 .newsletter-form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-md);
-    align-items: center;
+}
+
+.form-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    width: 100%;
 }
 
 .sacred-input {
@@ -80,11 +141,39 @@ const handleSubmit = () => {
 
 .newsletter-btn {
     width: auto;
-    justify-self: center;
+    align-self: flex-start;
 }
 
-@media (max-width: 600px) {
-    .newsletter-form {
+.newsletter-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.newsletter-feedback {
+    margin-top: var(--space-md);
+    font-size: 0.9rem;
+    color: var(--color-ink);
+    font-weight: 500;
+    min-height: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.newsletter-feedback.error, 
+.newsletter-feedback.success {
+    opacity: 1;
+}
+
+.newsletter-feedback.error {
+    color: #d32f2f;
+}
+
+.newsletter-feedback.success {
+    color: #2e7d32;
+}
+
+@media (max-width: 768px) {
+    .form-inputs {
         grid-template-columns: 1fr;
     }
     .newsletter-btn {

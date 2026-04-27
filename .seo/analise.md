@@ -1,8 +1,8 @@
 # Relatório de Análise SEO (nuxt-lite)
 
-- **Data:** 19/04/2026, 23:02:55
+- **Data:** 26/04/2026, 23:26:46
 - **Páginas Analisadas:** 23
-- **Total de Problemas:** 122
+- **Total de Problemas:** 124
 - **Score Médio:** 97/100
 
 ## Índice por Rota
@@ -11,15 +11,15 @@
 - [/autores/plinio-sousa (Score: 90)](#autores-plinio-sousa)
 - [/temas/evangelismo (Score: 95)](#temas-evangelismo)
 - [/temas/pedagogia (Score: 95)](#temas-pedagogia)
-- [/ (Score: 100)](#home)
 - [/manuscritos (Score: 100)](#manuscritos)
+- [/ (Score: 100)](#home)
 - [/sobre (Score: 100)](#sobre)
 - [/autores (Score: 100)](#autores)
 - [/colecoes (Score: 100)](#colecoes)
 - [/temas (Score: 100)](#temas)
 - [/audios (Score: 100)](#audios)
-- [/links-uteis (Score: 100)](#links-uteis)
 - [/livros (Score: 100)](#livros)
+- [/links-uteis (Score: 100)](#links-uteis)
 - [/manuscritos/ao-redor-do-portao (Score: 100)](#manuscritos-ao-redor-do-portao)
 - [/manuscritos/despertar-o-primeiro-passo-para-a-salvacao (Score: 100)](#manuscritos-despertar-o-primeiro-passo-para-a-salvacao)
 - [/manuscritos/opusculo-sobre-o-modo-de-aprender-e-meditar (Score: 100)](#manuscritos-opusculo-sobre-o-modo-de-aprender-e-meditar)
@@ -83,7 +83,7 @@
 
 ---
 
-### Rota: `/` { #home }
+### Rota: `/manuscritos` { #manuscritos }
 **Score:** 100/100
 
 | Severidade | Regra | Mensagem | Sugestão |
@@ -97,7 +97,7 @@
 
 ---
 
-### Rota: `/manuscritos` { #manuscritos }
+### Rota: `/` { #home }
 **Score:** 100/100
 
 | Severidade | Regra | Mensagem | Sugestão |
@@ -108,6 +108,8 @@
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ❌ | `input-missing-label` | Elemento <input> sem label associado | Adicionar <label for="id"> ou aria-label ao campo de formulário |
+| ❌ | `input-missing-label` | Elemento <input> sem label associado | Adicionar <label for="id"> ou aria-label ao campo de formulário |
 
 ---
 
@@ -150,13 +152,6 @@
 
 ---
 
-### Rota: `/links-uteis` { #links-uteis }
-**Score:** 100/100
-
-✅ Nenhum problema encontrado.
-
----
-
 ### Rota: `/livros` { #livros }
 **Score:** 100/100
 
@@ -178,6 +173,13 @@
 | ⚠️ | `dom-depth` | Aninhamento excessivo: span no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+
+---
+
+### Rota: `/links-uteis` { #links-uteis }
+**Score:** 100/100
+
+✅ Nenhum problema encontrado.
 
 ---
 
