@@ -5,3 +5,7 @@
 [submodule "nuxt-lite"]
 	path = nuxt-lite
 	url = https://github.com/HelenoSalgado/nuxt-lite.git
+[submodule "ebooks-ai"]
+	path = ebooks-ai
+	url = https://github.com/HelenoSalgado/ebooks-ai.git
+	update = none
