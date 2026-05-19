@@ -167,7 +167,7 @@ async function processPost(slug, force = false, dryRun = false, charCount = fals
     const audioMetadata = `---
 title: "${title}"
 description: "${description}"
-imgUrl: "/img/${slug}.webp"
+imgUrl: "/img/ai/${slug}.webp"
 duration: "${duration}"
 createdAt: "${new Date().toISOString().split('T')[0]}"
 ---
