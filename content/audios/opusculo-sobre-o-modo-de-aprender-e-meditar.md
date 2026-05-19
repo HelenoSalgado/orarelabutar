@@ -1,7 +1,7 @@
 ---
-title: "Opúsculo sobre o Modo de Aprender e Meditar"
-description: "Ouça o guia prático de Hugo de São Vítor sobre os métodos clássicos de estudo e contemplação espiritual, buscando a santidade através da meditação cristã."
-imgUrl: "/img/aprender-e-meditar.webp"
-duration: "15:42"
-createdAt: "2026-04-05"
+title: "Opúsculo sobre o modo de aprender e meditar"
+description: "Descubra os ensinamentos de Hugo de São Vitor sobre humildade, leitura e os três tipos de meditação para organizar o estudo com foco na santidade."
+imgUrl: "/img/opusculo-sobre-o-modo-de-aprender-e-meditar.webp"
+duration: "14:18"
+createdAt: "2026-05-19"
 ---

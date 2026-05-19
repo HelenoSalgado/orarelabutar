@@ -1,2 +1,10 @@
 {
+    "files.exclude": {
+        "**/nuxt-lite": true,
+        "**/ebooks-ai": true
+    },
+    "search.exclude": {
+        "**/nuxt-lite": true,
+        "**/ebooks-ai": true
+    }
 }
