@@ -19,6 +19,7 @@
         <button type="button" class="theme-toggle" title="Alterar tema">
           <IconsMoon class="theme-icon icon-light" />
           <IconsSun class="theme-icon icon-dark" />
+          <IconsCoffee class="theme-icon icon-sepia" />
         </button>
 
         <button type="button" class="hamburguer-btn" aria-label="Menu">
@@ -159,10 +160,10 @@ const navLinks = [
   color: var(--color-gold);
 }
 
-.icon-dark { display: none; }
-.icon-light { display: block; }
+.icon-light, .icon-dark, .icon-sepia { display: none; }
+html:not(.dark):not(.sepia) .icon-light { display: block; }
 .dark .icon-dark { display: block; }
-.dark .icon-light { display: none; }
+.sepia .icon-sepia { display: block; }
 
 .hamburguer-btn {
   background: none;

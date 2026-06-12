@@ -15,6 +15,7 @@
     --color-ink: #1a1a1a;
     --color-ink-muted: #4a4a4a;
     --color-gold: #b8860b;
+    --color-gold-rgb: 184, 134, 11;
     --color-gold-muted: rgba(184, 134, 11, 0.05);
     --color-shadow: rgba(0, 0, 0, 0.05);
     --color-selection: #fff2cc;
@@ -46,7 +47,8 @@
     --color-ink: #d4d4d4;
     --color-ink-muted: #a0a0a0;
     --color-gold: #c69b32;
-    --color-gold-muted: rgba(198, 155, 50, 0.05);
+    --color-gold-rgb: 198, 155, 50;
+    --color-gold-muted: rgba(198, 155, 50, 0.1);
     --color-shadow: rgba(0, 0, 0, 0.3);
     --color-selection: #2d2d2d;
 }
@@ -56,6 +58,7 @@
     --color-ink: #5b4636;
     --color-ink-muted: #8c715e;
     --color-gold: #946c00;
+    --color-gold-rgb: 148, 108, 0;
     --color-gold-muted: rgba(148, 108, 0, 0.05);
     --color-shadow: rgba(91, 70, 54, 0.1);
     --color-selection: #e6dac1;
