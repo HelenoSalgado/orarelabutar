@@ -1,6 +1,6 @@
 # Relatório de Análise SEO (nuxt-lite)
 
-- **Data:** 12/06/2026, 12:16:51
+- **Data:** 12/06/2026, 16:04:24
 - **Páginas Analisadas:** 26
 - **Total de Problemas:** 167
 - **Score Médio:** 94/100
@@ -15,8 +15,8 @@
 - [/audios (Score: 95)](#audios)
 - [/temas/evangelismo (Score: 95)](#temas-evangelismo)
 - [/temas/pedagogia (Score: 95)](#temas-pedagogia)
-- [/ (Score: 100)](#home)
 - [/manuscritos (Score: 100)](#manuscritos)
+- [/ (Score: 100)](#home)
 - [/colecoes (Score: 100)](#colecoes)
 - [/temas (Score: 100)](#temas)
 - [/links-uteis (Score: 100)](#links-uteis)
@@ -138,6 +138,20 @@
 
 ---
 
+### Rota: `/manuscritos` { #manuscritos }
+**Score:** 100/100
+
+| Severidade | Regra | Mensagem | Sugestão |
+|---|---|---|---|
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+
+---
+
 ### Rota: `/` { #home }
 **Score:** 100/100
 
@@ -151,20 +165,6 @@
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ❌ | `input-missing-label` | Elemento <input> sem label associado | Adicionar <label for="id"> ou aria-label ao campo de formulário |
 | ❌ | `input-missing-label` | Elemento <input> sem label associado | Adicionar <label for="id"> ou aria-label ao campo de formulário |
-
----
-
-### Rota: `/manuscritos` { #manuscritos }
-**Score:** 100/100
-
-| Severidade | Regra | Mensagem | Sugestão |
-|---|---|---|---|
-| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
-| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
-| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
-| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
-| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
-| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 
 ---
 

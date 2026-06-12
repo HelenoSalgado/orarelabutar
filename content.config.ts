@@ -8,6 +8,7 @@ const repository = (hasToken && !isDev) ? {
   url: 'https://github.com/HelenoSalgado/cms-orarelabutar',
   branch: process.env.CMS_BRANCH || 'master',
   auth: {
+    username: 'HelenoSalgado',
     token: process.env.GITHUB_TOKEN
   }
 } : undefined
