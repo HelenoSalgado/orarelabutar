@@ -10,13 +10,7 @@
     <div class="player-overlay-top"></div>
     <div class="player-overlay-bottom"></div>
 
-    <audio
-      ref="audioRef"
-      :src="src"
-      @timeupdate="updateProgress"
-      @loadedmetadata="onLoadedMetadata"
-      @ended="isPlaying = false"
-    ></audio>
+    <audio :src="src"></audio>
     
     <div class="player-content">
       <!-- Espaço superior para valorizar a imagem -->
@@ -24,26 +18,23 @@
 
       <!-- Seção de Controles (agora acima do progresso) -->
       <div class="controls-section">
-        <button type="button" class="control-btn skip" @click="skip(-10)" aria-label="Voltar 10 segundos">
+        <button type="button" class="control-btn skip" aria-label="Voltar 10 segundos">
           <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
             <path d="M12.5 5.5v13L3 12l9.5-6.5zM21 5.5v13L11.5 12 21 5.5z"/>
           </svg>
           <span class="skip-label">10s</span>
         </button>
 
-        <button type="button" class="main-play-btn" @click="togglePlay" :aria-label="isPlaying ? 'Pausar' : 'Ouvir'">
-          <svg v-if="!isPlaying" viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
+        <button type="button" class="main-play-btn" aria-label="Ouvir">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
             <path d="M8 5.14v14.13L19 12 8 5.14z"/>
-          </svg>
-          <svg v-else viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
-            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
           </svg>
         </button>
 
-        <button type="button" class="control-btn skip" @click="skip(10)" aria-label="Avançar 10 segundos">
+        <button type="button" class="control-btn skip" aria-label="Avançar 10 segundos">
           <span class="skip-label">10s</span>
           <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
-            <path d="M1.5 5.5v13L11 12 1.5 5.5zM11.5 5.5v13l9.5-6.5-9.5-6.5z"/>
+            <path d="M3 5.5v13L12.5 12 3 5.5zM11.5 5.5v13L21 12 11.5 5.5z"/>
           </svg>
         </button>
       </div>
@@ -51,11 +42,11 @@
       <!-- Barra de Progresso (último elemento) -->
       <div class="progress-section">
         <div class="time-info">
-          <span>{{ formatTime(currentTime) }}</span>
-          <span>{{ formatTime(duration) }}</span>
+          <span>00:00</span>
+          <span>00:00</span>
         </div>
-        <div class="progress-container" @click="seek">
-          <div class="progress-bar-fill" :style="{ width: progress + '%' }"></div>
+        <div class="progress-container">
+          <div class="progress-bar-fill" style="width: 0%"></div>
         </div>
       </div>
     </div>
@@ -63,79 +54,89 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   src: string
   imgUrl?: string
 }>()
 
-const audioRef = ref<HTMLAudioElement | null>(null)
-const isPlaying = ref(false)
-const currentTime = ref(0)
-const duration = ref(0)
-const progress = ref(0)
+useHead({
+  script: [
+    {
+      innerHTML: `
+        (function() {
+          if (window.__AUDIO_PLAYER_INIT__) return;
+          window.__AUDIO_PLAYER_INIT__ = true;
 
-const togglePlay = () => {
-  if (!audioRef.value) return
-  if (isPlaying.value) {
-    audioRef.value.pause()
-  } else {
-    audioRef.value.play()
-  }
-  isPlaying.value = !isPlaying.value
-}
+          const format = (s) => {
+            if (!s || isNaN(s)) return '00:00';
+            const m = Math.floor(s / 60);
+            const rs = Math.floor(s % 60);
+            return m.toString().padStart(2, '0') + ':' + rs.toString().padStart(2, '0');
+          };
 
-const skip = (seconds: number) => {
-  if (!audioRef.value) return
-  audioRef.value.currentTime += seconds
-}
+          const update = (audio) => {
+            const container = audio.closest('.elegant-player-container');
+            if (!container) return;
+            const isPlaying = !audio.paused;
+            const playBtn = container.querySelector('.main-play-btn');
+            if (playBtn) {
+              playBtn.innerHTML = isPlaying 
+                ? '<svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>'
+                : '<svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40"><path d="M8 5.14v14.13L19 12 8 5.14z"/></svg>';
+            }
+            const bar = container.querySelector('.progress-bar-fill');
+            if (bar && audio.duration) {
+              bar.style.width = (audio.currentTime / audio.duration * 100) + '%';
+            }
+            const times = container.querySelectorAll('.time-info span');
+            if (times.length >= 2) {
+              times[0].textContent = format(audio.currentTime);
+              times[1].textContent = format(audio.duration);
+            }
+          };
 
-const updateProgress = () => {
-  if (!audioRef.value) return
-  currentTime.value = audioRef.value.currentTime
-  progress.value = (currentTime.value / (duration.value || 1)) * 100
-}
+          document.addEventListener('click', (e) => {
+            const play = e.target.closest('.main-play-btn');
+            if (play) {
+              const a = play.closest('.elegant-player-container').querySelector('audio');
+              if (a.paused) a.play(); else a.pause();
+              return;
+            }
+            const skip = e.target.closest('.control-btn.skip');
+            if (skip) {
+              const a = skip.closest('.elegant-player-container').querySelector('audio');
+              const label = skip.getAttribute('aria-label');
+              a.currentTime += label.includes('Voltar') ? -10 : 10;
+              return;
+            }
+            const prog = e.target.closest('.progress-container');
+            if (prog) {
+              const a = prog.closest('.elegant-player-container').querySelector('audio');
+              const r = prog.getBoundingClientRect();
+              const x = e.clientX - r.left;
+              if (a.duration) a.currentTime = (x / r.width) * a.duration;
+            }
+          });
 
-const onLoadedMetadata = () => {
-  if (!audioRef.value) return
-  duration.value = audioRef.value.duration
-}
-
-const seek = (event: MouseEvent) => {
-  if (!audioRef.value || !duration.value) return
-  
-  // Evita forced reflow usando requestAnimationFrame para leitura assíncrona
-  requestAnimationFrame(() => {
-    const container = event.currentTarget as HTMLElement
-    if (!container) return
-    
-    const rect = container.getBoundingClientRect()
-    const x = event.clientX - rect.left
-    const percentage = x / rect.width
-    audioRef.value!.currentTime = percentage * duration.value
-  })
-}
-
-const formatTime = (seconds: number) => {
-  if (!seconds) return '00:00'
-  const mins = Math.floor(seconds / 60)
-  const secs = Math.floor(seconds % 60)
-  return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
-}
-
-onBeforeUnmount(() => {
-  if (audioRef.value) {
-    audioRef.value.pause()
-    audioRef.value.src = ''
-    audioRef.value.load()
-  }
-})
+          ['play', 'pause', 'timeupdate', 'loadedmetadata'].forEach(ev => {
+            document.addEventListener(ev, (e) => {
+              if (e.target.tagName === 'AUDIO') update(e.target);
+            }, true);
+          });
+        })();
+      `,
+      tagPosition: 'bodyClose',
+      id: 'audio-player-handler'
+    }
+  ]
+});
 </script>
 
 <style scoped>
 .elegant-player-container {
   position: relative;
   width: 100%;
-  height: 450px; /* Altura aumentada significativamente */
+  height: 450px;
   border-radius: 20px;
   overflow: hidden;
   display: flex;
@@ -151,7 +152,7 @@ onBeforeUnmount(() => {
   height: 100%;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.7) contrast(1.1); /* Imagem mais nítida e vibrante */
+  filter: brightness(0.7) contrast(1.1);
   transition: transform 0.5s ease;
 }
 
@@ -159,7 +160,6 @@ onBeforeUnmount(() => {
   transform: scale(1.03);
 }
 
-/* Gradiente superior para dar profundidade */
 .player-overlay-top {
   position: absolute;
   top: 0;
@@ -170,7 +170,6 @@ onBeforeUnmount(() => {
   z-index: 1;
 }
 
-/* Gradiente inferior denso para destacar controles e progresso */
 .player-overlay-bottom {
   position: absolute;
   bottom: 0;
@@ -185,7 +184,6 @@ onBeforeUnmount(() => {
   z-index: 1;
 }
 
-/* Overlay de cor destaque sutil (Gold) */
 .elegant-player-container::after {
   content: '';
   position: absolute;
@@ -206,14 +204,13 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0; /* Padding controlado internamente */
+  padding: 0;
 }
 
 .image-focus-area {
-  flex-grow: 1; /* Empurra os controles para baixo, deixando o topo livre */
+  flex-grow: 1;
 }
 
-/* Controles */
 .controls-section {
   display: flex;
   align-items: center;
@@ -269,7 +266,6 @@ onBeforeUnmount(() => {
   font-family: monospace;
 }
 
-/* Progresso na base */
 .progress-section {
   width: 100%;
   padding-bottom: var(--space-md);

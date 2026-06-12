@@ -51,8 +51,17 @@ export default {
       trailingSlash: true
     },
     '/css/**': { trailingSlash: false },
-    '/img/**': { trailingSlash: false },
-    '/_nuxt/**': { trailingSlash: false }
+    '/img/**': { trailingSlash: false, headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
+    '/audio/**': { 
+      trailingSlash: false, 
+      headers: { 
+        'Content-Type': 'audio/mpeg',
+        'Accept-Ranges': 'bytes',
+        'Cache-Control': 'public, max-age=31536000, immutable'
+      },
+      compress: false
+    },
+    '/_nuxt/**': { trailingSlash: false, headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } }
   },
 
   publicAssets: [

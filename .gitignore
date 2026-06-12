@@ -16,3 +16,9 @@ docs
 # nuxt-lite
 
 OPTIMIZATION_SPEC.md
+
+# CMS
+content/
+data/
+.cms-cache/
+
