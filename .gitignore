@@ -21,4 +21,5 @@ OPTIMIZATION_SPEC.md
 content/
 data/
 .cms-cache/
+.data/
 
