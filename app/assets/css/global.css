@@ -148,7 +148,7 @@ section{
 main,
 section {
     max-width: 800px;
-    margin: var(--space-xl) auto var(--space-md) auto;
+    margin: var(--space-lg) auto var(--space-md) auto;
 }
 
 /* Divisores Simples */
