@@ -84,9 +84,9 @@ body {
 }
 
 /* Títulos de Página (H1) e Seções (H2, H3) */
-h1,
-h2,
-h3 {
+h1:has(svg),
+h2:has(svg),
+h3:has(svg) {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
@@ -168,6 +168,8 @@ hr {
     gap: var(--space-xl);
     width: 100%;
     margin: var(--space-lg) 0;
+    justify-content: center;
+    justify-items: center;
 }
 
 /* --- Elementos Comuns --- */

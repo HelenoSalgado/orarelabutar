@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
 
   const surroundings = await queryCollectionItemSurroundings(event, 'posts', post.path, {
     fields: ['id', 'title', 'slug']
-  });
+  }).where('published', '=', true);
 
   // Fetch author details
   let author = null;

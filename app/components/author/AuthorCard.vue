@@ -19,7 +19,6 @@ defineProps<{
 <style scoped>
 .sacred-author-card {
     width: 100%;
-    max-width: 280px;
     transition: transform var(--transition-base);
     display: flex;
     flex-direction: column;
@@ -28,6 +27,9 @@ defineProps<{
     color: var(--color-ink);
     text-decoration: none;
     gap: var(--space-xs);
+    border: 1px solid var(--color-gold);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
 }
 
 .sacred-author-card:hover {

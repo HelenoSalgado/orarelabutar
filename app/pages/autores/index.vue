@@ -4,7 +4,6 @@
             <IconsUsers />
             <span>Autores</span>
         </h1>
-        <h2 class="sr-only">Lista de Autores e Biografias</h2>
         <div class="sacred-grid">
             <AuthorCard v-for="author in authors" :key="author.id" :title="author.title" :img-url="author.imgUrl"
                 :slug="author.slug" :description="author.description" />

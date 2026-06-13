@@ -1,22 +1,20 @@
 # Relatório de Análise SEO (nuxt-lite)
 
-- **Data:** 12/06/2026, 16:04:24
-- **Páginas Analisadas:** 26
-- **Total de Problemas:** 167
-- **Score Médio:** 94/100
+- **Data:** 12/06/2026, 22:01:52
+- **Páginas Analisadas:** 24
+- **Total de Problemas:** 151
+- **Score Médio:** 99/100
 
 ## Índice por Rota
 
-- [/manuscritos/comentario-ao-numero-quaternario-da-alma (Score: 43)](#manuscritos-comentario-ao-numero-quaternario-da-alma)
-- [/manuscritos/o-argumento-do-quarto-chines (Score: 43)](#manuscritos-o-argumento-do-quarto-chines)
 - [/autores/plinio-sousa (Score: 90)](#autores-plinio-sousa)
 - [/sobre (Score: 95)](#sobre)
 - [/autores (Score: 95)](#autores)
 - [/audios (Score: 95)](#audios)
 - [/temas/evangelismo (Score: 95)](#temas-evangelismo)
 - [/temas/pedagogia (Score: 95)](#temas-pedagogia)
-- [/manuscritos (Score: 100)](#manuscritos)
 - [/ (Score: 100)](#home)
+- [/manuscritos (Score: 100)](#manuscritos)
 - [/colecoes (Score: 100)](#colecoes)
 - [/temas (Score: 100)](#temas)
 - [/links-uteis (Score: 100)](#links-uteis)
@@ -35,38 +33,6 @@
 - [/livros/tratado-da-religiao-crista-volume-4 (Score: 100)](#livros-tratado-da-religiao-crista-volume-4)
 
 ## Detalhes por Rota
-
-### Rota: `/manuscritos/comentario-ao-numero-quaternario-da-alma` { #manuscritos-comentario-ao-numero-quaternario-da-alma }
-**Score:** 43/100
-
-| Severidade | Regra | Mensagem | Sugestão |
-|---|---|---|---|
-| ⚠️ | `Title-too-short` | Title tem 14 caracteres (mínimo recomendado: 30) | Aumentar para pelo menos 30 caracteres |
-| ❌ | `description-missing` | Meta tag "description" está ausente | Adicionar <meta> para "description" |
-| ❌ | `og:title-missing` | Meta tag "og:title" está ausente | Adicionar <meta> para "og:title" |
-| ❌ | `og:description-missing` | Meta tag "og:description" está ausente | Adicionar <meta> para "og:description" |
-| ⚠️ | `og-image-extension` | og:image pode ter formato não otimizado: "https://orarelabutar.com/img/ai/undefined" | Usar .webp, .jpg ou .png para melhor compatibilidade |
-| ℹ️ | `twitter:title-missing` | Meta tag "twitter:title" não encontrada (recomendada) | Adicionar "twitter:title" para melhor compartilhamento no Twitter |
-| ℹ️ | `twitter:description-missing` | Meta tag "twitter:description" não encontrada (recomendada) | Adicionar "twitter:description" para melhor compartilhamento no Twitter |
-| ❌ | `missing-h1` | Nenhum <h1> encontrado na página | Adicionar exatamente um <h1> como título principal da página |
-
----
-
-### Rota: `/manuscritos/o-argumento-do-quarto-chines` { #manuscritos-o-argumento-do-quarto-chines }
-**Score:** 43/100
-
-| Severidade | Regra | Mensagem | Sugestão |
-|---|---|---|---|
-| ⚠️ | `Title-too-short` | Title tem 14 caracteres (mínimo recomendado: 30) | Aumentar para pelo menos 30 caracteres |
-| ❌ | `description-missing` | Meta tag "description" está ausente | Adicionar <meta> para "description" |
-| ❌ | `og:title-missing` | Meta tag "og:title" está ausente | Adicionar <meta> para "og:title" |
-| ❌ | `og:description-missing` | Meta tag "og:description" está ausente | Adicionar <meta> para "og:description" |
-| ⚠️ | `og-image-extension` | og:image pode ter formato não otimizado: "https://orarelabutar.com/img/ai/undefined" | Usar .webp, .jpg ou .png para melhor compatibilidade |
-| ℹ️ | `twitter:title-missing` | Meta tag "twitter:title" não encontrada (recomendada) | Adicionar "twitter:title" para melhor compartilhamento no Twitter |
-| ℹ️ | `twitter:description-missing` | Meta tag "twitter:description" não encontrada (recomendada) | Adicionar "twitter:description" para melhor compartilhamento no Twitter |
-| ❌ | `missing-h1` | Nenhum <h1> encontrado na página | Adicionar exatamente um <h1> como título principal da página |
-
----
 
 ### Rota: `/autores/plinio-sousa` { #autores-plinio-sousa }
 **Score:** 90/100
@@ -138,20 +104,6 @@
 
 ---
 
-### Rota: `/manuscritos` { #manuscritos }
-**Score:** 100/100
-
-| Severidade | Regra | Mensagem | Sugestão |
-|---|---|---|---|
-| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
-| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
-| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
-| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
-| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
-| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
-
----
-
 ### Rota: `/` { #home }
 **Score:** 100/100
 
@@ -165,6 +117,20 @@
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ❌ | `input-missing-label` | Elemento <input> sem label associado | Adicionar <label for="id"> ou aria-label ao campo de formulário |
 | ❌ | `input-missing-label` | Elemento <input> sem label associado | Adicionar <label for="id"> ou aria-label ao campo de formulário |
+
+---
+
+### Rota: `/manuscritos` { #manuscritos }
+**Score:** 100/100
+
+| Severidade | Regra | Mensagem | Sugestão |
+|---|---|---|---|
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 
 ---
 
