@@ -148,7 +148,7 @@ section{
 main,
 section {
     max-width: 800px;
-    margin: var(--space-xs) auto;
+    margin: var(--space-xl) auto var(--space-md) auto;
 }
 
 /* Divisores Simples */
@@ -167,7 +167,6 @@ hr {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--space-xl);
     width: 100%;
-    margin: var(--space-lg) 0;
     justify-content: center;
     justify-items: center;
 }

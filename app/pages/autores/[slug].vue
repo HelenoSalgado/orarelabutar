@@ -20,11 +20,12 @@
       </h2>
       <div class="grid-container">
         <PostRelation v-for="post in authorData.posts" :key="post.id" :title="post.title" :img-url="post.imgUrl"
-          :slug="post.slug" />
+        :description="post.description"
+        :slug="post.slug" />
       </div>
     </section>
 
-    <section class="all-authors-section">
+    <section>
       <h2>
         <IconsUsers />
         <span>Autores</span>
