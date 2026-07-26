@@ -63,7 +63,7 @@ useHead({
                                     messageEl.classList.add('success');
                                     form.reset();
                                 } else {
-                                    messageEl.textContent = result.statusMessage || 'Erro ao se inscrever.';
+                                    messageEl.textContent = result.message || 'Erro ao se inscrever.';
                                     messageEl.classList.add('error');
                                 }
                             } catch (err) {

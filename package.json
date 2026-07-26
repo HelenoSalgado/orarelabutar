@@ -20,10 +20,9 @@
     "node": ">=22.18.0"
   },
   "scripts": {
-    "prebuild": "cd nuxt-lite && npm install && npm run build:runtime",
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "npm run prebuild && nuxt generate",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "convert-images": "node scripts/convert_to_webp.mjs",
@@ -53,6 +52,7 @@
     "@nuxtjs/color-mode": "^4.0.0",
     "linkedom": "^0.18.12",
     "nuxt": "^4.4.6",
+    "nuxt-lite": "^0.0.2",
     "vue": "^3.5.32",
     "vue-router": "^5.0.4"
   }

@@ -2,7 +2,7 @@ import { queryCollection } from '@nuxt/content/server';
 
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, 'slug');
-  
+
   const posts = await queryCollection(event, 'posts')
     .where('collectionSlug', '=', slug)
     .where('published', '=', true)
@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
   if (posts.length === 0) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'Coleção não encontrada',
+      message: 'Coleção não encontrada',
     });
   }
 

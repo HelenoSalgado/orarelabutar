@@ -2,11 +2,11 @@ import { queryCollection } from '@nuxt/content/server';
 
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, 'slug');
-  
+
   if (!slug) {
     throw createError({
       statusCode: 400,
-      statusMessage: 'O identificador é obrigatório',
+      message: 'O identificador é obrigatório',
     });
   }
 
@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
   if (!pdf) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'PDF não encontrado',
+      message: 'PDF não encontrado',
     });
   }
 

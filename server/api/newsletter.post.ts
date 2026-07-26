@@ -1,30 +1,30 @@
-import { createError, defineEventHandler, readBody, getRequestHeader } from 'h3'
+import { createError, defineEventHandler, getRequestHeader, readBody } from 'h3'
 
 export default defineEventHandler(async (event) => {
   if (event.method !== 'POST') {
-    throw createError({ statusCode: 405, statusMessage: 'Method Not Allowed' })
+    throw createError({ statusCode: 405, message: 'Method Not Allowed' })
   }
 
   const body = await readBody(event)
   const cloudflare = event.context.cloudflare
 
   if (!body?.email || !body?.name) {
-    throw createError({ statusCode: 400, statusMessage: 'Nome e e-mail são obrigatórios.' })
+    throw createError({ statusCode: 400, message: 'Nome e e-mail são obrigatórios.' })
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   if (!emailRegex.test(body.email)) {
-    throw createError({ statusCode: 400, statusMessage: 'E-mail inválido.' })
+    throw createError({ statusCode: 400, message: 'E-mail inválido.' })
   }
 
   const origin = getRequestHeader(event, 'origin')
   if (process.env.NODE_ENV === 'production' && origin && !origin.includes('orarelabutar.com')) {
-    throw createError({ statusCode: 403, statusMessage: 'Acesso negado.' })
+    throw createError({ statusCode: 403, message: 'Acesso negado.' })
   }
 
   const db = cloudflare?.env?.DB
   if (!db && process.env.NODE_ENV !== 'development') {
-    throw createError({ statusCode: 500, statusMessage: 'Banco de dados não configurado.' })
+    throw createError({ statusCode: 500, message: 'Banco de dados não configurado.' })
   }
 
   try {
@@ -69,6 +69,6 @@ export default defineEventHandler(async (event) => {
     if (error.message?.includes('UNIQUE constraint failed')) {
       return { success: true, message: 'Este e-mail já está cadastrado.' }
     }
-    throw createError({ statusCode: 500, statusMessage: 'Erro interno ao processar inscrição.' })
+    throw createError({ statusCode: 500, message: 'Erro interno ao processar inscrição.' })
   }
 })

@@ -1,18 +1,21 @@
 # Relatório de Análise SEO (nuxt-lite)
 
-- **Data:** 12/06/2026, 22:01:52
-- **Páginas Analisadas:** 24
-- **Total de Problemas:** 151
-- **Score Médio:** 99/100
+- **Data:** 26/07/2026, 17:28:11
+- **Páginas Analisadas:** 28
+- **Total de Problemas:** 353
+- **Score Médio:** 98/100
 
 ## Índice por Rota
 
+- [/autores/olavo-de-carvalho (Score: 75)](#autores-olavo-de-carvalho)
 - [/autores/plinio-sousa (Score: 90)](#autores-plinio-sousa)
 - [/sobre (Score: 95)](#sobre)
 - [/autores (Score: 95)](#autores)
 - [/audios (Score: 95)](#audios)
 - [/temas/evangelismo (Score: 95)](#temas-evangelismo)
 - [/temas/pedagogia (Score: 95)](#temas-pedagogia)
+- [/temas/politica (Score: 95)](#temas-politica)
+- [/temas/Política (Score: 95)](#temas-pol-tica)
 - [/ (Score: 100)](#home)
 - [/manuscritos (Score: 100)](#manuscritos)
 - [/colecoes (Score: 100)](#colecoes)
@@ -22,6 +25,7 @@
 - [/manuscritos/ao-redor-do-portao (Score: 100)](#manuscritos-ao-redor-do-portao)
 - [/manuscritos/despertar-o-primeiro-passo-para-a-salvacao (Score: 100)](#manuscritos-despertar-o-primeiro-passo-para-a-salvacao)
 - [/manuscritos/opusculo-sobre-o-modo-de-aprender-e-meditar (Score: 100)](#manuscritos-opusculo-sobre-o-modo-de-aprender-e-meditar)
+- [/manuscritos/true-outspeak-4-de-dezembro-de-2006 (Score: 100)](#manuscritos-true-outspeak-4-de-dezembro-de-2006)
 - [/autores/charles-h-spurgeon (Score: 100)](#autores-charles-h-spurgeon)
 - [/autores/hugo-de-sao-vitor (Score: 100)](#autores-hugo-de-sao-vitor)
 - [/audios/ao-redor-do-portao (Score: 100)](#audios-ao-redor-do-portao)
@@ -34,6 +38,28 @@
 
 ## Detalhes por Rota
 
+### Rota: `/autores/olavo-de-carvalho` { #autores-olavo-de-carvalho }
+**Score:** 75/100
+
+| Severidade | Regra | Mensagem | Sugestão |
+|---|---|---|---|
+| ❌ | `Description-too-long` | Description tem 568 caracteres (máximo absoluto: 300) | Reduzir para no máximo 160 caracteres |
+| ⚠️ | `OG Description-exceeds-recommended` | OG Description tem 568 caracteres (recomendado: até 200) | Considerar reduzir para 200 caracteres ou menos |
+| ⚠️ | `Twitter Description-exceeds-recommended` | Twitter Description tem 568 caracteres (recomendado: até 200) | Considerar reduzir para 200 caracteres ou menos |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: img no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+
+---
+
 ### Rota: `/autores/plinio-sousa` { #autores-plinio-sousa }
 **Score:** 90/100
 
@@ -41,6 +67,8 @@
 |---|---|---|---|
 | ⚠️ | `Title-too-short` | Title tem 29 caracteres (mínimo recomendado: 30) | Aumentar para pelo menos 30 caracteres |
 | ⚠️ | `Description-exceeds-recommended` | Description tem 197 caracteres (recomendado: até 160) | Considerar reduzir para 160 caracteres ou menos |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
@@ -104,11 +132,32 @@
 
 ---
 
+### Rota: `/temas/politica` { #temas-politica }
+**Score:** 95/100
+
+| Severidade | Regra | Mensagem | Sugestão |
+|---|---|---|---|
+| ⚠️ | `Description-exceeds-recommended` | Description tem 183 caracteres (recomendado: até 160) | Considerar reduzir para 160 caracteres ou menos |
+
+---
+
+### Rota: `/temas/Política` { #temas-pol-tica }
+**Score:** 95/100
+
+| Severidade | Regra | Mensagem | Sugestão |
+|---|---|---|---|
+| ⚠️ | `Description-too-short` | Description tem 80 caracteres (mínimo recomendado: 120) | Aumentar para pelo menos 120 caracteres |
+| ❌ | `missing-h1` | Nenhum <h1> encontrado na página | Adicionar exatamente um <h1> como título principal da página |
+
+---
+
 ### Rota: `/` { #home }
 **Score:** 100/100
 
 | Severidade | Regra | Mensagem | Sugestão |
 |---|---|---|---|
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
@@ -125,6 +174,8 @@
 
 | Severidade | Regra | Mensagem | Sugestão |
 |---|---|---|---|
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
@@ -225,6 +276,189 @@
 
 ---
 
+### Rota: `/manuscritos/true-outspeak-4-de-dezembro-de-2006` { #manuscritos-true-outspeak-4-de-dezembro-de-2006 }
+**Score:** 100/100
+
+| Severidade | Regra | Mensagem | Sugestão |
+|---|---|---|---|
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: sup no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: sup no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: sup no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: sup no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: sup no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: sup no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: use no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 8 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: li no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: strong no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: em no nível 7 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 7 | Considerar reduzir profundidade do DOM |
+
+---
+
 ### Rota: `/autores/charles-h-spurgeon` { #autores-charles-h-spurgeon }
 **Score:** 100/100
 
@@ -234,6 +468,8 @@
 | ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: img no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
@@ -250,6 +486,8 @@
 |---|---|---|---|
 | ⚠️ | `dom-depth` | Aninhamento excessivo: img no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
+| ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: a no nível 6 | Considerar reduzir profundidade do DOM |
 | ⚠️ | `dom-depth` | Aninhamento excessivo: h3 no nível 6 | Considerar reduzir profundidade do DOM |

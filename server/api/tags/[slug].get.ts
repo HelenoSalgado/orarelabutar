@@ -2,7 +2,7 @@ import { queryCollection } from '@nuxt/content/server';
 
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, 'slug') as string;
-  
+
   const tag = await queryCollection(event, 'tags')
     .where('slug', '=', slug)
     .select('id', 'title', 'description', 'slug')
@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
   if (!tag) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'Tema não encontrado',
+      message: 'Tema não encontrado',
     });
   }
 

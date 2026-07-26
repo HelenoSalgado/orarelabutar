@@ -1,7 +1,7 @@
 import { defineNuxtConfig } from "nuxt/config";
 import nitro from "./server/nitro";
 //import { cloudflare } from "@cloudflare/vite-plugin";
-import type { NuxtLiteOptions } from './nuxt-lite/src';
+import type { ModuleOptions as NuxtLiteOptions } from 'nuxt-lite';
 
 export default defineNuxtConfig({
   compatibilityDate: "2026-04-09",
@@ -103,7 +103,7 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    "./nuxt-lite/src/module",
+    "nuxt-lite",
     "@nuxt/content",
     "@nuxt/image",
     "@nuxt/eslint",

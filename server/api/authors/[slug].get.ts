@@ -2,7 +2,7 @@ import { queryCollection } from '@nuxt/content/server';
 
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, 'slug');
-  
+
   const author = await queryCollection(event, 'authors')
     .where('slug', '=', slug)
     .select('title', 'description', 'imgUrl', 'slug', 'body')
@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
   if (!author) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'Autor não encontrado',
+      message: 'Autor não encontrado',
     });
   }
 

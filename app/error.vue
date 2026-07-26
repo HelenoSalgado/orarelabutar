@@ -39,7 +39,7 @@ const errorMessage = computed(() => {
   if (props.error?.status === 404) {
     return 'O manuscrito que você procura parece ter sido perdido no tempo ou nunca foi escrito.';
   }
-  return props.error?.statusMessage || 'Não foi possível carregar o conteúdo solicitado. Por favor, tente novamente mais tarde.';
+  return props.error?.message || 'Não foi possível carregar o conteúdo solicitado. Por favor, tente novamente mais tarde.';
 });
 
 const handleError = () => clearError({ redirect: "/" });
