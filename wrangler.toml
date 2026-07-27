@@ -1,7 +1,6 @@
 name = "orarelabutar"
 compatibility_date = "2026-04-09"
 
-
 [[d1_databases]]
 binding = "DB"
 database_name = "orarelabutar-db"

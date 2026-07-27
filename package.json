@@ -42,6 +42,7 @@
     "@vue/test-utils": "^2.4.6",
     "better-sqlite3": "^12.8.0",
     "happy-dom": "^20.8.9",
+    "nuxt-lite": "^0.0.8",
     "playwright-core": "^1.59.1",
     "sharp": "^0.34.5",
     "vitest": "^4.1.2",
@@ -52,7 +53,6 @@
     "@nuxtjs/color-mode": "^4.0.0",
     "linkedom": "^0.18.12",
     "nuxt": "^4.4.6",
-    "nuxt-lite": "^0.0.2",
     "vue": "^3.5.32",
     "vue-router": "^5.0.4"
   }

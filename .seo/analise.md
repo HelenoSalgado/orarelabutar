@@ -1,12 +1,13 @@
 # Relatório de Análise SEO (nuxt-lite)
 
-- **Data:** 26/07/2026, 17:28:11
+- **Data:** 27/07/2026, 04:27:30
 - **Páginas Analisadas:** 28
-- **Total de Problemas:** 353
-- **Score Médio:** 98/100
+- **Total de Problemas:** 359
+- **Score Médio:** 96/100
 
 ## Índice por Rota
 
+- [/teste-css (Score: 46)](#teste-css)
 - [/autores/olavo-de-carvalho (Score: 75)](#autores-olavo-de-carvalho)
 - [/autores/plinio-sousa (Score: 90)](#autores-plinio-sousa)
 - [/sobre (Score: 95)](#sobre)
@@ -15,7 +16,6 @@
 - [/temas/evangelismo (Score: 95)](#temas-evangelismo)
 - [/temas/pedagogia (Score: 95)](#temas-pedagogia)
 - [/temas/politica (Score: 95)](#temas-politica)
-- [/temas/Política (Score: 95)](#temas-pol-tica)
 - [/ (Score: 100)](#home)
 - [/manuscritos (Score: 100)](#manuscritos)
 - [/colecoes (Score: 100)](#colecoes)
@@ -37,6 +37,22 @@
 - [/livros/tratado-da-religiao-crista-volume-4 (Score: 100)](#livros-tratado-da-religiao-crista-volume-4)
 
 ## Detalhes por Rota
+
+### Rota: `/teste-css` { #teste-css }
+**Score:** 46/100
+
+| Severidade | Regra | Mensagem | Sugestão |
+|---|---|---|---|
+| ⚠️ | `Title-too-short` | Title tem 14 caracteres (mínimo recomendado: 30) | Aumentar para pelo menos 30 caracteres |
+| ❌ | `description-missing` | Meta tag "description" está ausente | Adicionar <meta> para "description" |
+| ❌ | `og:title-missing` | Meta tag "og:title" está ausente | Adicionar <meta> para "og:title" |
+| ❌ | `og:description-missing` | Meta tag "og:description" está ausente | Adicionar <meta> para "og:description" |
+| ℹ️ | `og:image-missing` | Meta tag "og:image" não encontrada (recomendada) | Adicionar "og:image" para melhor compartilhamento social |
+| ℹ️ | `twitter:title-missing` | Meta tag "twitter:title" não encontrada (recomendada) | Adicionar "twitter:title" para melhor compartilhamento no Twitter |
+| ℹ️ | `twitter:description-missing` | Meta tag "twitter:description" não encontrada (recomendada) | Adicionar "twitter:description" para melhor compartilhamento no Twitter |
+| ℹ️ | `twitter:image-missing` | Meta tag "twitter:image" não encontrada (recomendada) | Adicionar "twitter:image" para melhor compartilhamento no Twitter |
+
+---
 
 ### Rota: `/autores/olavo-de-carvalho` { #autores-olavo-de-carvalho }
 **Score:** 75/100
@@ -138,16 +154,6 @@
 | Severidade | Regra | Mensagem | Sugestão |
 |---|---|---|---|
 | ⚠️ | `Description-exceeds-recommended` | Description tem 183 caracteres (recomendado: até 160) | Considerar reduzir para 160 caracteres ou menos |
-
----
-
-### Rota: `/temas/Política` { #temas-pol-tica }
-**Score:** 95/100
-
-| Severidade | Regra | Mensagem | Sugestão |
-|---|---|---|---|
-| ⚠️ | `Description-too-short` | Description tem 80 caracteres (mínimo recomendado: 120) | Aumentar para pelo menos 120 caracteres |
-| ❌ | `missing-h1` | Nenhum <h1> encontrado na página | Adicionar exatamente um <h1> como título principal da página |
 
 ---
 

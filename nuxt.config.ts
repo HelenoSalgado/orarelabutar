@@ -116,7 +116,7 @@ export default defineNuxtConfig({
       optimizeSeo: 'analyze',
     },
     optimizeSvg: true,
-    pruneOutput: false,
+    pruneOutput: true,
     colorMode: {
       storageKey: 'ol-color-mode',
       preference: 'light',
